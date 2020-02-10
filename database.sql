@@ -11,15 +11,15 @@ CREATE TABLE "user" (
 CREATE TABLE "opportunity" (
 	"id" serial NOT NULL,
 	"name" varchar(255) NOT NULL,
-	"image_url" varchar(255) NOT NULL,
+	"image_url" varchar(255),
 	"description" varchar(255) NOT NULL,
-	"contact" varchar(255) NOT NULL,
-	"email" varchar(255) NOT NULL,
-	"phone" varchar(15) NOT NULL,
-	"web_address" varchar(255) NOT NULL,
-	"social" varchar(255) NOT NULL,
-	"street_address" varchar(255) NOT NULL,
-	"city" varchar(50) NOT NULL,
+	"contact" varchar(255),
+	"email" varchar(255),
+	"phone" varchar(15),
+	"web_address" varchar(255),
+	"social" varchar(255),
+	"street_address" varchar(255),
+	"city" varchar(50),
 	"zip" varchar(50) NOT NULL,
 	"date_added" serial(99) NOT NULL DEFAULT 'getdate()',
 	CONSTRAINT "opportunity_pk" PRIMARY KEY ("id")
@@ -30,7 +30,7 @@ CREATE TABLE "opportunity" (
 CREATE TABLE "user_opportunity" (
 	"user_id" int NOT NULL,
 	"opportunity_id" int NOT NULL,
-	"review" varchar(255) NOT NULL,
+	"review" varchar(255),
 	CONSTRAINT "user_opportunity_pk" PRIMARY KEY ("user_id","opportunity_id")
 ) WITH (
   OIDS=FALSE
@@ -75,15 +75,15 @@ VALUES(
 (
 'House of Hope Presbyterian Church', 
 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT4iXM8E1rLI2GiPnBH1DJn8hEOWdfittXfe7uI3JygJz-1L-Ok', 
-' contribute to the fine organizations that are making the North a better place to live through charitable donations, partnerships, and volunteer events. Our volunteers are a really active, passionate bunch and man do they give a damn.', 
-'Mary Selke', 
-'mary@surlybrewing.com', 
-'',
-'https://surlybrewing.com/surly-gives-a-damn/', 
-'https://twitter.com/surlygivesadamn?lang=en', 
-'',
-'Minneapolis', 
-'55414'), 
+'At the core of House of Hope is a deeply embedded commitment to the greater community. We are dedicated to social justice and human rights, and are intentional citizens and good neighbors within the community.', 
+'', 
+'HOH@hohchurch.org', 
+'(651) 227-6311',
+'https://www.hohchurch.org/mission/get-involved/', 
+'https://www.facebook.com/HouseofHopePresbyterian/', 
+'797 Summit Avenue',
+'Saint Paul', 
+'55105'), 
 (
 'Surly Gives a Damn', 
 'https://pbs.twimg.com/profile_images/867503621331718146/drqBGY3Q.jpg', 
