@@ -4,7 +4,7 @@ class SubmitOpp extends Component {
     render() {
         return (
             <div>
-                <p>this is a form</p>
+                <p>this is the SUBMIT form</p>
                 <input placeholder="name"></input>
                 <input placeholder="description"></input>
                 <input placeholder="contact"></input>

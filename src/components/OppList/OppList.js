@@ -5,7 +5,7 @@ class OppList extends Component {
     render() {
         return (
             <div>
-                <p>this is a list</p>
+                <p>this is a LIST</p>
                 <OppItem />
             </div>
         )

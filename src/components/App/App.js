@@ -15,10 +15,10 @@ import InfoPage from '../InfoPage/InfoPage';
 import OppList from '../OppList/OppList';
 import SubmitOpp from '../SubmitOpp/SubmitOpp';
 import EditOpp from '../EditOpp/EditOpp';
-
 import './App.css';
 
 class App extends Component {
+
   componentDidMount() {
     this.props.dispatch({ type: 'FETCH_USER' })
   }

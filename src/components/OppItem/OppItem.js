@@ -9,7 +9,7 @@ class OppItem extends Component {
     render() {
         return (
             <div>
-                <p>this is an item</p>
+                <p>this is an ITEM</p>
             </div>
         )
     }
