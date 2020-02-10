@@ -1,24 +1,26 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   HashRouter as Router,
   Route,
   Redirect,
   Switch,
 } from 'react-router-dom';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
-import OppList from '../OppList/OppList'
+import OppList from '../OppList/OppList';
+import SubmitOpp from '../SubmitOpp/SubmitOpp';
+import EditOpp from '../EditOpp/EditOpp';
 
 import './App.css';
 
 class App extends Component {
-  componentDidMount () {
-    this.props.dispatch({type: 'FETCH_USER'})
+  componentDidMount() {
+    this.props.dispatch({ type: 'FETCH_USER' })
   }
 
   render() {
@@ -56,10 +58,13 @@ class App extends Component {
             <Route render={() => <h1>404</h1>} />
           </Switch>
           <OppList />
+          <SubmitOpp />
+          <EditOpp />
           <Footer />
         </div>
       </Router>
-  )}
+    )
+  }
 }
 
 export default connect()(App);
