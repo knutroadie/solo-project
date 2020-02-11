@@ -8,38 +8,33 @@ const Nav = (props) => (
   <div className="nav">
     <h1>good do good</h1>
     <h3>meeting good people WAS hard.</h3>
-    <Link to="/home">
-      {/* <h2 className="nav-title">Prime Solo Project</h2> */}
-    </Link>
-    <div className="nav-right">
-      <Link className="nav-link" to="/home">
-        {/* Show this link if they are logged in or not,
+    {/* <h2 className="nav-title">Prime Solo Project</h2> */}
+    <button className="nav-link" to="/home">
+      Home
+    </button>
+
+    <button className="nav-link" to="/home">
+      {/* Show this link if they are logged in or not,
         but call this link 'Home' if they are logged in,
         and call this link 'Login / Register' if they are not */}
-        {props.user.id ? 'Home' : 'Login / Register'}
-      </Link>
-      {/* Show the link to the info page and the logout button if the user is logged in */}
-      {props.user.id && (
-        <>
-          <Link className="nav-link" to="/info">
-            Info Page
-          </Link>
-          <LogOutButton className="nav-link" />
-        </>
-      )}
-      {/* Always show this link since the about page is not protected */}
-      <Link className="nav-link" to="/about">
-        About
-      </Link>
-      <Link className="nav-link" to="/submit">
-        Submit
-      </Link>
-      <button>home</button>
-      <button>login</button>
-      <button>logout</button>
-      <button>submit</button>
-      <button>about</button>
-    </div>
+      {props.user.id ? 'Home' : 'Login / Register'}
+    </button>
+    {/* Show the link to the info page and the logout button if the user is logged in */}
+    {props.user.id && (
+      <>
+        <button className="nav-link" to="/info">
+          Info Page
+          </button>
+        <LogOutButton className="nav-link" />
+      </>
+    )}
+    {/* Always show this link since the about page is not protected */}
+    <button className="nav-link" to="/about">
+      About
+      </button>
+    <button className="nav-link" to="/submit">
+      Submit
+      </button>
   </div>
 );
 
