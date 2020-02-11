@@ -3,7 +3,7 @@ import React, { Component} from 'react';
 class SubmitOpp extends Component {
 
     state = {
-        newOpp: {
+        editedOpp: {
             name: '',
             description: '',
             contact: '',
