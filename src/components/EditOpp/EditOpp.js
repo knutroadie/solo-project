@@ -1,6 +1,15 @@
 import React, { Component} from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+
 
 class EditOpp extends Component {
+
+    goDetail = () => {
+        console.log('clicking to go detail');
+        this.props.history.push(`/detail`)
+    }
+
     render() {
         return (
             <div>
@@ -16,10 +25,16 @@ class EditOpp extends Component {
                 <input placeholder="city"></input>
                 <input placeholder="zip"></input>
                 <input placeholder="image_url"></input>
-                <button>submit changes</button>
+                <button onClick={this.goDetail}>submit changes</button>
             </div>
         )
     }
 }
 
-export default EditOpp;
+const putReduxStateOnProps = (reduxState) => {
+    return {
+        reduxState
+    }
+}
+
+export default withRouter(connect(putReduxStateOnProps)(EditOpp));

@@ -1,6 +1,13 @@
 import React, { Component} from 'react';
 
 class SubmitOpp extends Component {
+
+    goHome = () => {
+        alert('thanks for helping us!')
+        console.log('clicking to go home');
+        this.props.history.push(`/`)
+    }
+
     render() {
         return (
             <div>
@@ -15,7 +22,7 @@ class SubmitOpp extends Component {
                 <input placeholder="street_address"></input>
                 <input placeholder="city"></input>
                 <input placeholder="zip"></input>
-                <button>submit</button>
+                <button onClick={this.goHome}>submit</button>
             </div>
         )
     }

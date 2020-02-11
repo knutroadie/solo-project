@@ -8,9 +8,7 @@ const LogOutButton = props => (
     // is passed to it from it's parents through React props
     className={props.className}
     onClick={() => props.dispatch({ type: 'LOGOUT' })}
-  >
-    Log Out
-  </button>
+  >logout</button>
 );
 
 // This component doesn't need 'mapStateToProps'

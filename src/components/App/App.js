@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 // import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 // import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
-// import AboutPage from '../AboutPage/AboutPage';
+import AboutPage from '../AboutPage/AboutPage';
 // import UserPage from '../UserPage/UserPage';
 // import InfoPage from '../InfoPage/InfoPage';
 import OppList from '../OppList/OppList';
@@ -35,6 +35,7 @@ class App extends Component {
           <Route path="/" exact component={OppList} />
           <Route path="/login" exact component={LoginPage} />
           <Route path="/register" exact component={RegisterPage} />
+          <Route path="/about" component={AboutPage} />
           <Route path="/detail" component={OppDetail} />
           <Route path="/submit" component={SubmitOpp} />
           <Route path="/edit" component={EditOpp} />
