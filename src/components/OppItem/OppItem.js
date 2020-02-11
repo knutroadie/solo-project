@@ -10,6 +10,7 @@ class OppItem extends Component {
         return (
             <div>
                 <p>this is an ITEM</p>
+                <button>see more</button>
             </div>
         )
     }

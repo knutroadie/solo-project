@@ -155,4 +155,16 @@ VALUES(
 'https://www.instagram.com/1stcovmpls/', 
 '810 South 7th Street',
 'Minneapolis', 
-'55415');
+'55415'),
+(
+'Sex Workers Outreach Project-Minneapolis',
+'https://www.winningcause.org/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/s/w/swopmplslogo_1.png',
+'SWOP-Minneapolis is a local branch of the Sex Workers Outreach Project, a national social justice network dedicated to the fundamental human rights of sex workers and their communities. SWOP focuses on ending violence and stigma through education and advocacy. We are a peer based support group focusing on harm reduction, outreach, and building community for Sex Workers.',
+'',
+'swopmpls@gmail.com',
+'',
+'http://swopminneapolis.weebly.com/',
+'https://www.facebook.com/swopmpls/',
+'',
+'Minneapolis',
+'');

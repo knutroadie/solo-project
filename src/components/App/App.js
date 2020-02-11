@@ -15,6 +15,7 @@ import InfoPage from '../InfoPage/InfoPage';
 import OppList from '../OppList/OppList';
 import SubmitOpp from '../SubmitOpp/SubmitOpp';
 import EditOpp from '../EditOpp/EditOpp';
+import OppDetail from '../OppDetail/OppDetail';
 import './App.css';
 
 class App extends Component {
@@ -42,24 +43,24 @@ class App extends Component {
             Visiting localhost:3000/home will show the UserPage if the user is logged in.
             If the user is not logged in, the ProtectedRoute will show the 'Login' or 'Register' page.
             Even though it seems like they are different pages, the user is always on localhost:3000/home */}
-            <ProtectedRoute
+            <Route
               exact
-              path="/home"
+              path="/login"
               component={UserPage}
             />
             {/* This works the same as the other protected route, except that if the user is logged in,
             they will see the info page instead. */}
-            <ProtectedRoute
+            <Route
               exact
-              path="/info"
-              component={InfoPage}
+              path="/detail"
+              component={OppDetail}
             />
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />
           </Switch>
-          <OppList />
-          <SubmitOpp />
-          <EditOpp />
+          {/* <OppList /> */}
+          {/* <SubmitOpp /> */}
+          {/* <EditOpp /> */}
           <Footer />
         </div>
       </Router>
