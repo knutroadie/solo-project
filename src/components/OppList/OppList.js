@@ -6,7 +6,11 @@ class OppList extends Component {
         return (
             <div>
                 <p>this is a LIST</p>
-                <OppItem />
+                <ul>
+                <li><OppItem /></li>
+                <li><OppItem /></li>
+                <li><OppItem /></li>
+                </ul>
             </div>
         )
     }
