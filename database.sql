@@ -147,7 +147,7 @@ VALUES(
 (
 'First Covenant Church of Minneapolis', 
 'https://www.handsontwincities.org/content/www.handsontwincities.org/agency/86814.jpg?1528320740?area=agency', 
-'Since 2009, First Covenant has partnered with a shelter provider to offer shelter to 50 men and women experiencing homelessness. In the past, we offered shelter only during the winter months.  This year, we are beginning a partnership with St. Stephen's and now will be offering shelter year round.  St. Stephen's provides the staff, assigns the guests, and shares the cost of operations. First Covenant provides the space and volunteer coordination to provide and serve a hot meal nightly. We seek volunteers to provide these critical needs every day.', 
+'Since 2009, First Covenant has partnered with a shelter provider to offer shelter to 50 men and women experiencing homelessness. In the past, we offered shelter only during the winter months.  This year, we are beginning a partnership with St. Stephen''s and now will be offering shelter year round.  St. Stephen''s provides the staff, assigns the guests, and shares the cost of operations. First Covenant provides the space and volunteer coordination to provide and serve a hot meal nightly. We seek volunteers to provide these critical needs every day.', 
 'Meg Barke', 
 'mbarke@ststephensmpls.org', 
 '612-332-8093',

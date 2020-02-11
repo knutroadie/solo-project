@@ -16,7 +16,7 @@ class EditOpp extends Component {
                 <input placeholder="city"></input>
                 <input placeholder="zip"></input>
                 <input placeholder="image_url"></input>
-                <button>submit</button>
+                <button>submit changes</button>
             </div>
         )
     }

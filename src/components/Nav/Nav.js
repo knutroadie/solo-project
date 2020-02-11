@@ -6,8 +6,8 @@ import './Nav.css';
 
 const Nav = (props) => (
   <div className="nav">
-    {/* <h1>good do good</h1>
-    <h3>meeting good people WAS hard.</h3> */}
+    <h1>good do good</h1>
+    <h3>meeting good people WAS hard.</h3>
     <Link to="/home">
       {/* <h2 className="nav-title">Prime Solo Project</h2> */}
     </Link>
@@ -34,7 +34,11 @@ const Nav = (props) => (
       <Link className="nav-link" to="/submit">
         Submit
       </Link>
-
+      <button>home</button>
+      <button>login</button>
+      <button>logout</button>
+      <button>submit</button>
+      <button>about</button>
     </div>
   </div>
 );

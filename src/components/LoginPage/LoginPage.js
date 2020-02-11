@@ -41,7 +41,7 @@ class LoginPage extends Component {
           </h2>
         )}
         <form onSubmit={this.login}>
-          <h2>Login</h2>
+          <h3>Login</h3>
           <div>
             <label htmlFor="username">
               Username:
@@ -73,15 +73,13 @@ class LoginPage extends Component {
             />
           </div>
         </form>
-        <center>
           <button
             type="button"
             className="link-button"
             onClick={() => {this.props.dispatch({type: 'SET_TO_REGISTER_MODE'})}}
           >
-            Register
+            Or Register
           </button>
-        </center>
       </div>
     );
   }
