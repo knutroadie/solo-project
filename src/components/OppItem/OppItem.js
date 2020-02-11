@@ -9,10 +9,16 @@ class OppItem extends Component {
         this.props.history.push(`/detail`)
     }
 
+    upVote = () => {
+        console.log('clicking to upvote'); 
+    }
+
     render() {
         return (
             <div>
                 <p>this is an ITEM</p>
+                <div onClick={this.goDetail}>image</div>
+                <button onClick={this.upVote}>upvote</button>
                 <button onClick={this.goDetail}>see more</button>
             </div>
         )
