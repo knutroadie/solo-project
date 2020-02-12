@@ -18,12 +18,12 @@ CREATE TABLE "opportunity" (
 	"street_address" VARCHAR(255),
 	"city" VARCHAR(50),
 	"zip" VARCHAR(50),
-	"date_added" serial(99) NOT NULL DEFAULT 'getDate()'
+	"date_added" TIMESTAMP(14)
 );
 
 CREATE TABLE "user_opportunity" (
-	"user_id" INT PRIMARY KEY NOT NULL,
-	"opportunity_id" INT PRIMARY KEY NOT NULL,
+	"user_id" INT PRIMARY KEY REFERENCES "user" NOT NULL,
+	"opportunity_id" INT PRIMARY KEY REFERENCES "opportunity" NOT NULL,
 	"review" VARCHAR(255)
 );
 
@@ -33,19 +33,12 @@ CREATE TABLE "keyword" (
 );
 
 CREATE TABLE "opportunity_keyword" (
-	"id" SERIAL NOT NULL,
-	"opportuity_id" INT NOT NULL,
-	"keyword_id" INT NOT NULL,
-	-- CONSTRAINT "opportunity_keyword_pk" PRIMARY KEY ("id")
+	"id" SERIAL PRIMARY KEY NOT NULL,
+	"opportuity_id" INT REFERENCES "opportunity" NOT NULL,
+	"keyword_id" INT REFERENCES "keyword" NOT NULL,
 );
 
--- ALTER TABLE "user_opportunity" ADD CONSTRAINT "user_opportunity_fk0" FOREIGN KEY ("user_id") REFERENCES "user"("id");
--- ALTER TABLE "user_opportunity" ADD CONSTRAINT "user_opportunity_fk1" FOREIGN KEY ("opportunity_id") REFERENCES "opportunity"("id");
-
--- ALTER TABLE "opportunity_keyword" ADD CONSTRAINT "opportunity_keyword_fk0" FOREIGN KEY ("opportuity_id") REFERENCES "opportunity"("id");
--- ALTER TABLE "opportunity_keyword" ADD CONSTRAINT "opportunity_keyword_fk1" FOREIGN KEY ("keyword_id") REFERENCES "keyword"("id");
-
-INSERT INTO "public"."opportunity"("name", "image_url", "description", "contact", "email", "phone", "web_address", "social", "street_address", "city", "zip")
+INSERT INTO "opportunity"("name", "image_url", "description", "contact", "email", "phone", "web_address", "social", "street_address", "city", "zip", "date_added")
 VALUES(
 'Surly Gives a Damn', 
 'https://pbs.twimg.com/profile_images/867503621331718146/drqBGY3Q.jpg', 
