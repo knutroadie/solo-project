@@ -8,11 +8,11 @@ class OppList extends Component {
             <div>
                 <p>this is a LIST</p>
                 <ul>
-                    <li>
+                    
                         {this.props.reduxState.oppsReducer.map(opp => {
                             return <OppItem id={opp.id} key={opp.id} />
                         })}
-                    </li>
+                    
                 </ul>
             </div>
         )

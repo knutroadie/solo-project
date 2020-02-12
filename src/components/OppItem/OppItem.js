@@ -17,9 +17,11 @@ class OppItem extends Component {
         return (
             <div>
                 <p>this is an ITEM</p>
+                <li>
                 <div onClick={this.goDetail}>image</div>
                 <button onClick={this.upVote}>upvote</button>
                 <button onClick={this.goDetail}>see more</button>
+                </li>
             </div>
         )
     }
