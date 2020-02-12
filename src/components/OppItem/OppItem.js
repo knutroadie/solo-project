@@ -18,6 +18,7 @@ class OppItem extends Component {
             <div>
                 <li>
                     <h3>{this.props.opp.name}</h3>
+                    <img src={this.props.opp.image_url} alt={this.props.opp.name}></img>
                     {/* <div onClick={this.goDetail} />{this.props.opp.image_url}</div> */}
                     <p>{this.props.opp.description}</p>
                     <p>{this.props.opp.contact}</p>
