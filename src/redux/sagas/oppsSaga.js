@@ -8,8 +8,7 @@ function* oppsSaga() {
 
 function* getOpps() {
     console.log('in getOpps generator');
-    
-    let response = yield axios.get('/api/opportunities')
+    let response = yield axios.get('/api/opportunity')
     console.log(response.data);
     yield put({ type: 'SET_OPPS', payload: response.data })
 }
