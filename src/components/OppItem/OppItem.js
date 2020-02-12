@@ -10,17 +10,26 @@ class OppItem extends Component {
     }
 
     upVote = () => {
-        console.log('clicking to upvote'); 
+        console.log('clicking to upvote');
     }
 
     render() {
         return (
             <div>
-                <p>this is an ITEM</p>
                 <li>
-                <div onClick={this.goDetail}>image</div>
-                <button onClick={this.upVote}>upvote</button>
-                <button onClick={this.goDetail}>see more</button>
+                    <h3>{this.props.opp.name}</h3>
+                    {/* <div onClick={this.goDetail} />{this.props.opp.image_url}</div> */}
+                    <p>{this.props.opp.description}</p>
+                    <p>{this.props.opp.contact}</p>
+                    <p>{this.props.opp.email}</p>
+                    <p>{this.props.opp.phone}</p>
+                    <p>{this.props.opp.web_address}</p>
+                    <p>{this.props.opp.social}</p>
+                    <p>{this.props.opp.street_address}</p>
+                    <p>{this.props.opp.city}</p>
+                    <p>{this.props.opp.zip}</p>
+                    <button onClick={this.upVote}>upvote</button>
+                    <button onClick={this.goDetail}>see more</button>
                 </li>
             </div>
         )
