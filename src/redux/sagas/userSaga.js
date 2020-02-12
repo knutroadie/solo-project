@@ -3,6 +3,8 @@ import { put, takeLatest } from 'redux-saga/effects';
 
 // worker Saga: will be fired on "FETCH_USER" actions
 function* fetchUser() {
+  console.log('in fetchUser generator');
+  
   try {
     const config = {
       headers: { 'Content-Type': 'application/json' },
@@ -18,14 +20,14 @@ function* fetchUser() {
     // now that the session has given us a user object
     // with an id and username set the client-side user object to let
     // the client-side code know the user is logged in
-    yield put({ type: 'SET_USER', payload: response.data });
-    yield put({ type: 'GET_OPPS' });
+    yield put({ type: 'SET_USER', payload: response.data })
   } catch (error) {
     console.log('User get request failed', error);
   }
 }
 
 function* userSaga() {
+  console.log('in user saga, fetching user');
   yield takeLatest('FETCH_USER', fetchUser);
 }
 

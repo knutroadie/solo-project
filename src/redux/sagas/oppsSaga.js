@@ -11,6 +11,7 @@ function* getOpps() {
     let response = yield axios.get('/api/opportunity')
     console.log(response.data);
     yield put({ type: 'SET_OPPS', payload: response.data })
+    yield put({ type: 'FETCH_USER' })
 }
 
 // function* setOpps(action) {
@@ -29,7 +30,7 @@ function* getOpps() {
 //             zip: action.payload.zip,
 //             date_added: action.payload.date_added
 //         }
-//         let response = yield axios.post('/api/opportunities', opportunity)
+//         let response = yield axios.post('/api/opportunity', opportunity)
 //         yield put({ type: 'GET_OPPS' })
 //     }
 //     catch (error) {

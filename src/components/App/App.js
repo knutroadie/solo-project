@@ -24,7 +24,8 @@ import './App.css';
 class App extends Component {
 
   componentDidMount() {
-    this.props.dispatch({ type: 'FETCH_USER' })
+    console.log('in component did mount');
+    this.props.dispatch({ type: 'GET_OPPS' })
   }
 
   render() {
@@ -41,6 +42,8 @@ class App extends Component {
 
           {/* eventually make this a Protected Route */}
           <Route path="/edit" component={EditOpp} />
+
+          {JSON.stringify(this.props.reduxState.oppsReducer)}
 
           {/* <Nav /> */}
           {/* <Switch> */}
