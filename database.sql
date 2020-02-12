@@ -1,56 +1,42 @@
 CREATE TABLE "user" (
-	"id" serial NOT NULL,
-	"name" varchar(255) NOT NULL,
-	"password" varchar(255) NOT NULL,
-	"auth" int(1) NOT NULL DEFAULT '1',
-	CONSTRAINT "user_pk" PRIMARY KEY ("id")
-) WITH (
-  OIDS=FALSE
+	"id" SERIAL PRIMARY KEY,
+	"name" VARCHAR(255) NOT NULL,
+	"password" VARCHAR(255) NOT NULL,
+	"auth" INT(1) NOT NULL DEFAULT '1'
 );
 
 CREATE TABLE "opportunity" (
-	"id" serial NOT NULL,
-	"name" varchar(255) NOT NULL,
-	"image_url" varchar(255),
-	"description" varchar(255) NOT NULL,
-	"contact" varchar(255),
-	"email" varchar(255),
-	"phone" varchar(15),
-	"web_address" varchar(255),
-	"social" varchar(255),
-	"street_address" varchar(255),
-	"city" varchar(50),
-	"zip" varchar(50),
-	"date_added" varchar(50),
-	CONSTRAINT "opportunity_pk" PRIMARY KEY ("id")
-) WITH (
-  OIDS=FALSE
+	"id" PRIMARY KEY,
+	"name" VARCHAR(255) NOT NULL,
+	"image_url" VARCHAR(255),
+	"description" VARCHAR(255),
+	"contact" VARCHAR(255),
+	"email" VARCHAR(255),
+	"phone" VARCHAR(15),
+	"web_address" VARCHAR(255),
+	"social" VARCHAR(255),
+	"street_address" VARCHAR(255),
+	"city" VARCHAR(50),
+	"zip" VARCHAR(50),
+	"date_added" serial(99) NOT NULL DEFAULT 'getdate()'
 );
 
 CREATE TABLE "user_opportunity" (
-	"user_id" int NOT NULL,
-	"opportunity_id" int NOT NULL,
-	"review" varchar(255),
-	CONSTRAINT "user_opportunity_pk" PRIMARY KEY ("user_id","opportunity_id")
-) WITH (
-  OIDS=FALSE
+	"user_id" INT PRIMARY KEY NOT NULL,
+	"opportunity_id" INT PRIMARY KEY NOT NULL,
+	"review" VARCHAR(255)
 );
 
 CREATE TABLE "keyword" (
-	"id" serial NOT NULL,
-	"tag" serial(255) NOT NULL,
-	CONSTRAINT "keyword_pk" PRIMARY KEY ("id")
-) WITH (
-  OIDS=FALSE
+	"id" SERIAL PRIMARY KEY NOT NULL,
+	"tag" VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE "opportunity_keyword" (
-	"id" serial NOT NULL,
-	"opportuity_id" int NOT NULL,
-	"keyword_id" int NOT NULL,
+	"id" SERIAL NOT NULL,
+	"opportuity_id" INT NOT NULL,
+	"keyword_id" INT NOT NULL,
 	CONSTRAINT "opportunity_keyword_pk" PRIMARY KEY ("id")
-) WITH (
-  OIDS=FALSE
 );
 
 ALTER TABLE "user_opportunity" ADD CONSTRAINT "user_opportunity_fk0" FOREIGN KEY ("user_id") REFERENCES "user"("id");
