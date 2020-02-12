@@ -2,7 +2,7 @@ CREATE TABLE "user" (
 	"id" SERIAL PRIMARY KEY,
 	"name" VARCHAR(255) NOT NULL,
 	"password" VARCHAR(255) NOT NULL,
-	"auth" INT(1) NOT NULL DEFAULT '1'
+	"auth" INT NOT NULL DEFAULT '1'
 );
 
 CREATE TABLE "opportunity" (
@@ -22,10 +22,13 @@ CREATE TABLE "opportunity" (
 );
 
 CREATE TABLE "user_opportunity" (
-	"user_id" INT PRIMARY KEY REFERENCES "user" NOT NULL,
-	"opportunity_id" INT PRIMARY KEY REFERENCES "opportunity" NOT NULL,
+	"user_id" INT NOT NULL,
+	"opportunity_id" INT NOT NULL,
 	"review" VARCHAR(255)
 );
+
+ALTER TABLE "user_opportunity" ADD CONSTRAINT "user_opportunity_fk0" FOREIGN KEY ("user_id") REFERENCES "user"("id");
+ALTER TABLE "user_opportunity" ADD CONSTRAINT "user_opportunity_fk1" FOREIGN KEY ("opportunity_id") REFERENCES "opportunity"("id");
 
 CREATE TABLE "keyword" (
 	"id" SERIAL PRIMARY KEY NOT NULL,
@@ -33,16 +36,19 @@ CREATE TABLE "keyword" (
 );
 
 CREATE TABLE "opportunity_keyword" (
-	"id" SERIAL PRIMARY KEY NOT NULL,
-	"opportuity_id" INT REFERENCES "opportunity" NOT NULL,
-	"keyword_id" INT REFERENCES "keyword" NOT NULL,
+	"id" SERIAL PRIMARY KEY,
+	"opportuity_id" INT NOT NULL,
+	"keyword_id" INT NOT NULL
 );
+
+ALTER TABLE "opportunity_keyword" ADD CONSTRAINT "opportunity_keyword_fk0" FOREIGN KEY ("opportuity_id") REFERENCES "opportunity"("id");
+ALTER TABLE "opportunity_keyword" ADD CONSTRAINT "opportunity_keyword_fk1" FOREIGN KEY ("keyword_id") REFERENCES "keyword"("id");
 
 INSERT INTO "opportunity"("name", "image_url", "description", "contact", "email", "phone", "web_address", "social", "street_address", "city", "zip", "date_added")
 VALUES(
 'Surly Gives a Damn', 
 'https://pbs.twimg.com/profile_images/867503621331718146/drqBGY3Q.jpg', 
-'Because living in Minnesota rules, we give back to our community with Surly Gives A Damn (SGAD). We contribute to the fine organizations that are making the North a better place to live through charitable donations, partnerships, and volunteer events. Our volunteers are a really active, passionate bunch and man do they give a damn.', 
+'We contribute to the fine organizations that are making the North a better place to live through charitable donations, partnerships, and volunteer events. Our volunteers are a really active, passionate bunch and man do they give a damn.', 
 'Mary Selke', 
 'mary@surlybrewing.com', 
 '',
@@ -51,7 +57,7 @@ VALUES(
 '',
 'Minneapolis', 
 '55414',
-'now()'), 
+'now()'),
 (
 'House of Hope Presbyterian Church', 
 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT4iXM8E1rLI2GiPnBH1DJn8hEOWdfittXfe7uI3JygJz-1L-Ok', 
@@ -64,7 +70,7 @@ VALUES(
 '797 Summit Avenue',
 'Saint Paul', 
 '55105',
-'now()'), 
+'now()'),
 (
 'Sha’arim', 
 'https://tcjewfolk.com/wp-content/uploads/2018/09/Shaarim.jpg', 
@@ -77,14 +83,14 @@ VALUES(
 '2851 Hedberg Drive',
 'Minnetonka', 
 '55305',
-'now()'), 
+'now()'),
 (
 'Council on Islamic Relations (CAIR) Minnesota', 
 'https://media-exp1.licdn.com/dms/image/C560BAQHjo_Jz-MA4sw/company-logo_200_200/0?e=2159024400&v=beta&t=wBUL9QXIVMVuKPylUUDNBCG99I3DGAn4DXfpqH3kOYI', 
 'CAIR-MN Mission: To enhance the understanding of Islam, encourage dialogue, protect civil liberties, empower American Muslims and build coalitions that promote justice and mutual understanding.', 
-'contact', 
+'', 
 'info@mn.cair.com', 
-'phone',
+'',
 'https://www.cairmn.com/57-internships/391-volunteer-advocate-impact-join-the-wecair-team.html', 
 'https://www.facebook.com/CAIR.Minnesota', 
 '2511 East Franklin Avenue, #100',
@@ -94,9 +100,9 @@ VALUES(
 (
 'St. Stephen’s Minneapolis', 
 'https://ststephensmpls.org/application/files/thumbnails/small/8215/7435/7962/Logo_Latest.png', 
-'Our mission is ending homelessness. St. Stephen''s provides street outreach, shelter, and housing programs for people who are experiencing and emerging from homelessness in Hennepin County, Minnesota. St. Stephen''s provides street outreach, shelter, and housing programs for people who are experiencing homelessness. Each year our programs reach more than 5,000 children and adults.', 
-'contact', 
-'email', 
+'Our mission is ending homelessness. St. Stephen''s provides street outreach, shelter, and housing programs for people who are experiencing and emerging from homelessness in Hennepin County, Minnesota.', 
+'', 
+'', 
 '612.874.0311',
 'https://ststephensmpls.org/volunteer', 
 'https://www.facebook.com/StStephensMpls/', 
@@ -107,8 +113,8 @@ VALUES(
 (
 'Special Olympics Minnesota', 
 'https://res.cloudinary.com/dktp1ybbx/image/upload/f_auto,fl_lossy,q_auto/v1550947259/organization/prod/57145/hVc6RqUhx4.jpg', 
-'Through Special Olympics’ athletic, health and leadership programs, people with intellectual disabilities transform themselves, their communities and the world. We offer group opportunities for businesses, schools, civic groups, friends and family, etc. Volunteer groups report improved teamwork and enhanced relationships as a result of working with Special Olympics Minnesota athletes. By joining us, your organization can showcase your social responsibility, build brand awareness, and experience an array of team-building opportunities.', 
-'contact', 
+'Through Special Olympics’ athletic, health and leadership programs, people with intellectual disabilities transform themselves, their communities and the world.', 
+'', 
 'info@somn.org', 
 '612.333.0999',
 'https://specialolympicsminnesota.org/get-involved/volunteers/', 
@@ -120,9 +126,9 @@ VALUES(
 (
 'Disabled American Veterans of Minnesota', 
 'https://lh3.googleusercontent.com/proxy/KNkcuqckAvUUzbmdoJe7KFV12cyoJC6my_H8t9JUDPAHWo3MyW8rJ-cELFeDVjBRKHsqxPJBEfJ9_zDBN84o1HX681N-aEdIsfcHzsMQmn8HB4Rq5PFqXKrwcBkS49qaconCIFxT', 
-'You can make a positive difference in the life of an American veteran who was disabled in our nation’s defense! The Disabled American Veterans’ Voluntary Services Program provides numerous opportunities for men and women of all ages to help make a difference in the lives of disabled veterans.', 
-'contact', 
-'email', 
+'The Disabled American Veterans’ Voluntary Services Program provides numerous opportunities for men and women of all ages to help make a difference in the lives of disabled veterans.', 
+'', 
+'', 
 '(651) 291-1212',
 'https://davmn.org/volunteer/', 
 'https://www.facebook.com/DAVofMN/', 
@@ -133,7 +139,7 @@ VALUES(
 (
 'First Covenant Church of Minneapolis', 
 'https://www.handsontwincities.org/content/www.handsontwincities.org/agency/86814.jpg?1528320740?area=agency', 
-'Since 2009, First Covenant has partnered with a shelter provider to offer shelter to 50 men and women experiencing homelessness. In the past, we offered shelter only during the winter months.  This year, we are beginning a partnership with St. Stephen''s and now will be offering shelter year round.  St. Stephen''s provides the staff, assigns the guests, and shares the cost of operations. First Covenant provides the space and volunteer coordination to provide and serve a hot meal nightly. We seek volunteers to provide these critical needs every day.', 
+'First Covenant partners with a shelter provider to offer shelter to men and women experiencing homelessness. We the space and volunteer coordination to provide and serve a hot meal nightly. We seek volunteers to provide these critical needs.', 
 'Meg Barke', 
 'mbarke@ststephensmpls.org', 
 '612-332-8093',
@@ -142,17 +148,4 @@ VALUES(
 '810 South 7th Street',
 'Minneapolis', 
 '55415',
-'now()'),
-(
-'Sex Workers Outreach Project-Minneapolis',
-'https://www.winningcause.org/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/s/w/swopmplslogo_1.png',
-'SWOP-Minneapolis is a local branch of the Sex Workers Outreach Project, a national social justice network dedicated to the fundamental human rights of sex workers and their communities. SWOP focuses on ending violence and stigma through education and advocacy. We are a peer based support group focusing on harm reduction, outreach, and building community for Sex Workers.',
-'',
-'swopmpls@gmail.com',
-'',
-'http://swopminneapolis.weebly.com/',
-'https://www.facebook.com/swopmpls/',
-'',
-'Minneapolis',
-'',
 'now()');
