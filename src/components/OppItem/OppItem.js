@@ -23,11 +23,11 @@ class OppItem extends Component {
                     <p>{this.props.opp.contact}</p>
                     <p>{this.props.opp.email}</p>
                     <p>{this.props.opp.phone}</p>
-                    <p>{this.props.opp.web_address}</p>
-                    <p>{this.props.opp.social}</p>
+                    <a href={this.props.opp.web_address}>website</a>
+                    <br></br>
+                    <a href={this.props.opp.social}>social</a>
                     <p>{this.props.opp.street_address}</p>
-                    <p>{this.props.opp.city}</p>
-                    <p>{this.props.opp.zip}</p>
+                    <p>{this.props.opp.city}, {this.props.opp.zip}</p>
                     <button onClick={this.upVote}>upvote</button>
                     <button onClick={this.goDetail}>see more</button>
                 </li>
