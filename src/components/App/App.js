@@ -43,7 +43,7 @@ class App extends Component {
           {/* eventually make this a Protected Route */}
           <Route path="/edit" component={EditOpp} />
 
-          {JSON.stringify(this.props.reduxState.oppsReducer)}
+          {/* {JSON.stringify(this.props.reduxState.oppsReducer)} */}
 
           {/* <Nav /> */}
           {/* <Switch> */}

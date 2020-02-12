@@ -1,5 +1,6 @@
-import React, { Component} from 'react';
-import OppItem from '../OppItem/OppItem'
+import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import OppItem from '../OppItem/OppItem';
 
 class OppList extends Component {
     render() {
@@ -7,13 +8,23 @@ class OppList extends Component {
             <div>
                 <p>this is a LIST</p>
                 <ul>
-                <li><OppItem /></li>
-                <li><OppItem /></li>
-                <li><OppItem /></li>
+                    <li>
+                        {this.props.reduxState.oppsReducer.map(opp => {
+                            return <OppItem id={opp.id} key={opp.id} />
+                        })}
+                    </li>
                 </ul>
             </div>
         )
     }
 }
 
-export default OppList;
+const putStateOnProps = (reduxState) => {
+    return (
+        {
+            reduxState
+        }
+    )
+}
+
+export default connect(putStateOnProps)(OppList)
