@@ -6,7 +6,7 @@ CREATE TABLE "user" (
 );
 
 CREATE TABLE "opportunity" (
-	"id" PRIMARY KEY,
+	"id" SERIAL PRIMARY KEY,
 	"name" VARCHAR(255) NOT NULL,
 	"image_url" VARCHAR(255),
 	"description" VARCHAR(255),
@@ -18,7 +18,7 @@ CREATE TABLE "opportunity" (
 	"street_address" VARCHAR(255),
 	"city" VARCHAR(50),
 	"zip" VARCHAR(50),
-	"date_added" serial(99) NOT NULL DEFAULT 'getdate()'
+	"date_added" serial(99) NOT NULL DEFAULT 'getDate()'
 );
 
 CREATE TABLE "user_opportunity" (
@@ -36,14 +36,14 @@ CREATE TABLE "opportunity_keyword" (
 	"id" SERIAL NOT NULL,
 	"opportuity_id" INT NOT NULL,
 	"keyword_id" INT NOT NULL,
-	CONSTRAINT "opportunity_keyword_pk" PRIMARY KEY ("id")
+	-- CONSTRAINT "opportunity_keyword_pk" PRIMARY KEY ("id")
 );
 
-ALTER TABLE "user_opportunity" ADD CONSTRAINT "user_opportunity_fk0" FOREIGN KEY ("user_id") REFERENCES "user"("id");
-ALTER TABLE "user_opportunity" ADD CONSTRAINT "user_opportunity_fk1" FOREIGN KEY ("opportunity_id") REFERENCES "opportunity"("id");
+-- ALTER TABLE "user_opportunity" ADD CONSTRAINT "user_opportunity_fk0" FOREIGN KEY ("user_id") REFERENCES "user"("id");
+-- ALTER TABLE "user_opportunity" ADD CONSTRAINT "user_opportunity_fk1" FOREIGN KEY ("opportunity_id") REFERENCES "opportunity"("id");
 
-ALTER TABLE "opportunity_keyword" ADD CONSTRAINT "opportunity_keyword_fk0" FOREIGN KEY ("opportuity_id") REFERENCES "opportunity"("id");
-ALTER TABLE "opportunity_keyword" ADD CONSTRAINT "opportunity_keyword_fk1" FOREIGN KEY ("keyword_id") REFERENCES "keyword"("id");
+-- ALTER TABLE "opportunity_keyword" ADD CONSTRAINT "opportunity_keyword_fk0" FOREIGN KEY ("opportuity_id") REFERENCES "opportunity"("id");
+-- ALTER TABLE "opportunity_keyword" ADD CONSTRAINT "opportunity_keyword_fk1" FOREIGN KEY ("keyword_id") REFERENCES "keyword"("id");
 
 INSERT INTO "public"."opportunity"("name", "image_url", "description", "contact", "email", "phone", "web_address", "social", "street_address", "city", "zip")
 VALUES(
@@ -57,7 +57,8 @@ VALUES(
 'https://twitter.com/surlygivesadamn?lang=en', 
 '',
 'Minneapolis', 
-'55414'), 
+'55414',
+'now()'), 
 (
 'House of Hope Presbyterian Church', 
 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT4iXM8E1rLI2GiPnBH1DJn8hEOWdfittXfe7uI3JygJz-1L-Ok', 
@@ -69,7 +70,8 @@ VALUES(
 'https://www.facebook.com/HouseofHopePresbyterian/', 
 '797 Summit Avenue',
 'Saint Paul', 
-'55105'), 
+'55105',
+'now()'), 
 (
 'Sha’arim', 
 'https://tcjewfolk.com/wp-content/uploads/2018/09/Shaarim.jpg', 
@@ -81,7 +83,8 @@ VALUES(
 'https://www.facebook.com/shaarimmn/', 
 '2851 Hedberg Drive',
 'Minnetonka', 
-'55305'), 
+'55305',
+'now()'), 
 (
 'Council on Islamic Relations (CAIR) Minnesota', 
 'https://media-exp1.licdn.com/dms/image/C560BAQHjo_Jz-MA4sw/company-logo_200_200/0?e=2159024400&v=beta&t=wBUL9QXIVMVuKPylUUDNBCG99I3DGAn4DXfpqH3kOYI', 
@@ -93,7 +96,8 @@ VALUES(
 'https://www.facebook.com/CAIR.Minnesota', 
 '2511 East Franklin Avenue, #100',
 'Minneapolis', 
-'55406'),
+'55406',
+'now()'),
 (
 'St. Stephen’s Minneapolis', 
 'https://ststephensmpls.org/application/files/thumbnails/small/8215/7435/7962/Logo_Latest.png', 
@@ -105,7 +109,8 @@ VALUES(
 'https://www.facebook.com/StStephensMpls/', 
 '2309 Nicollet Avenue',
 'Minneapolis', 
-'55404'),
+'55404',
+'now()'),
 (
 'Special Olympics Minnesota', 
 'https://res.cloudinary.com/dktp1ybbx/image/upload/f_auto,fl_lossy,q_auto/v1550947259/organization/prod/57145/hVc6RqUhx4.jpg', 
@@ -117,7 +122,8 @@ VALUES(
 'https://www.facebook.com/SOMinnesota', 
 '900 2nd Avenue South, Suite 300',
 'Minneapolis', 
-'55402'),
+'55402',
+'now()'),
 (
 'Disabled American Veterans of Minnesota', 
 'https://lh3.googleusercontent.com/proxy/KNkcuqckAvUUzbmdoJe7KFV12cyoJC6my_H8t9JUDPAHWo3MyW8rJ-cELFeDVjBRKHsqxPJBEfJ9_zDBN84o1HX681N-aEdIsfcHzsMQmn8HB4Rq5PFqXKrwcBkS49qaconCIFxT', 
@@ -129,7 +135,8 @@ VALUES(
 'https://www.facebook.com/DAVofMN/', 
 '20 12th Street West',
 'Saint Paul', 
-'55155'),
+'55155',
+'now()'),
 (
 'First Covenant Church of Minneapolis', 
 'https://www.handsontwincities.org/content/www.handsontwincities.org/agency/86814.jpg?1528320740?area=agency', 
@@ -141,7 +148,8 @@ VALUES(
 'https://www.instagram.com/1stcovmpls/', 
 '810 South 7th Street',
 'Minneapolis', 
-'55415'),
+'55415',
+'now()'),
 (
 'Sex Workers Outreach Project-Minneapolis',
 'https://www.winningcause.org/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/s/w/swopmplslogo_1.png',
@@ -153,4 +161,5 @@ VALUES(
 'https://www.facebook.com/swopmpls/',
 '',
 'Minneapolis',
-'');
+'',
+'now()');
