@@ -125,7 +125,7 @@ VALUES(
 'now()'),
 (
 'Disabled American Veterans of Minnesota', 
-'https://lh3.googleusercontent.com/proxy/KNkcuqckAvUUzbmdoJe7KFV12cyoJC6my_H8t9JUDPAHWo3MyW8rJ-cELFeDVjBRKHsqxPJBEfJ9_zDBN84o1HX681N-aEdIsfcHzsMQmn8HB4Rq5PFqXKrwcBkS49qaconCIFxT', 
+'https://lh3.googleusercontent.com/proxy/3df2T9yvvKTK7wWz4KlyRoKYQsDQ4BT8xBwc9W5IlBTkMnWPsJNW8vxOj8KOqSHqX144Cp0dTtfpe6-p7BWnKxRPuky7D8bkOmCow8Dkpouqw_mJUmFpa0OKvYyiLes5OuT68wZK', 
 'The Disabled American Veterans’ Voluntary Services Program provides numerous opportunities for men and women of all ages to help make a difference in the lives of disabled veterans.', 
 '', 
 '', 
