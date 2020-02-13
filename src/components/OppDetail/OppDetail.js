@@ -7,7 +7,7 @@ class OppDetail extends Component {
     componentDidMount() {
         this.props.dispatch({
             type: 'GET_DETAIL',
-            payload : this.props.match.params.id
+            payload: this.props.match.params.id
         })
     }
 
@@ -21,24 +21,29 @@ class OppDetail extends Component {
     }
 
     upVote = () => {
-        console.log('clicking to upvote'); 
+        console.log('clicking to upvote');
     }
 
     render() {
         console.log(this.props.match.params.id);
+        console.log(this.props.reduxState.detailReducer);
+        
         return (
             <div>
-                    {/* <p>{this.props.reduxState.oppReducer[opp.id].name}</p>
-                    <p>{this.props.opp.email}</p>
-                    <p>{this.props.opp.phone}</p>
-                    <a href={this.props.opp.web_address}>website</a>
-                    <br></br>
-                    <a href={this.props.opp.social}>social</a>
-                    <p>{this.props.opp.street_address}</p>
-                    <p>{this.props.opp.city}, {this.props.opp.zip}</p>
-                <button onClick={this.upVote}>upvote</button> */}
+                <br></br>
+                <img src={this.props.reduxState.detailReducer.image_url} alt={this.props.reduxState.detailReducer.name} height="85"></img>
+                <h3>{this.props.reduxState.detailReducer.name}</h3>
+                <p>{this.props.reduxState.detailReducer.description}</p>
+                <p>{this.props.reduxState.detailReducer.email}</p>
+                <p>{this.props.reduxState.detailReducer.phone}</p>
+                <a href={this.props.reduxState.detailReducer.web_address}>website</a>
+                <br></br>
+                <a href={this.props.reduxState.detailReducer.social}>social</a>
+                <p>{this.props.reduxState.detailReducer.street_address}</p>
+                <p>{this.props.reduxState.detailReducer.city}, {this.props.reduxState.detailReducer.zip}</p>
+                <button onClick={this.upVote}>upvote</button>
                 <button onClick={this.goEdit}>edit</button>
-                <button onClick={(event) => {if (window.confirm('are you sure you want to delete this?')) this.deleteOpp(event)}}>delete</button>
+                <button onClick={(event) => { if (window.confirm('are you sure you want to delete this?')) this.deleteOpp(event) }}>delete</button>
             </div>
         )
     }
