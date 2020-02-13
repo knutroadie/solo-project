@@ -3,6 +3,7 @@ import { put, takeLatest } from 'redux-saga/effects';
 
 function* oppsSaga() {
     yield takeLatest('GET_OPPS', getOpps);
+    // yield takeLatest('GET_DETAIL', getDetail);
     // yield takeLatest('SET_OPPS', setOpps);
 }
 

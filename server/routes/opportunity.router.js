@@ -17,6 +17,18 @@ router.get('/', (req, res) => {
         })
 })
 
+router.get('/:id', (req, res) => {
+    let queryText = `SELECT * FROM "opportunity" WHERE "id" = ${req.params.id}`
+    pool.query(queryText)
+        .then(response => {
+            res.send(response.rows)
+        })
+        .catch(err => {
+            console.log(err);
+            res.sendStatus(500)
+        })
+})
+
 /**
  * POST route template
  */
