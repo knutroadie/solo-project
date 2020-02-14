@@ -37,10 +37,10 @@ router.post('/', (req, res) => {
     let queryText = `
         INSERT INTO "opportunity" 
         ("name", "description", "contact", "email", "phone", "web_address", "social", "street_address", "city", "zip", "date_added")
-        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)`;
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11);`;
     let values = [req.body.name, req.body.description, req.body.contact, req.body.email, req.body.phone, req.body.web_address, req.body.social, req.body.street_address, req.body.city, req.body.zip, 'now()'];
     pool.query(queryText, values).then((result) => {
-        res.sendStatus(200);
+        res.sendStatus(201);
     }).catch((error) => {
         console.log('error in opportunity POST', error);
         res.sendStatus(500);
