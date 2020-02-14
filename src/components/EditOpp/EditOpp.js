@@ -4,17 +4,9 @@ import { withRouter } from 'react-router-dom';
 
 class EditOpp extends Component {
 
-    // componentDidMount() {
-    //     this.props.dispatch({
-    //         type: 'GET_DETAIL',
-    //         payload: this.props.match.params.id
-    //     })
-    // }
-
-    // let oppId = this.props.match.params.id;
-
     state = {
         oppToEdit: {
+            id: this.props.reduxState.detailReducer.id,
             img_url: '',
             name: this.props.reduxState.detailReducer.name,
             description: this.props.reduxState.detailReducer.description,
@@ -30,6 +22,7 @@ class EditOpp extends Component {
     }
 
     editThisOpp = (event, propertyValue) => {
+        //build a new object in state
         console.log('building a new opp', this.state.oppToEdit);
         this.setState({
             oppToEdit: {
@@ -40,13 +33,14 @@ class EditOpp extends Component {
     }
 
     submitEdit = () => {
+        // dispatches edit to redux
         console.log('clicking to submit edit', this.state.oppToEdit);
         this.goDetail();
     }
 
     goDetail = () => {
-        console.log('clicking to go detail', this.props.params.id);
-        this.props.history.push(`/detail/${this.props.params.id}`)
+        console.log('clicking to go detail', this.props.match.params.id );
+        this.props.history.push(`/detail/${this.props.reduxState.detailReducer.id}`)
     }
 
     render() {
