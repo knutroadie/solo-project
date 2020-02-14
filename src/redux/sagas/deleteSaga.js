@@ -10,7 +10,6 @@ function* deleteOpp(action) {
     let response = yield axios.delete(`/api/opportunity/${action.payload}`);
     yield put({type: 'SET_OPP', payload: response.data[0]});
     yield put({ type: 'GET_OPPS'});
-
 }
 
 export default deleteSaga;

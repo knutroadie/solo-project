@@ -12,8 +12,8 @@ class OppDetail extends Component {
     }
 
     goEdit = () => {
-        console.log('clicking to go edit');
-        this.props.history.push(`/edit`)
+        console.log('clicking to go edit', this.props.match.params.id );
+        this.props.history.push(`/edit/${this.props.match.params.id}`)
     }
     
     deleteOpp = () => {

@@ -11,6 +11,8 @@ class EditOpp extends Component {
     //     })
     // }
 
+    // let oppId = this.props.match.params.id;
+
     state = {
         editedOpp: {
             img_url: '',
@@ -27,8 +29,13 @@ class EditOpp extends Component {
         }
     }
 
+submitEdit = () => {
+    console.log('clicking to submit edit', this.state.editedOpp);
+    this.goDetail();
+}
+
     goDetail = () => {
-        console.log('clicking to go detail');
+        console.log('clicking to go detail', this.props.params.id);
         this.props.history.push(`/detail`)
     }
 
@@ -47,7 +54,7 @@ class EditOpp extends Component {
                 <input placeholder="street address"></input>
                 <input placeholder="city"></input>
                 <input placeholder="zip code"></input>
-                <button onClick={this.goDetail}>submit changes</button>
+                <button onClick={this.submitEdit}>submit changes</button>
             </div>
         )
     }
