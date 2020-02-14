@@ -1,9 +1,11 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 class SubmitOpp extends Component {
 
     state = {
-        editedOpp: {
+        newOpp: {
             name: '',
             description: '',
             contact: '',
@@ -15,6 +17,13 @@ class SubmitOpp extends Component {
             city: '',
             zip: '',
         }
+    }
+
+    componentDidMount() {
+        this.props.dispatch({
+            type: 'GET_DETAIL',
+            payload: this.props.match.params.id
+        })
     }
 
     makeNewOpp = (event, propertyValue) => {
@@ -58,4 +67,10 @@ class SubmitOpp extends Component {
     }
 }
 
-export default SubmitOpp;
+const putReduxStateOnProps = (reduxState) => {
+    return {
+        reduxState
+    }
+}
+
+export default withRouter(connect(putReduxStateOnProps)(SubmitOpp));

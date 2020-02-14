@@ -15,6 +15,7 @@ class OppDetail extends Component {
         console.log('clicking to go edit');
         this.props.history.push(`/edit`)
     }
+    
     deleteOpp = () => {
         console.log('clicking to delete');
         this.props.history.push(`/`)
