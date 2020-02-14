@@ -12,7 +12,7 @@ function* getOpps() {
     let response = yield axios.get('/api/opportunity')
     console.log(response.data);
     yield put({ type: 'SET_OPPS', payload: response.data })
-    yield put({ type: 'FETCH_USER' })
+    yield put({ type: 'FETCH_USER' });
 }
 
 // function* setOpps(action) {

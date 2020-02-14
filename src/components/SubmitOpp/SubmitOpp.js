@@ -38,12 +38,16 @@ class SubmitOpp extends Component {
 
     submitNewOpp = () => {
         console.log('submitting new:', this.state.newOpp);
+        this.props.dispatch({
+            type: 'SUBMIT_OPP',
+            payload: this.state.newOpp
+        })
         this.goHome();
     }
 
     goHome = () => {
         alert('thanks for helping us!')
-        console.log('clicking to go home');
+        console.log('clicking the alert to submit and go home');
         this.props.history.push(`/`)
     }
 
