@@ -20,10 +20,10 @@ class SubmitOpp extends Component {
     }
 
     componentDidMount() {
-        this.props.dispatch({
-            type: 'GET_DETAIL',
-            payload: this.props.match.params.id
-        })
+        // this.props.dispatch({
+        //     type: 'GET_DETAIL',
+        //     payload: this.props.match.params.id
+        // })
     }
 
     makeNewOpp = (event, propertyValue) => {
