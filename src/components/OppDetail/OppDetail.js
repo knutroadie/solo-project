@@ -17,7 +17,11 @@ class OppDetail extends Component {
     }
     
     deleteOpp = () => {
-        console.log('clicking to delete');
+        console.log('clicking to delete', );
+        this.props.dispatch({
+            type: 'DELETE_OPP',
+            payload: this.props.match.params.id
+        })
         this.props.history.push(`/`)
     }
 

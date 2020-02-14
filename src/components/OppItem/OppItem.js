@@ -7,7 +7,6 @@ class OppItem extends Component {
 
     goDetail = (event, opp) => {
         console.log('clicking to go detail', this.props.opp);
-        // <OppDetail opp={this.props.opp} />
         this.props.history.push(`/detail/${opp.id}`)
     }
 

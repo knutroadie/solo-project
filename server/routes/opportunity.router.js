@@ -47,54 +47,17 @@ router.post('/', (req, res) => {
     })
 });
 
-// router.post('/opportunity', async (req, res) => {
-//     const client = await pool.connect();
-//     try {
-//         const {
-//             name,
-//             description,
-//             contact,
-//             email,
-//             phone,
-//             web_address,
-//             social,
-//             street_address,
-//             city,
-//             zip
-//         } = req.body;
-//         await client.query('BEGIN')
-//         const orderInsertResults = await client.query(`
-//             INSERT INTO "opportunity" 
-//             ("name", "description", "contact", "email", "phone", "web_address", "social", "street_address", "city", "zip", "date_added")
-//             VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, 'now()')`
-//             // [customer_name, street_address, city, zip, type, total]
-//         );
-//         // const orderId = orderInsertResults.rows[0].id;
-
-//         // await Promise.all(pizzas.map(pizza => {
-//         //     const insertLineItemText = `INSERT INTO "line_item" ("order_id", "pizza_id", "quantity") VALUES ($1, $2, $3)`;
-//         //     const insertLineItemValues = [orderId, pizza.id, pizza.quantity];
-//         //     return client.query(insertLineItemText, insertLineItemValues);
-//         // }
-//         ));
-//         await client.query('COMMIT')
-//         res.sendStatus(201);
-//     } catch (error) {
-//         await client.query('ROLLBACK')
-//         console.log('Error POST /api/order', error);
-//         res.sendStatus(500);
-//     } finally {
-//         client.release()
-//     }
-// });
-
-// });
-
 /**
  * DELETE route template
  */
-router.delete('/', (req, res) => {
-
+router.delete('/:id', (req, res) => {
+    console.log(req.params.id);
+    pool.query('DELETE FROM "opportunity" WHERE id=$1', [req.params.id]).then((result) => {
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log('Error DELETE /api/opportunity', error);
+        res.sendStatus(500);
+    })
 });
 
 /**

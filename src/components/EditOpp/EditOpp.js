@@ -2,8 +2,14 @@ import React, { Component} from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-
 class EditOpp extends Component {
+
+    // componentDidMount() {
+    //     this.props.dispatch({
+    //         type: 'GET_DETAIL',
+    //         payload: this.props.match.params.id
+    //     })
+    // }
 
     state = {
         editedOpp: {
