@@ -29,6 +29,16 @@ class EditOpp extends Component {
         }
     }
 
+    editThisOpp = (event, propertyValue) => {
+        console.log('building a new opp', this.state.oppToEdit);
+        this.setState({
+            oppToEdit: {
+                ...this.state.oppToEdit,
+                [propertyValue]: event.target.value,
+            }
+        })
+    }
+
     submitEdit = () => {
         console.log('clicking to submit edit', this.state.oppToEdit);
         this.goDetail();
@@ -43,18 +53,18 @@ class EditOpp extends Component {
         console.log(this.props.reduxState.detailReducer);
         return (
             <div>
-                <p>this is the EDIT form</p>
-                <input placeholder="enter an image_url"></input>
-                <input defaultValue={this.state.oppToEdit.name}></input>
-                <input defaultValue={this.state.oppToEdit.description}></input>
-                <input defaultValue={this.state.oppToEdit.contact}></input>
-                <input defaultValue={this.state.oppToEdit.email}></input>
-                <input defaultValue={this.state.oppToEdit.phone}></input>
-                <input defaultValue={this.state.oppToEdit.web_address}></input>
-                <input defaultValue={this.state.oppToEdit.social}></input>
-                <input defaultValue={this.state.oppToEdit.street_address}></input>
-                <input defaultValue={this.state.oppToEdit.city}></input>
-                <input defaultValue={this.state.oppToEdit.zip}></input>
+                <br></br>
+                <input placeholder="enter an image_url" value={this.state.oppToEdit.image_url} onChange={(event) => this.editThisOpp(event, 'image_url')}></input>
+                <input defaultValue={this.state.oppToEdit.name} value={this.state.oppToEdit.name} onChange={(event) => this.editThisOpp(event, 'name')}></input>
+                <input defaultValue={this.state.oppToEdit.description} value={this.state.oppToEdit.description} onChange={(event) => this.editThisOpp(event, 'description')}></input>
+                <input defaultValue={this.state.oppToEdit.contact} value={this.state.oppToEdit.contact} onChange={(event) => this.editThisOpp(event, 'contact')}></input>
+                <input defaultValue={this.state.oppToEdit.email} value={this.state.oppToEdit.email} onChange={(event) => this.editThisOpp(event, 'email')}></input>
+                <input defaultValue={this.state.oppToEdit.phone} value={this.state.oppToEdit.phone} onChange={(event) => this.editThisOpp(event, 'phone')}></input>
+                <input defaultValue={this.state.oppToEdit.web_address} value={this.state.oppToEdit.web_address} onChange={(event) => this.editThisOpp(event, 'web_address')}></input>
+                <input defaultValue={this.state.oppToEdit.social} value={this.state.oppToEdit.social} onChange={(event) => this.editThisOpp(event, 'social')}></input>
+                <input defaultValue={this.state.oppToEdit.street_address} value={this.state.oppToEdit.street_address} onChange={(event) => this.editThisOpp(event, 'street_address')}></input>
+                <input defaultValue={this.state.oppToEdit.city} value={this.state.oppToEdit.city} onChange={(event) => this.editThisOpp(event, 'city')}></input>
+                <input defaultValue={this.state.oppToEdit.zip} value={this.state.oppToEdit.zip} onChange={(event) => this.editThisOpp(event, 'zip')}></input>
                 <button onClick={this.submitEdit}>submit changes</button>
             </div>
         )
