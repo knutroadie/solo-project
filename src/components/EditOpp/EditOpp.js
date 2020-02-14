@@ -7,7 +7,7 @@ class EditOpp extends Component {
     state = {
         oppToEdit: {
             id: this.props.reduxState.detailReducer.id,
-            img_url: '',
+            img_url: this.props.reduxState.detailReducer.image_url,
             name: this.props.reduxState.detailReducer.name,
             description: this.props.reduxState.detailReducer.description,
             contact: this.props.reduxState.detailReducer.contact,
@@ -53,7 +53,7 @@ class EditOpp extends Component {
         return (
             <div>
                 <br></br>
-                <input defaultValue={this.state.oppToEdit.image_url} value={this.state.oppToEdit.image_url} onChange={(event) => this.editThisOpp(event, 'image_url')}></input>
+                <input defaultValue={this.state.oppToEdit.img_url} value={this.state.oppToEdit.img_url} onChange={(event) => this.editThisOpp(event, 'img_url')}></input>
                 <input defaultValue={this.state.oppToEdit.name} value={this.state.oppToEdit.name} onChange={(event) => this.editThisOpp(event, 'name')}></input>
                 <input defaultValue={this.state.oppToEdit.description} value={this.state.oppToEdit.description} onChange={(event) => this.editThisOpp(event, 'description')}></input>
                 <input defaultValue={this.state.oppToEdit.contact} value={this.state.oppToEdit.contact} onChange={(event) => this.editThisOpp(event, 'contact')}></input>
