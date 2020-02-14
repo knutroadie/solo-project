@@ -6,6 +6,7 @@ import oppsSaga from './oppsSaga';
 import detailSaga from './detailSaga';
 import submitSaga from './submitSaga';
 import deleteSaga from './deleteSaga';
+import editSaga from './editSaga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -22,6 +23,7 @@ export default function* rootSaga() {
     oppsSaga(),
     detailSaga(),
     submitSaga(),
-    deleteSaga()
+    deleteSaga(),
+    editSaga()
   ]);
 }

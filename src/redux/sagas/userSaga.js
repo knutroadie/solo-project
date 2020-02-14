@@ -3,8 +3,7 @@ import { put, takeLatest } from 'redux-saga/effects';
 
 // worker Saga: will be fired on "FETCH_USER" actions
 function* fetchUser() {
-  console.log('in fetchUser generator');
-  
+  // console.log('in fetchUser generator');
   try {
     const config = {
       headers: { 'Content-Type': 'application/json' },
@@ -27,7 +26,7 @@ function* fetchUser() {
 }
 
 function* userSaga() {
-  console.log('in user saga, fetching user');
+  // console.log('in user saga, fetching user');
   yield takeLatest('FETCH_USER', fetchUser);
 }
 

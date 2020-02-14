@@ -24,7 +24,7 @@ import './App.css';
 class App extends Component {
 
   componentDidMount() {
-    console.log('in component did mount');
+    // console.log('in component did mount');
     this.props.dispatch({ type: 'GET_OPPS' })
   }
 

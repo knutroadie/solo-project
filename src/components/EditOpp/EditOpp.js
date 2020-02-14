@@ -35,11 +35,16 @@ class EditOpp extends Component {
     submitEdit = () => {
         // dispatches edit to redux
         console.log('clicking to submit edit', this.state.oppToEdit);
+        this.props.dispatch({
+            type: 'SUBMIT_EDIT',
+            payload: this.state.oppToEdit,
+            url: `/api/opportunity/${this.state.oppToEdit.id}`
+        })
         this.goDetail();
     }
 
     goDetail = () => {
-        console.log('clicking to go detail', this.props.match.params.id );
+        console.log('clicking to go back to detail');
         this.props.history.push(`/detail/${this.props.reduxState.detailReducer.id}`)
     }
 
@@ -48,7 +53,7 @@ class EditOpp extends Component {
         return (
             <div>
                 <br></br>
-                <input placeholder="enter an image_url" value={this.state.oppToEdit.image_url} onChange={(event) => this.editThisOpp(event, 'image_url')}></input>
+                <input defaultValue={this.state.oppToEdit.image_url} value={this.state.oppToEdit.image_url} onChange={(event) => this.editThisOpp(event, 'image_url')}></input>
                 <input defaultValue={this.state.oppToEdit.name} value={this.state.oppToEdit.name} onChange={(event) => this.editThisOpp(event, 'name')}></input>
                 <input defaultValue={this.state.oppToEdit.description} value={this.state.oppToEdit.description} onChange={(event) => this.editThisOpp(event, 'description')}></input>
                 <input defaultValue={this.state.oppToEdit.contact} value={this.state.oppToEdit.contact} onChange={(event) => this.editThisOpp(event, 'contact')}></input>

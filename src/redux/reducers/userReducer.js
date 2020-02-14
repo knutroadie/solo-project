@@ -1,5 +1,5 @@
 const userReducer = (state = {}, action) => {
-  console.log('in userReducer');
+  // console.log('in userReducer');
   switch (action.type) {    
     case 'SET_USER':
       return action.payload;

@@ -7,13 +7,4 @@ const oppsReducer = (state = [], action) => {
     }
 }
 
-// const oppReducer = (state = [], action) => {
-//     switch (action.type) {
-//         case 'SET_OPP':
-//             return action.payload;
-//         default:
-//             return state;
-//     }
-// }
-
 export default oppsReducer;

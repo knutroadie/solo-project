@@ -30,8 +30,8 @@ class OppDetail extends Component {
     }
 
     render() {
-        console.log(this.props.match.params.id);
-        console.log(this.props.reduxState.detailReducer);
+        // console.log(this.props.match.params.id);
+        // console.log(this.props.reduxState.detailReducer);
         
         return (
             <div>

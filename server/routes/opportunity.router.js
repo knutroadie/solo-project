@@ -63,8 +63,41 @@ router.delete('/:id', (req, res) => {
 /**
  * PUT route template
  */
-router.put('/', (req, res) => {
-
+router.put('/:id', (req, res) => {
+    console.log('in router PUT', req.body);
+    // let img_url = req.body.img_url
+    // let name = req.body.name
+    // let description = req.body.description
+    // let contact = req.body.contact
+    // let email = req.body.email
+    // let phone = req.body.phone
+    // let web_address = req.body.web_address
+    // let social = req.body.social
+    // let street_address = req.body.street_address
+    // let city = req.body.city
+    // let zip = req.body.zip
+    let sqlText = `
+    UPDATE "opportunity" 
+    SET "image_url"=$1, "name"=$2, "description"=$3, "contact"=$4, "email"=$5, "phone"=$6, "web_address"=$7, "social"=$8, "street_address"=$9, "city"=$10, "zip"=$11 WHERE "id"=${req.params.id};`;
+    let values = [req.body.img_url, req.body.name, req.body.description, req.body.contact, req.body.email, req.body.phone, req.body.web_address, req.body.social, req.body.street_address, req.body.city, req.body.zip];
+    // "img_url" = $1, 
+    // "name" = $2, 
+    // "description" = $3, 
+    // "contact" = $4, 
+    // "email" = $5, 
+    // "phone" = $6, 
+    // "web_address" = $7, 
+    // "social" = $8, 
+    // "street_address" = $9, 
+    // "city" = $10, 
+    // "zip" = $11, 
+    pool.query(sqlText, values)
+    .then((result) => {
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log(error);
+        res.sendStatus(500);
+    });
 });
 
 module.exports = router;
