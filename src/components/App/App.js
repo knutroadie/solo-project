@@ -35,6 +35,7 @@ class App extends Component {
           <NavBar />
           <Route path="/" exact component={OppList} />
           <Route path="/login" exact component={LoginPage} />
+          <Route exact path="/login" component={UserPage}/>
           <Route path="/register" exact component={RegisterPage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/detail/:id" component={OppDetail} />
@@ -60,11 +61,6 @@ class App extends Component {
             Visiting localhost:3000/home will show the UserPage if the user is logged in.
             If the user is not logged in, the ProtectedRoute will show the 'Login' or 'Register' page.
             Even though it seems like they are different pages, the user is always on localhost:3000/home */}
-          <Route
-              exact
-              path="/login"
-              component={UserPage}
-            />
           {/* This works the same as the other protected route, except that if the user is logged in,
             they will see the info page instead. */}
           {/* <Route

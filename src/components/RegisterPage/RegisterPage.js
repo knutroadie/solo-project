@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 class RegisterPage extends Component {
   state = {
@@ -92,5 +93,5 @@ const mapStateToProps = state => ({
   errors: state.errors,
 });
 
-export default connect(mapStateToProps)(RegisterPage);
+export default withRouter(connect(mapStateToProps)(RegisterPage));
 
