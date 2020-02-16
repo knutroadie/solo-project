@@ -23,6 +23,7 @@ class NavBar extends Component {
     }
 
     render() {
+        console.log(this.props.reduxState.user.name);
         return (
             <div>
                 <h1>good do good</h1>
@@ -31,6 +32,7 @@ class NavBar extends Component {
                 <LogOutButton />
                 <button onClick={this.goSubmit}>submit</button>
                 <button onClick={this.goAbout}>about</button>
+                <p>{this.props.reduxState.user.name} is logged in.</p>
             </div>
         )
     }

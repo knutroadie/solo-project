@@ -48,16 +48,16 @@ class SubmitOpp extends Component {
         return (
             <div>
                 <br></br>
-                name: <input placeholder="name" value={this.state.newOpp.name} onChange={(event) => this.makeNewOpp(event, 'name')}></input>
-                description: <input placeholder="description" value={this.state.newOpp.description} onChange={(event) => this.makeNewOpp(event, 'description')}></input>
-                contact name: <input placeholder="contact name" value={this.state.newOpp.contact} onChange={(event) => this.makeNewOpp(event, 'contact')}></input>
-                contact email: <input placeholder="contact email" value={this.state.newOpp.email} onChange={(event) => this.makeNewOpp(event, 'email')}></input>
-                contact phone number: <input placeholder="contact phone" value={this.state.newOpp.phone} onChange={(event) => this.makeNewOpp(event, 'phone')}></input>
-                internet address: <input placeholder="web address" value={this.state.newOpp.web_address} onChange={(event) => this.makeNewOpp(event, 'web_address')}></input>
-                social media address: <input placeholder="social" value={this.state.newOpp.social} onChange={(event) => this.makeNewOpp(event, 'social')}></input>
-                street address: <input placeholder="street address" value={this.state.newOpp.street_address} onChange={(event) => this.makeNewOpp(event, 'street_address')}></input>
-                city: <input placeholder="city" value={this.state.newOpp.city} onChange={(event) => this.makeNewOpp(event, 'city')}></input>
-                zip code: <input placeholder="zip code" value={this.state.newOpp.zip} onChange={(event) => this.makeNewOpp(event, 'zip')}></input>
+                name: <input type="text" placeholder="name" value={this.state.newOpp.name} onChange={(event) => this.makeNewOpp(event, 'name')}></input>
+                description: <input type="text" placeholder="description" value={this.state.newOpp.description} onChange={(event) => this.makeNewOpp(event, 'description')}></input>
+                contact name: <input type="text" placeholder="contact name" value={this.state.newOpp.contact} onChange={(event) => this.makeNewOpp(event, 'contact')}></input>
+                contact email: <input type="email" placeholder="contact email" value={this.state.newOpp.email} onChange={(event) => this.makeNewOpp(event, 'email')}></input>
+                contact phone number: <input type="tel" placeholder="contact phone" value={this.state.newOpp.phone} onChange={(event) => this.makeNewOpp(event, 'phone')}></input>
+                internet address: <input type="url" placeholder="web address" value={this.state.newOpp.web_address} onChange={(event) => this.makeNewOpp(event, 'web_address')}></input>
+                social media address: <input type="url" placeholder="social" value={this.state.newOpp.social} onChange={(event) => this.makeNewOpp(event, 'social')}></input>
+                street address: <input type="text" placeholder="street address" value={this.state.newOpp.street_address} onChange={(event) => this.makeNewOpp(event, 'street_address')}></input>
+                city: <input type="text" placeholder="city" value={this.state.newOpp.city} onChange={(event) => this.makeNewOpp(event, 'city')}></input>
+                zip code: <input type="text" placeholder="zip code" value={this.state.newOpp.zip} onChange={(event) => this.makeNewOpp(event, 'zip')}></input>
                 <button onClick={this.submitNewOpp}>submit</button>
             </div>
         )
