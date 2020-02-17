@@ -6,9 +6,10 @@ import {
   Switch,
 } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Nav from '../Nav/Nav';
+// import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
-import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
+import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
+import AdminRoute from '../AdminRoute/AdminRoute';
 import AboutPage from '../AboutPage/AboutPage';
 // import UserPage from '../UserPage/UserPage';
 // import InfoPage from '../InfoPage/InfoPage';
@@ -16,7 +17,7 @@ import OppList from '../OppList/OppList';
 import SubmitOpp from '../SubmitOpp/SubmitOpp';
 import EditOpp from '../EditOpp/EditOpp';
 import OppDetail from '../OppDetail/OppDetail';
-// import NavBar from '../NavBar/NavBar';
+import NavBar from '../NavBar/NavBar';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import './App.css';
@@ -32,16 +33,19 @@ class App extends Component {
     return (
       <Router>
         <div>
-          {/* <NavBar /> */}
-          <Nav />
+          <NavBar />
+          {/* <Nav /> */}
           <Route path="/" exact component={OppList} />
           <Route path="/login" exact component={LoginPage} />
           {/* <Route path="/login" component={UserPage}/> */}
           <Route path="/register" exact component={RegisterPage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/detail/:id" component={OppDetail} />
-          <ProtectedRoute path="/submit" component={SubmitOpp} />
-          <ProtectedRoute path="/edit" component={EditOpp} />
+          <ProtectedRoute path="/submit" where='/submit' component={SubmitOpp} />
+
+          {/* make this an AdminRoute in a new component */}
+          <AdminRoute path="/edit" component={EditOpp} />
+
           {/* <Switch> */}
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
           {/* <Redirect exact from="/" to="/home" /> */}

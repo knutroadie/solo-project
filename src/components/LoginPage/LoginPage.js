@@ -19,7 +19,14 @@ class LoginPage extends Component {
           password: this.state.password,
         },
       });
-      this.props.history.push('/');
+      const location = this.props.match.path;
+      console.log('location:', this.props.match.path);
+      if(location == '/login'){
+        this.props.history.push('/');
+      } else {
+        this.props.history.push(location);
+      }
+      
     } else {
       this.props.dispatch({ type: 'LOGIN_INPUT_ERROR' });
     }
