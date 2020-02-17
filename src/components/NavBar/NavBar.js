@@ -28,7 +28,7 @@ class NavBar extends Component {
                     <button onClick={(event) => this.navClick(event, '')}>home</button>
                     <button onClick={(event) => this.navClick(event, 'login')}>login</button>
                     <button onClick={(event) => this.navClick(event, 'about')}>about</button>
-                    <p>log in to submit your favorite volunteer opportunity.</p>
+                    <p>log in to recommend or submit your favorite volunteer opportunity.</p>
                 </div>
             )
 
