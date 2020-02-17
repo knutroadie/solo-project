@@ -48,6 +48,7 @@ class SubmitOpp extends Component {
         return (
             <div>
                 <br></br>
+                <form>
                 name: <input type="text" placeholder="name" value={this.state.newOpp.name} onChange={(event) => this.makeNewOpp(event, 'name')}></input>
                 description: <input type="text" placeholder="description" value={this.state.newOpp.description} onChange={(event) => this.makeNewOpp(event, 'description')}></input>
                 contact name: <input type="text" placeholder="contact name" value={this.state.newOpp.contact} onChange={(event) => this.makeNewOpp(event, 'contact')}></input>
@@ -59,6 +60,7 @@ class SubmitOpp extends Component {
                 city: <input type="text" placeholder="city" value={this.state.newOpp.city} onChange={(event) => this.makeNewOpp(event, 'city')}></input>
                 zip code: <input type="text" placeholder="zip code" value={this.state.newOpp.zip} onChange={(event) => this.makeNewOpp(event, 'zip')}></input>
                 <button onClick={this.submitNewOpp}>submit</button>
+                </form>
             </div>
         )
     }

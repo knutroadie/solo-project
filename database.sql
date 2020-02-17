@@ -164,5 +164,19 @@ VALUES
 '55415',
 'now()');
 
+INSERT INTO "opportunity"("name", "image_url", "description", "contact", "email", "phone", "web_address", "social", "street_address", "city", "zip")
+VALUES
+('RECLAIM!', 
+'https://scontent.ffcm1-2.fna.fbcdn.net/v/t1.0-9/51666014_2397331036965572_4560729409736146944_o.jpg?_nc_cat=108&_nc_ohc=vlJxlNZitj4AX9fsIhw&_nc_ht=scontent.ffcm1-2.fna&oh=1037914dae73f35b7301857edbe8953d&oe=5EC7AE84', 
+'RECLAIM’s mission is to increase access to mental health support for queer and trans youth so they might reclaim their lives from oppression in all of its forms.', 
+'', 
+'info@reclaim.care', 
+'(612) 235-6743', 
+'https://www.reclaim.care/', 
+'https://www.facebook.com/reclaimqt/', 
+'771 Raymond Avenue', 
+'Saint Paul', 
+'55114');
+
 INSERT INTO "user" ("username", "password", "auth")
 VALUES ('admin', '123', '0') ('user', '123', '1');
