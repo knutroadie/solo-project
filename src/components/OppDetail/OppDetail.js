@@ -12,12 +12,12 @@ class OppDetail extends Component {
     }
 
     goEdit = () => {
-        console.log('clicking to go edit', this.props.match.params.id );
+        console.log('clicking to go edit', this.props.match.params.id);
         this.props.history.push(`/edit/${this.props.match.params.id}`)
     }
-    
+
     deleteOpp = () => {
-        console.log('clicking to delete', );
+        console.log('clicking to delete');
         this.props.dispatch({
             type: 'DELETE_OPP',
             payload: this.props.match.params.id
@@ -26,33 +26,36 @@ class OppDetail extends Component {
     }
 
     upVote = () => {
-        console.log('clicking to upvote');
+        // post to user_opportunity
+        this.props.dispatch({
+            type: 'CLICK_LIKE',
+            payload: this.props.match.params.id
+        })
     }
 
     render() {
-        console.log(this.props.reduxState.user);
-        
-        // console.log(this.props.match.params.id);
-        // console.log(this.props.reduxState.detailReducer);
+
+        console.log(this.props.match.params.id);
+        console.log(this.props.reduxState.detailReducer);
         if (this.props.reduxState.user.auth < 1) {
-        return (
-            <div>
-                <br></br>
-                <img src={this.props.reduxState.detailReducer.image_url} alt={this.props.reduxState.detailReducer.name} height="85"></img>
-                <h3>{this.props.reduxState.detailReducer.name}</h3>
-                <p>{this.props.reduxState.detailReducer.description}</p>
-                <p>{this.props.reduxState.detailReducer.email}</p>
-                <p>{this.props.reduxState.detailReducer.phone}</p>
-                <a href={this.props.reduxState.detailReducer.web_address}>website</a>
-                <br></br>
-                <a href={this.props.reduxState.detailReducer.social}>social</a>
-                <p>{this.props.reduxState.detailReducer.street_address}</p>
-                <p>{this.props.reduxState.detailReducer.city}, {this.props.reduxState.detailReducer.zip}</p>
-                <button onClick={this.upVote}>upvote</button>
-                <button onClick={this.goEdit}>edit</button>
-                <button onClick={(event) => { if (window.confirm('are you sure you want to delete this?')) this.deleteOpp(event) }}>delete</button>
-            </div>
-        )
+            return (
+                <div>
+                    <br></br>
+                    <img src={this.props.reduxState.detailReducer.image_url} alt={this.props.reduxState.detailReducer.name} height="85"></img>
+                    <h3>{this.props.reduxState.detailReducer.name}</h3>
+                    <p>{this.props.reduxState.detailReducer.description}</p>
+                    <p>{this.props.reduxState.detailReducer.email}</p>
+                    <p>{this.props.reduxState.detailReducer.phone}</p>
+                    <a href={this.props.reduxState.detailReducer.web_address}>website</a>
+                    <br></br>
+                    <a href={this.props.reduxState.detailReducer.social}>social</a>
+                    <p>{this.props.reduxState.detailReducer.street_address}</p>
+                    <p>{this.props.reduxState.detailReducer.city}, {this.props.reduxState.detailReducer.zip}</p>
+                    <button onClick={this.upVote}>upvote</button>
+                    <button onClick={this.goEdit}>edit</button>
+                    <button onClick={(event) => { if (window.confirm('are you sure you want to delete this?')) this.deleteOpp(event) }}>delete</button>
+                </div>
+            )
         } else if (this.props.reduxState.user.auth > 0) {
             return (
                 <div>
@@ -68,8 +71,6 @@ class OppDetail extends Component {
                     <p>{this.props.reduxState.detailReducer.street_address}</p>
                     <p>{this.props.reduxState.detailReducer.city}, {this.props.reduxState.detailReducer.zip}</p>
                     <button onClick={this.upVote}>upvote</button>
-                    {/* <button onClick={this.goEdit}>edit</button> */}
-                    {/* <button onClick={(event) => { if (window.confirm('are you sure you want to delete this?')) this.deleteOpp(event) }}>delete</button> */}
                 </div>
             )
         } else {
@@ -88,7 +89,7 @@ class OppDetail extends Component {
                     <p>{this.props.reduxState.detailReducer.city}, {this.props.reduxState.detailReducer.zip}</p>
                 </div>
             )
-    
+
         }
     }
 }

@@ -8,8 +8,8 @@ function* deleteSaga() {
 function* deleteOpp(action) {
     console.log('in deleteOpp', action.payload);
     let response = yield axios.delete(`/api/opportunity/${action.payload}`);
-    yield put({type: 'SET_OPP', payload: response.data[0]});
-    yield put({ type: 'GET_OPPS'});
+    yield put({ type: 'SET_OPP', payload: response.data[0] });
+    yield put({ type: 'GET_OPPS' });
 }
 
 export default deleteSaga;

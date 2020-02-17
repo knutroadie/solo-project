@@ -13,7 +13,7 @@ class OppItem extends Component {
     upVote = () => {
         // post to user_opportunity
         this.props.dispatch({
-            type: 'LIKE_CLICK',
+            type: 'CLICK_LIKE',
             payload: this.props.opp.id
         })
         console.log('clicking to upvote', this.props.opp.id);

@@ -6,12 +6,9 @@ function* likeSaga() {
 }
 
 function* submitLike(action) {
-    // console.log('in submitOpp generator', action.payload);
-    // let response = yield axios.post(`/api/opportunity`);
-    // yield put({ type: 'GET_OPPS' });
-    yield console.log('in submitLike', action.payload)
+    console.log('in submitLike generator', action.payload);
     try {
-        yield axios.post(`/api/like`, action.payload);
+        yield axios.post(`/api/like`, { id: action.payload });
         // yield put({ type: 'GET_OPPS' })
     } catch (error) {
         console.log('Error in submitLike generator', error);

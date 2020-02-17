@@ -31,7 +31,6 @@ class NavBar extends Component {
                     <p>log in to recommend or submit your favorite volunteer opportunity.</p>
                 </div>
             )
-
         }
     }
 }
