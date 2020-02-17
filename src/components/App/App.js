@@ -3,7 +3,7 @@ import {
   HashRouter as Router,
   Route,
   // Redirect,
-  Switch,
+  // Switch,
 } from 'react-router-dom';
 import { connect } from 'react-redux';
 // import Nav from '../Nav/Nav';
