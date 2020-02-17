@@ -11,11 +11,10 @@ class NavBar extends Component {
     }
 
     render() {
-        console.log(this.props.reduxState.user.username);
+        // console.log(this.props.reduxState.user.username);
         if (this.props.reduxState.user.username) {
             return (
                 <div>
-                    <h1>good do good</h1>
                     <button onClick={(event) => this.navClick(event, '')}>home</button>
                     <LogOutButton />
                     <button onClick={(event) => this.navClick(event, 'submit')}>submit</button>
@@ -26,7 +25,6 @@ class NavBar extends Component {
         } else {
             return (
                 <div>
-                    <h1>good do good</h1>
                     <button onClick={(event) => this.navClick(event, '')}>home</button>
                     <button onClick={(event) => this.navClick(event, 'login')}>login</button>
                     <button onClick={(event) => this.navClick(event, 'about')}>about</button>

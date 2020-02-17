@@ -26,11 +26,11 @@ const AdminRoute = (props) => {
     ...otherProps
   } = props;
   
-  console.log(user.id);
+  console.log(user.auth);
   
   let ComponentToShow;
 
-  if(user.id < 1) {
+  if(user.auth < 1) {
     // if the user is logged in (only logged in users have ids)
     // show the component that is protected
     ComponentToShow = ComponentToProtect;

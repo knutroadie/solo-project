@@ -33,6 +33,8 @@ class App extends Component {
     return (
       <Router>
         <div>
+          <h1>good do good</h1>
+          <h3>meeting good people WAS hard</h3>
           <NavBar />
           {/* <Nav /> */}
           <Route path="/" exact component={OppList} />
