@@ -7,10 +7,10 @@ const router = express.Router();
  */
 router.get('/', (req, res) => {
     let queryText = `
-        SELECT "opportunity".*, COUNT(*) as myCount FROM "opportunity"
+        SELECT "opportunity".*, COUNT(*) as likes FROM "opportunity"
         JOIN "user_opportunity" on "user_opportunity".opportunity_id = "opportunity".id
         GROUP BY "opportunity".id
-        ORDER BY myCount DESC;`
+        ORDER BY likes DESC;`
     pool.query(queryText)
         .then(response => {
             res.send(response.rows)

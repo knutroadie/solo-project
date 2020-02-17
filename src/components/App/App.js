@@ -20,6 +20,7 @@ import OppDetail from '../OppDetail/OppDetail';
 import NavBar from '../NavBar/NavBar';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import NewlyAdded from '../NewlyAdded/NewlyAdded';
 import './App.css';
 
 class App extends Component {
@@ -48,6 +49,7 @@ class App extends Component {
           {/* make this an AdminRoute in a new component */}
           <AdminRoute path="/edit" component={EditOpp} />
 
+          <NewlyAdded />
           {/* <Switch> */}
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
           {/* <Redirect exact from="/" to="/home" /> */}
