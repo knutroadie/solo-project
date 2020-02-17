@@ -6,13 +6,18 @@ import { connect } from 'react-redux';
 // const UserPage = ({ user }) => (
 // and then instead of `props.user.username` you could use `user.username`
 const UserPage = (props) => (
-  <div>
-    <h1 id="welcome">
-      Welcome, { props.user.username }!
+
+  // componentDidMount() {
+  //   setTimeout(this.props.history.push('/'), 3000);
+  // }
+
+<div>
+  <h1 id="welcome">
+    Welcome, {props.user.username}!
     </h1>
-    <p>Your ID is: {props.user.id}</p>
-    {/* <LogOutButton className="log-in" /> */}
-  </div>
+  <p>Your ID is: {props.user.id}</p>
+  {/* <LogOutButton className="log-in" /> */}
+</div>
 );
 
 // Instead of taking everything from state, we just want the user info.

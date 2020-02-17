@@ -4,46 +4,57 @@ import { withRouter } from 'react-router-dom';
 import LogOutButton from '../LogOutButton/LogOutButton';
 
 class NavBar extends Component {
-
+// const NavBar = (props) => (
     // each click calls the same function, passing in an event and a route
 
-    goHome = () => {
-        console.log('clicking to go home');
-        this.props.history.push(`/`)
-    }
-    goLogin = () => {
-        console.log('clicking to go login');
-        this.props.history.push(`/login`)
-    }
-    goSubmit = () => {
-        console.log('clicking to go submit');
-        this.props.history.push(`/submit`)
-    }
-    goAbout = () => {
-        console.log('clicking to go about');
-        this.props.history.push(`/about`)
+    navClick = (event, propertyValue) => {
+        console.log('clicking to go to:', propertyValue );
+        this.props.history.push(`${propertyValue}`);
     }
 
     render() {
-        // console.log(this.props.reduxState.user.name);
+        console.log(this.props.reduxState.user.name);
         return (
             <div>
                 <h1>good do good</h1>
-                <button onClick={this.goHome}>home</button>
-                <button onClick={this.goLogin}>login</button>
+                <button onClick={(event) => this.navClick(event, '/')}>home</button>
+                <button onClick={(event) => this.navClick(event, '/login')}>login</button>
                 <LogOutButton />
-                <button onClick={this.goSubmit}>submit</button>
-                <button onClick={this.goAbout}>about</button>
-                {/* <p>{this.props.reduxState.user.name} is logged in.</p> */}
+                <button onClick={(event) => this.navClick(event, '/submit')}>submit</button>
+                <button onClick={(event) => this.navClick(event, '/about')}>about</button>
+                <p>{this.props.ReduxState.user.name} is logged in.</p>
             </div>
         )
     }
 }
+// );
+// const putStateOnProps = state => ({
+//     user: state.user,
+//   });
 
-const putReduxStateOnProps = (reduxState) => {
+const putStateOnProps = (reduxState) => {
     return {
         reduxState
     }
 }
 
-export default withRouter(connect(putReduxStateOnProps)(NavBar));
+export default withRouter(connect(putStateOnProps)(NavBar));
+
+
+
+    // goLogin = () => {
+    //     console.log('clicking to go login');
+    //     this.props.history.push(`/login`)
+    // }
+    // goSubmit = () => {
+    //     console.log('clicking to go submit');
+    //     this.props.history.push(`/submit`)
+    // }
+    // goAbout = () => {
+    //     console.log('clicking to go about');
+    //     this.props.history.push(`/about`)
+    // }
+
+    // render() {
+        // console.log(this.props.reduxState.user.name);
+        // return (
