@@ -1,3 +1,38 @@
+#header {
+    color: white;
+    background-color: #002f6c;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-style: italic;
+    font-variant: normal;
+    line-height: 80px;
+    text-align: center;
+    /* transition: 0.3s; */
+    /* padding-top: 0px; */
+    /* padding-bottom: 10px; */
+    /* position: fixed; */
+    width: 100%;
+}
+
+#motto {
+    color: #002f6c;
+    background-color: transparent;
+    text-align: center;
+    font-family: Helvetica, "Trebuchet MS", Arial, sans-serif;
+    /* padding-top: 100px; */
+    line-height: 5px;
+    text-align: center;
+    transition: 0.3s;
+    /* padding-top: 0px; */
+    /* padding-bottom: 10px; */
+    /* position: fixed; */
+    width: 100%;
+}
+
+#mainList {
+    align-content: center;
+    width: 60%;
+}
+
 /* body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0px;

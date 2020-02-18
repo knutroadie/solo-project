@@ -23,65 +23,77 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import NewlyAdded from '../NewlyAdded/NewlyAdded';
 import './App.css';
 
+
+// window.onscroll = function () { scrollFunction() };
+
+// function scrollFunction() {
+//   if (document.body.scrollTop > 90 || document.documentElement.scrollTop > 100) {
+//     document.getElementById("header").style.fontSize = "40px";
+//   } else {
+//     document.getElementById("header").style.fontSize = "65px";
+//   }
+// }
+
 class App extends Component {
 
   componentDidMount() {
-    // console.log('in component did mount');
     this.props.dispatch({ type: 'GET_OPPS' })
   }
 
-  render() {
-    return (
-      <Router>
-        <div>
-          <h1>good do good</h1>
-          <h3>meeting good people WAS hard</h3>
+render() {
+  return (
+    <Router>
+      <div>
+        <header>
+          <h1 id="header">good do good</h1>
+          <h3 id="motto">meeting good people WAS hard</h3>
           <NavBar />
-          {/* <Nav /> */}
-          <Route path="/" exact component={OppList} />
-          <Route path="/login" exact component={LoginPage} />
-          {/* <Route path="/login" component={UserPage}/> */}
-          <Route path="/register" exact component={RegisterPage} />
-          <Route path="/about" component={AboutPage} />
-          <Route path="/detail/:id" component={OppDetail} />
-          <ProtectedRoute path="/submit" where='/submit' component={SubmitOpp} />
+        </header>
+        {/* <Nav /> */}
+        <Route path="/" exact component={OppList} />
+        <Route path="/login" exact component={LoginPage} />
+        {/* <Route path="/login" component={UserPage}/> */}
+        <Route path="/register" exact component={RegisterPage} />
+        <Route path="/about" component={AboutPage} />
+        <Route path="/detail/:id" component={OppDetail} />
+        <ProtectedRoute path="/submit" where='/submit' component={SubmitOpp} />
 
-          {/* make this an AdminRoute in a new component */}
-          <AdminRoute path="/edit" component={EditOpp} />
+        {/* make this an AdminRoute in a new component */}
+        <AdminRoute path="/edit" component={EditOpp} />
 
-          <NewlyAdded />
-          {/* <Switch> */}
-          {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
-          {/* <Redirect exact from="/" to="/home" /> */}
-          {/* Visiting localhost:3000/about will show the about page.
+        {/* <NewlyAdded /> */}
+        {/* <Switch> */}
+        {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
+        {/* <Redirect exact from="/" to="/home" /> */}
+        {/* Visiting localhost:3000/about will show the about page.
             This is a route anyone can see, no login necessary */}
-          {/* <Route
+        {/* <Route
               exact
               path="/about"
               component={AboutPage}
             /> */}
-          {/* For protected routes, the view could show one of several things on the same route.
+        {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/home will show the UserPage if the user is logged in.
             If the user is not logged in, the ProtectedRoute will show the 'Login' or 'Register' page.
             Even though it seems like they are different pages, the user is always on localhost:3000/home */}
-          {/* This works the same as the other protected route, except that if the user is logged in,
+        {/* This works the same as the other protected route, except that if the user is logged in,
             they will see the info page instead. */}
-          {/* <Route
+        {/* <Route
               exact
               path="/detail"
               component={OppDetail}
             /> */}
-          {/* If none of the other routes matched, we will show a 404. */}
-          {/* <Route render={() => <h1>404</h1>} /> */}
-          {/* </Switch> */}
-          {/* <OppList /> */}
-          {/* <SubmitOpp /> */}
-          {/* <EditOpp /> */}
-          <Footer />
-        </div>
-      </Router>
-    )
-  }
+        {/* If none of the other routes matched, we will show a 404. */}
+        {/* <Route render={() => <h1>404</h1>} /> */}
+        {/* </Switch> */}
+        {/* <OppList /> */}
+        {/* <SubmitOpp /> */}
+        {/* <EditOpp /> */}
+        <Footer />
+      </div>
+    </Router>
+  )
+}
 }
 
 const putStateOnProps = (reduxState) => {
