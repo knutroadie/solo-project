@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
 
 class LoginPage extends Component {
   state = {
@@ -23,7 +25,7 @@ class LoginPage extends Component {
       });
       const location = this.props.match.path;
       console.log('location:', this.props.match.path);
-      if(location == '/login'){
+      if (location == '/login') {
         this.props.history.push('/');
       } else {
         this.props.history.push(location);
@@ -39,20 +41,31 @@ class LoginPage extends Component {
     });
   }
 
+  navClick = () => {
+    this.props.dispatch({
+      type: 'SET_TO_REGISTER_MODE'
+    })
+    this.props.history.push('/register')
+  }
+
   render() {
     return (
-      <div>
-        {this.props.errors.loginMessage && (
-          <h2
-            className="alert"
-            role="alert"
-          >
-            {this.props.errors.loginMessage}
-          </h2>
-        )}
-        <form onSubmit={this.login}>
-          <h3>Login</h3>
+      <Card>
+        <CardContent>
           <div>
+            {this.props.errors.loginMessage && (
+              <h2
+                className="alert"
+                role="alert"
+              >
+                {this.props.errors.loginMessage}
+              </h2>
+            )}
+            <form>
+              {/* onSubmit={this.login} */}
+              <h3>Login</h3>
+              <TextField type="text" label="username" value={this.state.username} onChange={this.handleInputChangeFor('username')} /><br></br>
+              {/* <div>
             <label htmlFor="username">
               Username:
               <input
@@ -62,8 +75,9 @@ class LoginPage extends Component {
                 onChange={this.handleInputChangeFor('username')}
               />
             </label>
-          </div>
-          <div>
+          </div> */}
+              <TextField type="text" label="password" value={this.state.password} onChange={this.handleInputChangeFor('password')} /><br></br>
+              {/* <div>
             <label htmlFor="password">
               Password:
               <input
@@ -73,8 +87,8 @@ class LoginPage extends Component {
                 onChange={this.handleInputChangeFor('password')}
               />
             </label>
-          </div>
-          {/* <div>
+          </div> */}
+              {/* <div>
             <input
               className="log-in"
               type="submit"
@@ -82,17 +96,20 @@ class LoginPage extends Component {
               value="Log In"
             />
           </div> */}
-          <Button variant="contained" onClick={this.login}>Log In</Button>
-        {/* </form> */}
-{/* this button should take the user to /register */}
-          <Button variant="contained"
-            // type="button"
-            // className="link-button"
-            onClick={() => {this.props.dispatch({type: 'SET_TO_REGISTER_MODE'})}}>
-            Or Register
+              <Button variant="contained" onClick={this.login}>Log In</Button>
+              {/* </form> */}
+              {/* this button should take the user to /register */}
+              <Button variant="contained"
+                // type="button"
+                // className="link-button"
+                // onClick={() => { this.props.dispatch({ type: 'SET_TO_REGISTER_MODE' })}}
+                onClick={this.navClick}>
+                Or Register
           </Button>
-          </form>
-      </div>
+            </form>
+          </div>
+        </CardContent>
+      </Card>
     );
   }
 }

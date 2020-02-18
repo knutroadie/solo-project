@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Button from "@material-ui/core/Button";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
 
 class OppItem extends Component {
 
@@ -22,26 +24,34 @@ class OppItem extends Component {
     render() {
         if (this.props.reduxState.user.username) {
             return (
-                <div>
-                    <li>
-                        <h3>{this.props.opp.name}</h3>
-                        <img src={this.props.opp.image_url} alt={this.props.opp.name} height="65"></img>
-                        <p>{this.props.opp.description}</p>
-                        <Button variant="contained" onClick={this.upVote}>upvote</Button>
-                        <Button variant="contained" key={this.props.opp.id} onClick={(event) => this.goDetail(event, this.props.opp)}>see more</Button>
-                    </li>
-                </div>
+                <Card>
+                    <CardContent>
+                        <div>
+                            <li>
+                                <h3>{this.props.opp.name}</h3>
+                                <img src={this.props.opp.image_url} alt={this.props.opp.name} height="65"></img>
+                                <p>{this.props.opp.description}</p>
+                                <Button variant="contained" onClick={this.upVote}>upvote</Button>
+                                <Button variant="contained" key={this.props.opp.id} onClick={(event) => this.goDetail(event, this.props.opp)}>see more</Button>
+                            </li>
+                        </div>
+                    </CardContent>
+                </Card>
             )
         } else {
             return (
-                <div>
-                    <li>
-                        <h3>{this.props.opp.name}</h3>
-                        <img src={this.props.opp.image_url} alt={this.props.opp.name} height="65"></img>
-                        <p>{this.props.opp.description}</p>
-                        <Button variant="contained" key={this.props.opp.id} onClick={(event) => this.goDetail(event, this.props.opp)}>see more</Button>
-                    </li>
-                </div>
+                <Card>
+                    <CardContent>
+                        <div>
+                            <li>
+                                <h3>{this.props.opp.name}</h3>
+                                <img src={this.props.opp.image_url} alt={this.props.opp.name} height="65"></img>
+                                <p>{this.props.opp.description}</p>
+                                <Button variant="contained" key={this.props.opp.id} onClick={(event) => this.goDetail(event, this.props.opp)}>see more</Button>
+                            </li>
+                        </div>
+                    </CardContent>
+                </Card>
             )
         }
     }

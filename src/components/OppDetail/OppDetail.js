@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Button from "@material-ui/core/Button";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
 
 class OppDetail extends Component {
 
@@ -42,6 +44,8 @@ class OppDetail extends Component {
             return (
                 <div>
                     <br></br>
+                    <Card>
+                    <CardContent>
                     <img src={this.props.reduxState.detailReducer.image_url} alt={this.props.reduxState.detailReducer.name} height="85"></img>
                     <h3>{this.props.reduxState.detailReducer.name}</h3>
                     <p>{this.props.reduxState.detailReducer.description}</p>
@@ -52,15 +56,19 @@ class OppDetail extends Component {
                     <a href={this.props.reduxState.detailReducer.social}>social</a>
                     <p>{this.props.reduxState.detailReducer.street_address}</p>
                     <p>{this.props.reduxState.detailReducer.city}, {this.props.reduxState.detailReducer.zip}</p>
-                    <Button onClick={this.upVote}>upvote</Button>
-                    <Button onClick={this.goEdit}>edit</Button>
-                    <Button onClick={(event) => { if (window.confirm('are you sure you want to delete this?')) this.deleteOpp(event) }}>delete</Button>
+                    <Button variant="contained" onClick={this.upVote}>upvote</Button>
+                    <Button variant="contained" onClick={this.goEdit}>edit</Button>
+                    <Button variant="contained" onClick={(event) => { if (window.confirm('are you sure you want to delete this?')) this.deleteOpp(event) }}>delete</Button>
+                    </CardContent>
+                    </Card>
                 </div>
             )
         } else if (this.props.reduxState.user.auth > 0) {
             return (
                 <div>
                     <br></br>
+                    <Card>
+                    <CardContent>
                     <img src={this.props.reduxState.detailReducer.image_url} alt={this.props.reduxState.detailReducer.name} height="85"></img>
                     <h3>{this.props.reduxState.detailReducer.name}</h3>
                     <p>{this.props.reduxState.detailReducer.description}</p>
@@ -71,13 +79,17 @@ class OppDetail extends Component {
                     <a href={this.props.reduxState.detailReducer.social}>social</a>
                     <p>{this.props.reduxState.detailReducer.street_address}</p>
                     <p>{this.props.reduxState.detailReducer.city}, {this.props.reduxState.detailReducer.zip}</p>
-                    <Button onClick={this.upVote}>upvote</Button>
+                    <Button variant="contained" onClick={this.upVote}>upvote</Button>
+                    </CardContent>
+                    </Card>
                 </div>
             )
         } else {
             return (
                 <div>
                     <br></br>
+                    <Card>
+                    <CardContent>
                     <img src={this.props.reduxState.detailReducer.image_url} alt={this.props.reduxState.detailReducer.name} height="85"></img>
                     <h3>{this.props.reduxState.detailReducer.name}</h3>
                     <p>{this.props.reduxState.detailReducer.description}</p>
@@ -88,6 +100,8 @@ class OppDetail extends Component {
                     <a href={this.props.reduxState.detailReducer.social}>social</a>
                     <p>{this.props.reduxState.detailReducer.street_address}</p>
                     <p>{this.props.reduxState.detailReducer.city}, {this.props.reduxState.detailReducer.zip}</p>
+                    </CardContent>
+                    </Card>
                 </div>
             )
         }

@@ -43,7 +43,7 @@ class App extends Component {
 render() {
   return (
     <Router>
-      <div>
+      <div className="App">
         <header>
           <h1 id="header">good do good</h1>
           <h3 id="motto">meeting good people WAS hard</h3>

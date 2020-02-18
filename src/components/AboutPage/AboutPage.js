@@ -1,4 +1,6 @@
 import React from 'react';
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
 
 // This is one of our simplest components
 // It doesn't have local state, so it can be a function component.
@@ -9,6 +11,8 @@ const AboutPage = () => (
   <div>
     <div>
       <h3>about us</h3>
+      <Card>
+      <CardContent>
       <p>Making quality connections to quality people is becoming 
         more difficult each day, especially in a place like the 
         Twin Cities, a place notorious for being difficult to break 
@@ -22,6 +26,8 @@ const AboutPage = () => (
         GOOD DO GOOD emphasises quality casual connections with 
         people who share your values.
       </p>
+      </CardContent>
+      </Card>
     </div>
   </div>
 );
