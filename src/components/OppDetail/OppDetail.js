@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import Button from "@material-ui/core/Button";
 
 class OppDetail extends Component {
 
@@ -51,9 +52,9 @@ class OppDetail extends Component {
                     <a href={this.props.reduxState.detailReducer.social}>social</a>
                     <p>{this.props.reduxState.detailReducer.street_address}</p>
                     <p>{this.props.reduxState.detailReducer.city}, {this.props.reduxState.detailReducer.zip}</p>
-                    <button onClick={this.upVote}>upvote</button>
-                    <button onClick={this.goEdit}>edit</button>
-                    <button onClick={(event) => { if (window.confirm('are you sure you want to delete this?')) this.deleteOpp(event) }}>delete</button>
+                    <Button onClick={this.upVote}>upvote</Button>
+                    <Button onClick={this.goEdit}>edit</Button>
+                    <Button onClick={(event) => { if (window.confirm('are you sure you want to delete this?')) this.deleteOpp(event) }}>delete</Button>
                 </div>
             )
         } else if (this.props.reduxState.user.auth > 0) {
@@ -70,7 +71,7 @@ class OppDetail extends Component {
                     <a href={this.props.reduxState.detailReducer.social}>social</a>
                     <p>{this.props.reduxState.detailReducer.street_address}</p>
                     <p>{this.props.reduxState.detailReducer.city}, {this.props.reduxState.detailReducer.zip}</p>
-                    <button onClick={this.upVote}>upvote</button>
+                    <Button onClick={this.upVote}>upvote</Button>
                 </div>
             )
         } else {
@@ -89,7 +90,6 @@ class OppDetail extends Component {
                     <p>{this.props.reduxState.detailReducer.city}, {this.props.reduxState.detailReducer.zip}</p>
                 </div>
             )
-
         }
     }
 }

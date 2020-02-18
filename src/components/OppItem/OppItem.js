@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import Button from "@material-ui/core/Button";
 
 class OppItem extends Component {
 
@@ -26,8 +27,8 @@ class OppItem extends Component {
                         <h3>{this.props.opp.name}</h3>
                         <img src={this.props.opp.image_url} alt={this.props.opp.name} height="65"></img>
                         <p>{this.props.opp.description}</p>
-                        <button onClick={this.upVote}>upvote</button>
-                        <button key={this.props.opp.id} onClick={(event) => this.goDetail(event, this.props.opp)}>see more</button>
+                        <Button onClick={this.upVote}>upvote</Button>
+                        <Button key={this.props.opp.id} onClick={(event) => this.goDetail(event, this.props.opp)}>see more</Button>
                     </li>
                 </div>
             )
@@ -38,7 +39,7 @@ class OppItem extends Component {
                         <h3>{this.props.opp.name}</h3>
                         <img src={this.props.opp.image_url} alt={this.props.opp.name} height="65"></img>
                         <p>{this.props.opp.description}</p>
-                        <button key={this.props.opp.id} onClick={(event) => this.goDetail(event, this.props.opp)}>see more</button>
+                        <Button key={this.props.opp.id} onClick={(event) => this.goDetail(event, this.props.opp)}>see more</Button>
                     </li>
                 </div>
             )

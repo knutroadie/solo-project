@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import Button from "@material-ui/core/Button";
 import LogOutButton from '../LogOutButton/LogOutButton';
 
 class NavBar extends Component {
@@ -15,19 +16,19 @@ class NavBar extends Component {
         if (this.props.reduxState.user.username) {
             return (
                 <div>
-                    <button onClick={(event) => this.navClick(event, '')}>home</button>
+                    <Button onClick={(event) => this.navClick(event, '')}>home</Button>
                     <LogOutButton />
-                    <button onClick={(event) => this.navClick(event, 'submit')}>submit</button>
-                    <button onClick={(event) => this.navClick(event, 'about')}>about</button>
+                    <Button onClick={(event) => this.navClick(event, 'submit')}>submit</Button>
+                    <Button onClick={(event) => this.navClick(event, 'about')}>about</Button>
                     <p>{this.props.reduxState.user.username} is logged in.</p>
                 </div>
             )
         } else {
             return (
                 <div>
-                    <button onClick={(event) => this.navClick(event, '')}>home</button>
-                    <button onClick={(event) => this.navClick(event, 'login')}>login</button>
-                    <button onClick={(event) => this.navClick(event, 'about')}>about</button>
+                    <Button onClick={(event) => this.navClick(event, '')}>home</Button>
+                    <Button onClick={(event) => this.navClick(event, 'login')}>login</Button>
+                    <Button onClick={(event) => this.navClick(event, 'about')}>about</Button>
                     <p>log in to recommend or submit your favorite volunteer opportunity.</p>
                 </div>
             )
