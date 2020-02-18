@@ -26,8 +26,6 @@ const AdminRoute = (props) => {
     ...otherProps
   } = props;
   
-  console.log(user.auth);
-  
   let ComponentToShow;
 
   if(user.auth < 1) {

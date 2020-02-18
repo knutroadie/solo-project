@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Button from "@material-ui/core/Button";
 import LogOutButton from '../LogOutButton/LogOutButton';
+import './NavBar.css';
 
 class NavBar extends Component {
 
@@ -16,19 +17,23 @@ class NavBar extends Component {
         if (this.props.reduxState.user.username) {
             return (
                 <div>
+                <div className="navBar">
                     <Button variant="contained" onClick={(event) => this.navClick(event, '')}>home</Button>
                     <LogOutButton />
                     <Button variant="contained" onClick={(event) => this.navClick(event, 'submit')}>submit</Button>
                     <Button variant="contained" onClick={(event) => this.navClick(event, 'about')}>about</Button>
+                    </div>
                     <p>{this.props.reduxState.user.username} is logged in.</p>
-                </div>
+                    </div>
             )
         } else {
             return (
                 <div>
+                <div className="navBar">
                     <Button variant="contained" onClick={(event) => this.navClick(event, '')}>home</Button>
                     <Button variant="contained" onClick={(event) => this.navClick(event, 'login')}>login</Button>
                     <Button variant="contained" onClick={(event) => this.navClick(event, 'about')}>about</Button>
+                    </div>
                     <p>log in to recommend or submit your favorite volunteer opportunity.</p>
                 </div>
             )
