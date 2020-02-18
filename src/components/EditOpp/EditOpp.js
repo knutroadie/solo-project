@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
 
 class EditOpp extends Component {
 
@@ -53,18 +55,18 @@ class EditOpp extends Component {
         return (
             <div>
                 <br></br>
-                image url: <input defaultValue={this.state.oppToEdit.img_url} value={this.state.oppToEdit.img_url} onChange={(event) => this.editThisOpp(event, 'img_url')}></input>
-                name: <input defaultValue={this.state.oppToEdit.name} value={this.state.oppToEdit.name} onChange={(event) => this.editThisOpp(event, 'name')}></input>
-                description: <input defaultValue={this.state.oppToEdit.description} value={this.state.oppToEdit.description} onChange={(event) => this.editThisOpp(event, 'description')}></input>
-                contact name: <input defaultValue={this.state.oppToEdit.contact} value={this.state.oppToEdit.contact} onChange={(event) => this.editThisOpp(event, 'contact')}></input>
-                email: <input defaultValue={this.state.oppToEdit.email} value={this.state.oppToEdit.email} onChange={(event) => this.editThisOpp(event, 'email')}></input>
-                phone: <input defaultValue={this.state.oppToEdit.phone} value={this.state.oppToEdit.phone} onChange={(event) => this.editThisOpp(event, 'phone')}></input>
-                web address: <input defaultValue={this.state.oppToEdit.web_address} value={this.state.oppToEdit.web_address} onChange={(event) => this.editThisOpp(event, 'web_address')}></input>
-                social media url: <input defaultValue={this.state.oppToEdit.social} value={this.state.oppToEdit.social} onChange={(event) => this.editThisOpp(event, 'social')}></input>
-                street address: <input defaultValue={this.state.oppToEdit.street_address} value={this.state.oppToEdit.street_address} onChange={(event) => this.editThisOpp(event, 'street_address')}></input>
-                city: <input defaultValue={this.state.oppToEdit.city} value={this.state.oppToEdit.city} onChange={(event) => this.editThisOpp(event, 'city')}></input>
-                zip code: <input defaultValue={this.state.oppToEdit.zip} value={this.state.oppToEdit.zip} onChange={(event) => this.editThisOpp(event, 'zip')}></input>
-                <button onClick={this.submitEdit}>submit changes</button>
+                <TextField type="text" label="image url" defaultValue={this.state.oppToEdit.img_url} value={this.state.oppToEdit.img_url} onChange={(event) => this.editThisOpp(event, 'img_url')} /><br></br>
+                <TextField type="text" label="name" defaultValue={this.state.oppToEdit.name} value={this.state.oppToEdit.name} onChange={(event) => this.editThisOpp(event, 'name')} /><br></br>
+                <TextField type="text" label="description" defaultValue={this.state.oppToEdit.description} value={this.state.oppToEdit.description} onChange={(event) => this.editThisOpp(event, 'description')} /><br></br>
+                <TextField type="text" label="contact name" defaultValue={this.state.oppToEdit.contact} value={this.state.oppToEdit.contact} onChange={(event) => this.editThisOpp(event, 'contact')} /><br></br>
+                <TextField type="email" label="contact email" defaultValue={this.state.oppToEdit.email} value={this.state.oppToEdit.email} onChange={(event) => this.editThisOpp(event, 'email')} /><br></br>
+                <TextField type="tel" label="contact phone" defaultValue={this.state.oppToEdit.phone} value={this.state.oppToEdit.phone} onChange={(event) => this.editThisOpp(event, 'phone')} /><br></br>
+                <TextField type="url" label="web address" defaultValue={this.state.oppToEdit.web_address} value={this.state.oppToEdit.web_address} onChange={(event) => this.editThisOpp(event, 'web_address')} /><br></br>
+                <TextField type="url" label="social" defaultValue={this.state.oppToEdit.social} value={this.state.oppToEdit.social} onChange={(event) => this.editThisOpp(event, 'social')} /><br></br>
+                <TextField type="text" label="street address" defaultValue={this.state.oppToEdit.street_address} value={this.state.oppToEdit.street_address} onChange={(event) => this.editThisOpp(event, 'street_address')} /><br></br>
+                <TextField type="text" label="city" defaultValue={this.state.oppToEdit.city} value={this.state.oppToEdit.city} onChange={(event) => this.editThisOpp(event, 'city')} /><br></br>
+                <TextField type="text" label="zip code" defaultValue={this.state.oppToEdit.zip} value={this.state.oppToEdit.zip} onChange={(event) => this.editThisOpp(event, 'zip')} /><br></br>
+                <Button variant="contained" onClick={this.submitEdit}>submit changes</Button>
             </div>
         )
     }

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
 
 class LoginPage extends Component {
   state = {
@@ -26,7 +28,6 @@ class LoginPage extends Component {
       } else {
         this.props.history.push(location);
       }
-      
     } else {
       this.props.dispatch({ type: 'LOGIN_INPUT_ERROR' });
     }
@@ -73,22 +74,23 @@ class LoginPage extends Component {
               />
             </label>
           </div>
-          <div>
+          {/* <div>
             <input
               className="log-in"
               type="submit"
               name="submit"
               value="Log In"
             />
-          </div>
+          </div> */}
+          <Button variant="contained" onClick={this.login}>Log In</Button>
         {/* </form> */}
 {/* this button should take the user to /register */}
-          <button
-            type="button"
-            className="link-button"
+          <Button variant="contained"
+            // type="button"
+            // className="link-button"
             onClick={() => {this.props.dispatch({type: 'SET_TO_REGISTER_MODE'})}}>
             Or Register
-          </button>
+          </Button>
           </form>
       </div>
     );

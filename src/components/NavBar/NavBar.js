@@ -16,19 +16,19 @@ class NavBar extends Component {
         if (this.props.reduxState.user.username) {
             return (
                 <div>
-                    <Button onClick={(event) => this.navClick(event, '')}>home</Button>
+                    <Button variant="contained" onClick={(event) => this.navClick(event, '')}>home</Button>
                     <LogOutButton />
-                    <Button onClick={(event) => this.navClick(event, 'submit')}>submit</Button>
-                    <Button onClick={(event) => this.navClick(event, 'about')}>about</Button>
+                    <Button variant="contained" onClick={(event) => this.navClick(event, 'submit')}>submit</Button>
+                    <Button variant="contained" onClick={(event) => this.navClick(event, 'about')}>about</Button>
                     <p>{this.props.reduxState.user.username} is logged in.</p>
                 </div>
             )
         } else {
             return (
                 <div>
-                    <Button onClick={(event) => this.navClick(event, '')}>home</Button>
-                    <Button onClick={(event) => this.navClick(event, 'login')}>login</Button>
-                    <Button onClick={(event) => this.navClick(event, 'about')}>about</Button>
+                    <Button variant="contained" onClick={(event) => this.navClick(event, '')}>home</Button>
+                    <Button variant="contained" onClick={(event) => this.navClick(event, 'login')}>login</Button>
+                    <Button variant="contained" onClick={(event) => this.navClick(event, 'about')}>about</Button>
                     <p>log in to recommend or submit your favorite volunteer opportunity.</p>
                 </div>
             )
