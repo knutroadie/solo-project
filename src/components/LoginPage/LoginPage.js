@@ -65,6 +65,9 @@ class LoginPage extends Component {
               {/* onSubmit={this.login} */}
               <h3>Login</h3>
               <TextField type="text" label="username" value={this.state.username} onChange={this.handleInputChangeFor('username')} /><br></br>
+              <TextField type="text" label="password" value={this.state.password} onChange={this.handleInputChangeFor('password')} /><br></br>
+              <Button variant="contained" onClick={this.login}>Log In</Button>
+              <Button variant="contained"onClick={this.navClick}>Register</Button>
               {/* <div>
             <label htmlFor="username">
               Username:
@@ -76,7 +79,6 @@ class LoginPage extends Component {
               />
             </label>
           </div> */}
-              <TextField type="text" label="password" value={this.state.password} onChange={this.handleInputChangeFor('password')} /><br></br>
               {/* <div>
             <label htmlFor="password">
               Password:
@@ -96,16 +98,8 @@ class LoginPage extends Component {
               value="Log In"
             />
           </div> */}
-              <Button variant="contained" onClick={this.login}>Log In</Button>
               {/* </form> */}
               {/* this button should take the user to /register */}
-              <Button variant="contained"
-                // type="button"
-                // className="link-button"
-                // onClick={() => { this.props.dispatch({ type: 'SET_TO_REGISTER_MODE' })}}
-                onClick={this.navClick}>
-                Or Register
-          </Button>
             </form>
           </div>
         </CardContent>

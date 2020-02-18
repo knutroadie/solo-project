@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import OppItem from '../OppItem/OppItem';
+import './OppList.css';
 
 class OppList extends Component {
     render() {

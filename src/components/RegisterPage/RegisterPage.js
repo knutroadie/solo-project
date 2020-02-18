@@ -50,6 +50,8 @@ class RegisterPage extends Component {
             <form>
               <h3>Register User</h3>
               <TextField type="text" label="username" value={this.state.username} onChange={this.handleInputChangeFor('username')} /><br></br>
+              <TextField type="text" label="password" value={this.state.password} onChange={this.handleInputChangeFor('password')} /><br></br>
+              <Button variant="contained" onClick={this.registerUser}>register</Button>
               {/* <div>
                 <label htmlFor="username">
                   Username:
@@ -72,7 +74,6 @@ class RegisterPage extends Component {
                   />
                 </label>
               </div> */}
-              <TextField type="text" label="password" value={this.state.password} onChange={this.handleInputChangeFor('password')} /><br></br>
               {/* <div>
                 <input
                   className="register"
@@ -81,7 +82,6 @@ class RegisterPage extends Component {
                   value="Register"
                 />
               </div> */}
-              <Button variant="contained" onClick={this.registerUser}>register</Button>
             </form>
             {/* <button
               type="button"
