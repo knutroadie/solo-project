@@ -51,6 +51,7 @@ render() {
           <NavBar />
         </header>
         {/* <Nav /> */}
+        <NewlyAdded />
         <Route path="/" exact component={OppList} />
         <Route path="/login" exact component={LoginPage} />
         {/* <Route path="/login" component={UserPage}/> */}
@@ -59,8 +60,6 @@ render() {
         <Route path="/detail/:id" component={OppDetail} />
         <ProtectedRoute path="/submit" where='/submit' component={SubmitOpp} />
         <AdminRoute path="/edit" component={EditOpp} />
-
-        <NewlyAdded />
         {/* <Switch> */}
         {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
         {/* <Redirect exact from="/" to="/home" /> */}

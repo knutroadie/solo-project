@@ -5,7 +5,8 @@ import NewOpp from '../NewOpp/NewOpp';
 class NewlyAdded extends Component {
     render() {
         return (
-            <div>
+            <div id="newlyAddedList">
+                <h3>recently added</h3>
                 <ul>
                     {this.props.reduxState.newOppReducer.map(opp => {
                         return <NewOpp key={opp.id} opp={opp} />

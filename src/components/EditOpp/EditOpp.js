@@ -61,7 +61,7 @@ class EditOpp extends Component {
                 <CardContent>
                 <TextField type="text" label="image url" defaultValue={this.state.oppToEdit.img_url} value={this.state.oppToEdit.img_url} onChange={(event) => this.editThisOpp(event, 'img_url')} /><br></br>
                 <TextField type="text" label="name" defaultValue={this.state.oppToEdit.name} value={this.state.oppToEdit.name} onChange={(event) => this.editThisOpp(event, 'name')} /><br></br>
-                <TextField type="text" label="description" defaultValue={this.state.oppToEdit.description} value={this.state.oppToEdit.description} onChange={(event) => this.editThisOpp(event, 'description')} /><br></br>
+                <TextField type="text" label="description" multiline rowsMax="10" defaultValue={this.state.oppToEdit.description} value={this.state.oppToEdit.description} onChange={(event) => this.editThisOpp(event, 'description')} /><br></br>
                 <TextField type="text" label="contact name" defaultValue={this.state.oppToEdit.contact} value={this.state.oppToEdit.contact} onChange={(event) => this.editThisOpp(event, 'contact')} /><br></br>
                 <TextField type="email" label="contact email" helperText="name@email.com" defaultValue={this.state.oppToEdit.email} value={this.state.oppToEdit.email} onChange={(event) => this.editThisOpp(event, 'email')} /><br></br>
                 <TextField type="tel" label="contact phone" helperText="(612) 555-1234" defaultValue={this.state.oppToEdit.phone} value={this.state.oppToEdit.phone} onChange={(event) => this.editThisOpp(event, 'phone')} /><br></br>

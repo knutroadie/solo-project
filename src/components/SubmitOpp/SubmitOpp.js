@@ -50,13 +50,13 @@ class SubmitOpp extends Component {
 
     render() {
         return (
-            <div>
+            <div id="submitEdit">
                 <br></br>
                 <Card>
                     <CardContent>
                         <form>
                             <TextField type="text" label="name" value={this.state.newOpp.name} onChange={(event) => this.makeNewOpp(event, 'name')} /><br></br>
-                            <TextField type="text" label="description" value={this.state.newOpp.description} onChange={(event) => this.makeNewOpp(event, 'description')} /><br></br>
+                            <TextField type="text" label="description" multiline rowsMax="10" value={this.state.newOpp.description} onChange={(event) => this.makeNewOpp(event, 'description')} /><br></br>
                             <TextField type="text" label="contact name" value={this.state.newOpp.contact} onChange={(event) => this.makeNewOpp(event, 'contact')} /><br></br>
                             <TextField type="email" label="contact email" helperText="name@email.com" value={this.state.newOpp.email} onChange={(event) => this.makeNewOpp(event, 'email')} /><br></br>
                             <TextField type="tel" label="contact phone" helperText="(612) 555-1234" value={this.state.newOpp.phone} onChange={(event) => this.makeNewOpp(event, 'phone')} /><br></br>
