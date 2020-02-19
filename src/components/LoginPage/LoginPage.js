@@ -5,7 +5,6 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
-import InputAdornment from '@material-ui/core/InputAdornment';
 
 class LoginPage extends Component {
   state = {
@@ -67,9 +66,9 @@ class LoginPage extends Component {
               {/* onSubmit={this.login} */}
               <h3>Login</h3>
               <TextField type="text" label="username" value={this.state.username} onChange={this.handleInputChangeFor('username')} /><br></br>
-              <TextField type="text" label="password" value={this.state.password} onChange={this.handleInputChangeFor('password')} /><br></br>
+              <TextField type="password" label="password" value={this.state.password} onChange={this.handleInputChangeFor('password')} /><br></br>
               <Button variant="contained" onClick={this.login}>Log In</Button>
-              <Button variant="contained"onClick={this.navClick}>Register</Button>
+              <Button variant="contained" onClick={this.navClick}>Register</Button>
               {/* <div>
             <label htmlFor="username">
               Username:

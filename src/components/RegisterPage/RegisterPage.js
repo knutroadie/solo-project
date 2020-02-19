@@ -52,7 +52,7 @@ class RegisterPage extends Component {
             <form>
               <h3>Register User</h3>
               <TextField type="text" label="username" value={this.state.username} onChange={this.handleInputChangeFor('username')} /><br></br>
-              <TextField type="text" label="password" value={this.state.password} onChange={this.handleInputChangeFor('password')} /><br></br>
+              <TextField type="password" label="password" value={this.state.password} onChange={this.handleInputChangeFor('password')} /><br></br>
               <Button variant="contained" onClick={this.registerUser}>register</Button>
               {/* <div>
                 <label htmlFor="username">
