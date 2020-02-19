@@ -5,6 +5,7 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
+import InputAdornment from '@material-ui/core/InputAdornment';
 
 class LoginPage extends Component {
   state = {
@@ -50,9 +51,10 @@ class LoginPage extends Component {
 
   render() {
     return (
+      <div id="loginCard">
       <Card>
         <CardContent>
-          <div>
+          
             {this.props.errors.loginMessage && (
               <h2
                 className="alert"
@@ -101,9 +103,10 @@ class LoginPage extends Component {
               {/* </form> */}
               {/* this button should take the user to /register */}
             </form>
-          </div>
+          
         </CardContent>
       </Card>
+      </div>
     );
   }
 }

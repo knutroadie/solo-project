@@ -55,7 +55,7 @@ class EditOpp extends Component {
     render() {
         console.log(this.props.reduxState.detailReducer);
         return (
-            <div>
+            <div id="submitEdit">
                 <br></br>
                 <Card>
                 <CardContent>

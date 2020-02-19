@@ -9,7 +9,7 @@ import CardContent from "@material-ui/core/CardContent";
 
 const AboutPage = () => (
   <div>
-    <div>
+    <div id="fortyCard">
       <Card>
       <CardContent>
       <h3>about us</h3>

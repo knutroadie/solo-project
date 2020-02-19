@@ -5,6 +5,7 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
+import InputAdornment from '@material-ui/core/InputAdornment';
 
 class RegisterPage extends Component {
   state = {
@@ -36,6 +37,7 @@ class RegisterPage extends Component {
 
   render() {
     return (
+      <div id="loginCard">
       <Card>
         <CardContent>
           <div>
@@ -93,6 +95,7 @@ class RegisterPage extends Component {
           </div>
         </CardContent>
       </Card>
+      </div>
     );
   }
 }
@@ -105,4 +108,3 @@ const mapStateToProps = state => ({
 });
 
 export default withRouter(connect(mapStateToProps)(RegisterPage));
-

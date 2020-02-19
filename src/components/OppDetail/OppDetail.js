@@ -41,7 +41,7 @@ class OppDetail extends Component {
         console.log(this.props.reduxState.detailReducer.contact);
         if (this.props.reduxState.user.auth < 1) {
             return (
-                <div>
+                <div id="fortyCard">
                     <br></br>
                     <Card>
                         <CardContent>
