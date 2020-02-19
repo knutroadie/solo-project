@@ -58,8 +58,8 @@ class SubmitOpp extends Component {
                             <TextField type="text" label="name" value={this.state.newOpp.name} onChange={(event) => this.makeNewOpp(event, 'name')} /><br></br>
                             <TextField type="text" label="description" multiline rowsMax="10" value={this.state.newOpp.description} onChange={(event) => this.makeNewOpp(event, 'description')} /><br></br>
                             <TextField type="text" label="contact name" value={this.state.newOpp.contact} onChange={(event) => this.makeNewOpp(event, 'contact')} /><br></br>
-                            <TextField type="email" label="contact email" helperText="name@email.com" value={this.state.newOpp.email} onChange={(event) => this.makeNewOpp(event, 'email')} /><br></br>
-                            <TextField type="tel" label="contact phone" helperText="(612) 555-1234" value={this.state.newOpp.phone} onChange={(event) => this.makeNewOpp(event, 'phone')} /><br></br>
+                            <TextField type="email" label="contact email" helperText="example: name@email.com" value={this.state.newOpp.email} onChange={(event) => this.makeNewOpp(event, 'email')} /><br></br>
+                            <TextField type="tel" label="contact phone" helperText="example: (612) 555-1234" value={this.state.newOpp.phone} onChange={(event) => this.makeNewOpp(event, 'phone')} /><br></br>
                             <TextField type="url" label="web address" value={this.state.newOpp.web_address} onChange={(event) => this.makeNewOpp(event, 'web_address')} /><br></br>
                             <TextField type="url" label="social" value={this.state.newOpp.social} onChange={(event) => this.makeNewOpp(event, 'social')} /><br></br>
                             <TextField type="text" label="street address" value={this.state.newOpp.street_address} onChange={(event) => this.makeNewOpp(event, 'street_address')} /><br></br>

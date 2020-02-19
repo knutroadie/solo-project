@@ -6,7 +6,7 @@ class NewlyAdded extends Component {
     render() {
         return (
             <div id="newlyAddedList">
-                <h3>recently added</h3>
+                <b>recently added</b>
                 <ul>
                     {this.props.reduxState.newOppReducer.map(opp => {
                         return <NewOpp key={opp.id} opp={opp} />

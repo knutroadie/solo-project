@@ -14,8 +14,8 @@ class NewOpp extends Component {
         
         return (
             <div key={this.props.opp.id} onClick={(event) => this.goDetail(event, this.props.opp)}>
-                <li>
-                    <h5>{this.props.opp.name}</h5>
+                <li id="newItemList">
+                    <p>{this.props.opp.name}</p>
                     <img src={this.props.opp.image_url} alt={this.props.opp.name} height="50"></img>
                 </li>
             </div>

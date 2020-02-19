@@ -51,15 +51,23 @@ ul {
     /* margin-bottom: 100px; */
 }
 
+#oppListItem {
+    margin: 50px;
+}
+
+/* #newItemList {
+    padding: 0px;
+} */
+
 #submitEdit {
-    width: 20%;
-    padding-left: 40%;
+    width: 16%;
+    padding-left: 42%;
 }
 
 #newlyAddedList {
     float: right;
     /* position: fixed; */
-    /* width: 20px; */
+    width: 20%;
 }
 
 /* .alert {
