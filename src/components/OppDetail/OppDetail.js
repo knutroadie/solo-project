@@ -37,7 +37,6 @@ class OppDetail extends Component {
     }
 
     render() {
-
         console.log(this.props.match.params.id);
         console.log(this.props.reduxState.detailReducer.contact);
         if (this.props.reduxState.user.auth < 1) {
@@ -45,22 +44,22 @@ class OppDetail extends Component {
                 <div>
                     <br></br>
                     <Card>
-                    <CardContent>
-                    <img src={this.props.reduxState.detailReducer.image_url} alt={this.props.reduxState.detailReducer.name} height="85"></img>
-                    <h3>{this.props.reduxState.detailReducer.name}</h3>
-                    <p>{this.props.reduxState.detailReducer.description}</p>
-                    <p>{this.props.reduxState.detailReducer.contact}</p>
-                    <p>{this.props.reduxState.detailReducer.email}</p>
-                    <p>{this.props.reduxState.detailReducer.phone}</p>
-                    <a href={this.props.reduxState.detailReducer.web_address}>website</a>
-                    <br></br>
-                    <a href={this.props.reduxState.detailReducer.social}>social</a>
-                    <p>{this.props.reduxState.detailReducer.street_address}</p>
-                    <p>{this.props.reduxState.detailReducer.city}, {this.props.reduxState.detailReducer.zip}</p>
-                    <Button variant="contained" onClick={this.upVote}>upvote</Button>
-                    <Button variant="contained" onClick={this.goEdit}>edit</Button>
-                    <Button variant="contained" onClick={(event) => { if (window.confirm('are you sure you want to delete this?')) this.deleteOpp(event) }}>delete</Button>
-                    </CardContent>
+                        <CardContent>
+                            <img src={this.props.reduxState.detailReducer.image_url} alt={this.props.reduxState.detailReducer.name} height="85"></img>
+                            <h3>{this.props.reduxState.detailReducer.name}</h3>
+                            <p>{this.props.reduxState.detailReducer.description}</p>
+                            <p>{this.props.reduxState.detailReducer.contact}</p>
+                            <p>{this.props.reduxState.detailReducer.email}</p>
+                            <p>{this.props.reduxState.detailReducer.phone}</p>
+                            <a href={this.props.reduxState.detailReducer.web_address}>website</a>
+                            <br></br>
+                            <a href={this.props.reduxState.detailReducer.social}>social</a>
+                            <p>{this.props.reduxState.detailReducer.street_address}</p>
+                            <p>{this.props.reduxState.detailReducer.city}, {this.props.reduxState.detailReducer.zip}</p>
+                            <Button variant="contained" onClick={this.upVote}>upvote</Button>
+                            <Button variant="contained" onClick={this.goEdit}>edit</Button>
+                            <Button variant="contained" onClick={(event) => { if (window.confirm('are you sure you want to delete this?')) this.deleteOpp(event) }}>delete</Button>
+                        </CardContent>
                     </Card>
                 </div>
             )
@@ -69,19 +68,19 @@ class OppDetail extends Component {
                 <div>
                     <br></br>
                     <Card>
-                    <CardContent>
-                    <img src={this.props.reduxState.detailReducer.image_url} alt={this.props.reduxState.detailReducer.name} height="85"></img>
-                    <h3>{this.props.reduxState.detailReducer.name}</h3>
-                    <p>{this.props.reduxState.detailReducer.description}</p>
-                    <p>{this.props.reduxState.detailReducer.email}</p>
-                    <p>{this.props.reduxState.detailReducer.phone}</p>
-                    <a href={this.props.reduxState.detailReducer.web_address}>website</a>
-                    <br></br>
-                    <a href={this.props.reduxState.detailReducer.social}>social</a>
-                    <p>{this.props.reduxState.detailReducer.street_address}</p>
-                    <p>{this.props.reduxState.detailReducer.city}, {this.props.reduxState.detailReducer.zip}</p>
-                    <Button variant="contained" onClick={this.upVote}>upvote</Button>
-                    </CardContent>
+                        <CardContent>
+                            <img src={this.props.reduxState.detailReducer.image_url} alt={this.props.reduxState.detailReducer.name} height="85"></img>
+                            <h3>{this.props.reduxState.detailReducer.name}</h3>
+                            <p>{this.props.reduxState.detailReducer.description}</p>
+                            <p>{this.props.reduxState.detailReducer.email}</p>
+                            <p>{this.props.reduxState.detailReducer.phone}</p>
+                            <a href={this.props.reduxState.detailReducer.web_address}>website</a>
+                            <br></br>
+                            <a href={this.props.reduxState.detailReducer.social}>social</a>
+                            <p>{this.props.reduxState.detailReducer.street_address}</p>
+                            <p>{this.props.reduxState.detailReducer.city}, {this.props.reduxState.detailReducer.zip}</p>
+                            <Button variant="contained" onClick={this.upVote}>upvote</Button>
+                        </CardContent>
                     </Card>
                 </div>
             )
@@ -90,18 +89,18 @@ class OppDetail extends Component {
                 <div>
                     <br></br>
                     <Card>
-                    <CardContent>
-                    <img src={this.props.reduxState.detailReducer.image_url} alt={this.props.reduxState.detailReducer.name} height="85"></img>
-                    <h3>{this.props.reduxState.detailReducer.name}</h3>
-                    <p>{this.props.reduxState.detailReducer.description}</p>
-                    <p>{this.props.reduxState.detailReducer.email}</p>
-                    <p>{this.props.reduxState.detailReducer.phone}</p>
-                    <a href={this.props.reduxState.detailReducer.web_address}>website</a>
-                    <br></br>
-                    <a href={this.props.reduxState.detailReducer.social}>social</a>
-                    <p>{this.props.reduxState.detailReducer.street_address}</p>
-                    <p>{this.props.reduxState.detailReducer.city}, {this.props.reduxState.detailReducer.zip}</p>
-                    </CardContent>
+                        <CardContent>
+                            <img src={this.props.reduxState.detailReducer.image_url} alt={this.props.reduxState.detailReducer.name} height="85"></img>
+                            <h3>{this.props.reduxState.detailReducer.name}</h3>
+                            <p>{this.props.reduxState.detailReducer.description}</p>
+                            <p>{this.props.reduxState.detailReducer.email}</p>
+                            <p>{this.props.reduxState.detailReducer.phone}</p>
+                            <a href={this.props.reduxState.detailReducer.web_address}>website</a>
+                            <br></br>
+                            <a href={this.props.reduxState.detailReducer.social}>social</a>
+                            <p>{this.props.reduxState.detailReducer.street_address}</p>
+                            <p>{this.props.reduxState.detailReducer.city}, {this.props.reduxState.detailReducer.zip}</p>
+                        </CardContent>
                     </Card>
                 </div>
             )

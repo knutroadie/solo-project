@@ -55,8 +55,7 @@ class SubmitOpp extends Component {
                 <Card>
                     <CardContent>
                         <form>
-                            <TextField type="text" label="name" value={this.state.newOpp.name} onChange={(event) => this.makeNewOpp(event, 'name')} /><br></br>
-                            <TextField type="text" label="description" multiline rowsMax="10" value={this.state.newOpp.description} onChange={(event) => this.makeNewOpp(event, 'description')} /><br></br>
+                            <TextField type="text" label="name" helperText="required" value={this.state.newOpp.name} onChange={(event) => this.makeNewOpp(event, 'name')} /><br></br>
                             <TextField type="text" label="contact name" value={this.state.newOpp.contact} onChange={(event) => this.makeNewOpp(event, 'contact')} /><br></br>
                             <TextField type="email" label="contact email" helperText="example: name@email.com" value={this.state.newOpp.email} onChange={(event) => this.makeNewOpp(event, 'email')} /><br></br>
                             <TextField type="tel" label="contact phone" helperText="example: (612) 555-1234" value={this.state.newOpp.phone} onChange={(event) => this.makeNewOpp(event, 'phone')} /><br></br>
@@ -65,6 +64,7 @@ class SubmitOpp extends Component {
                             <TextField type="text" label="street address" value={this.state.newOpp.street_address} onChange={(event) => this.makeNewOpp(event, 'street_address')} /><br></br>
                             <TextField type="text" label="city" value={this.state.newOpp.city} onChange={(event) => this.makeNewOpp(event, 'city')} /><br></br>
                             <TextField type="text" label="zip code" value={this.state.newOpp.zip} onChange={(event) => this.makeNewOpp(event, 'zip')} /><br></br>
+                            <TextField type="text" label="description" multiline rowsMax="10" value={this.state.newOpp.description} onChange={(event) => this.makeNewOpp(event, 'description')} /><br></br>
                             <Button variant="contained" onClick={this.submitNewOpp}>submit</Button>
                         </form>
                     </CardContent>

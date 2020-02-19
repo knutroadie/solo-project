@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Button from "@material-ui/core/Button";
 import LogOutButton from '../LogOutButton/LogOutButton';
-import './NavBar.css';
 
 class NavBar extends Component {
 
@@ -23,7 +22,7 @@ class NavBar extends Component {
                         <Button onClick={(event) => this.navClick(event, 'submit')}>submit</Button>
                         <Button onClick={(event) => this.navClick(event, 'about')}>about</Button>
                     </div>
-                    <p>{this.props.reduxState.user.username} is logged in.</p>
+                    <p id="loggedIn">{this.props.reduxState.user.username} is logged in.</p>
                 </div>
             )
         } else {
@@ -34,7 +33,7 @@ class NavBar extends Component {
                         <Button onClick={(event) => this.navClick(event, 'login')}>login</Button>
                         <Button onClick={(event) => this.navClick(event, 'about')}>about</Button>
                     </div>
-                    <p>log in to recommend or submit your favorite volunteer opportunity.</p>
+                    <p id="loggedIn">log in to recommend or submit your favorite volunteer opportunity.</p>
                 </div>
             )
         }
