@@ -37,7 +37,8 @@ import './App.css';
 class App extends Component {
 
   componentDidMount() {
-    this.props.dispatch({ type: 'GET_OPPS' })
+    this.props.dispatch({ type: 'GET_OPPS' });
+    this.props.dispatch({ type: 'GET_NEW_OPPS' });
   }
 
 render() {
@@ -57,11 +58,9 @@ render() {
         <Route path="/about" component={AboutPage} />
         <Route path="/detail/:id" component={OppDetail} />
         <ProtectedRoute path="/submit" where='/submit' component={SubmitOpp} />
-
-        {/* make this an AdminRoute in a new component */}
         <AdminRoute path="/edit" component={EditOpp} />
 
-        {/* <NewlyAdded /> */}
+        <NewlyAdded />
         {/* <Switch> */}
         {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
         {/* <Redirect exact from="/" to="/home" /> */}

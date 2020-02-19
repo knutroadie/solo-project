@@ -10,9 +10,9 @@ import CardContent from "@material-ui/core/CardContent";
 const AboutPage = () => (
   <div>
     <div>
-      <h3>about us</h3>
       <Card>
       <CardContent>
+      <h3>about us</h3>
       <p>Making quality connections to quality people is becoming 
         more difficult each day, especially in a place like the 
         Twin Cities, a place notorious for being difficult to break 

@@ -7,7 +7,7 @@ class NewlyAdded extends Component {
         return (
             <div>
                 <ul>
-                    {this.props.reduxState.oppsReducer.map(opp => {
+                    {this.props.reduxState.newOppReducer.map(opp => {
                         return <NewOpp key={opp.id} opp={opp} />
                     })}
                 </ul>

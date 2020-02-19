@@ -4,8 +4,6 @@ import { withRouter } from 'react-router-dom';
 
 class NewOpp extends Component {
 
-    // create a new array of the old array, a function that loops Over it, sorts by Date, returns new array, and limits it to three items
-
     goDetail = (event, opp) => {
         console.log('clicking to go detail', this.props.opp);
         this.props.history.push(`/detail/${opp.id}`)

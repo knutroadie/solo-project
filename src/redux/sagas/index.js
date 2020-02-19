@@ -8,6 +8,7 @@ import submitSaga from './submitSaga';
 import deleteSaga from './deleteSaga';
 import editSaga from './editSaga';
 import likeSaga from './likeSaga';
+import newOppSaga from './newOppSaga';
 
 
 // rootSaga is the primary saga.
@@ -27,6 +28,7 @@ export default function* rootSaga() {
     submitSaga(),
     deleteSaga(),
     editSaga(),
-    likeSaga()
+    likeSaga(),
+    newOppSaga(),
   ]);
 }

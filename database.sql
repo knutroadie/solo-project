@@ -137,7 +137,7 @@ VALUES
 INSERT INTO "opportunity"("name", "image_url", "description", "contact", "email", "phone", "web_address", "social", "street_address", "city", "zip", "date_added")
 VALUES
 ('Disabled American Veterans of Minnesota', 
-'https://lh3.googleusercontent.com/proxy/3Q3K3LNtrfgVBvHh32TPVZuQsjdtQ7QmSk0o9iuVzws5_9OamtQjGJgWxPmwwlGNBoSaUHBliZYzYlrXfclYbwVvdK8DXfbDeEYmK0bUBfQ1KxIm8fQsShdR0PRgrfLnJxTYXcLo', 
+'https://davmn.org/wp-content/uploads/2018/02/DAV-of-MN1.jpg', 
 'The Disabled American Veterans’ Voluntary Services Program provides numerous opportunities for men and women of all ages to help make a difference in the lives of disabled veterans.', 
 '', 
 '', 

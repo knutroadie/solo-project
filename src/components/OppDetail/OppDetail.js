@@ -39,16 +39,17 @@ class OppDetail extends Component {
     render() {
 
         console.log(this.props.match.params.id);
-        console.log(this.props.reduxState.detailReducer);
+        console.log(this.props.reduxState.detailReducer.contact);
         if (this.props.reduxState.user.auth < 1) {
             return (
-                <div id="mainList">
+                <div>
                     <br></br>
                     <Card>
                     <CardContent>
                     <img src={this.props.reduxState.detailReducer.image_url} alt={this.props.reduxState.detailReducer.name} height="85"></img>
                     <h3>{this.props.reduxState.detailReducer.name}</h3>
                     <p>{this.props.reduxState.detailReducer.description}</p>
+                    <p>{this.props.reduxState.detailReducer.contact}</p>
                     <p>{this.props.reduxState.detailReducer.email}</p>
                     <p>{this.props.reduxState.detailReducer.phone}</p>
                     <a href={this.props.reduxState.detailReducer.web_address}>website</a>
