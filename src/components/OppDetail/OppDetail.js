@@ -63,9 +63,9 @@ class OppDetail extends Component {
                             <a href={this.props.reduxState.detailReducer.social}>social</a>
                             <p>{this.props.reduxState.detailReducer.street_address}</p>
                             <p>{this.props.reduxState.detailReducer.city}, {this.props.reduxState.detailReducer.zip}</p>
-                            <Button variant="contained" onClick={this.upVote}>upvote</Button>
-                            <Button variant="contained" onClick={this.goEdit}>edit</Button>
-                            <Button variant="contained" onClick={(event) => { if (window.confirm('are you sure you want to delete this?')) this.deleteOpp(event) }}>delete</Button>
+                            <Button id="Button" variant="contained" onClick={this.upVote}>upvote</Button>
+                            <Button id="Button" variant="contained" onClick={this.goEdit}>edit</Button>
+                            <Button id="Button" variant="contained" onClick={(event) => { if (window.confirm('are you sure you want to delete this?')) this.deleteOpp(event) }}>delete</Button>
                         </CardContent>
                     </Card>
                 </div>

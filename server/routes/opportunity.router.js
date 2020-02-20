@@ -1,6 +1,7 @@
 const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
+const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 
 // GET for landing page, ranks entries based on likes
 router.get('/', (req, res) => {
@@ -60,7 +61,7 @@ router.delete('/:id', (req, res) => {
 });
 
 // UPDATES table at targeted ID
-router.put('/:id', (req, res) => {
+router.put('/:id', rejectUnauthenticated, (req, res) => {
     console.log('in router PUT', req.body);
     let sqlText = `
     UPDATE "opportunity" 

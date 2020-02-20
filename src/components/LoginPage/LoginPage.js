@@ -56,18 +56,20 @@ class LoginPage extends Component {
       <div id="loginCard">
         <Card>
           <CardContent>
+            <div>
             {this.props.errors.loginMessage && (
               <h2 className="alert" role="alert">
                 {this.props.errors.loginMessage}
               </h2>
             )}
-            <form>
+            <form id="formContent">
               <h3>Login</h3>
               <TextField type="text" label="username" value={this.state.username} onChange={this.handleInputChangeFor('username')} /><br></br>
               <TextField type="password" label="password" value={this.state.password} onChange={this.handleInputChangeFor('password')} /><br></br>
-              <Button variant="contained" onClick={this.login}>Log In</Button>
-              <Button variant="contained" onClick={this.navClick}>Register</Button>
+              <Button id="Button" variant="contained" onClick={this.login}>Log In</Button>
+              <Button id="Button" variant="contained" onClick={this.navClick}>Register</Button>
             </form>
+            </div>
           </CardContent>
         </Card>
       </div>

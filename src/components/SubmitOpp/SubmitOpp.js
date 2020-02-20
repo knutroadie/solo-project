@@ -55,22 +55,23 @@ class SubmitOpp extends Component {
 
     // displays a form for the user to generate a database submission
     render() {
+        let opp = this.state.newOpp;
         return (
             <div id="submitEdit">
                 <br></br>
                 <Card>
                     <CardContent>
                         <form>
-                            <TextField type="text" label="name" helperText="required" value={this.state.newOpp.name} onChange={(event) => this.makeNewOpp(event, 'name')} /><br></br>
-                            <TextField type="text" label="contact name" value={this.state.newOpp.contact} onChange={(event) => this.makeNewOpp(event, 'contact')} /><br></br>
-                            <TextField type="email" label="contact email" helperText="example: name@email.com" value={this.state.newOpp.email} onChange={(event) => this.makeNewOpp(event, 'email')} /><br></br>
-                            <TextField type="tel" label="contact phone" helperText="example: (612) 555-1234" value={this.state.newOpp.phone} onChange={(event) => this.makeNewOpp(event, 'phone')} /><br></br>
-                            <TextField type="url" label="web address" value={this.state.newOpp.web_address} onChange={(event) => this.makeNewOpp(event, 'web_address')} /><br></br>
-                            <TextField type="url" label="social" value={this.state.newOpp.social} onChange={(event) => this.makeNewOpp(event, 'social')} /><br></br>
-                            <TextField type="text" label="street address" value={this.state.newOpp.street_address} onChange={(event) => this.makeNewOpp(event, 'street_address')} /><br></br>
-                            <TextField type="text" label="city" value={this.state.newOpp.city} onChange={(event) => this.makeNewOpp(event, 'city')} /><br></br>
-                            <TextField type="text" label="zip code" value={this.state.newOpp.zip} onChange={(event) => this.makeNewOpp(event, 'zip')} /><br></br>
-                            <TextField type="text" label="description" multiline rowsMax="10" value={this.state.newOpp.description} onChange={(event) => this.makeNewOpp(event, 'description')} /><br></br>
+                            <TextField type="text" label="name" helperText="required" value={opp.name} onChange={(event) => this.makeNewOpp(event, 'name')} /><br></br>
+                            <TextField type="text" label="contact name" value={opp.contact} onChange={(event) => this.makeNewOpp(event, 'contact')} /><br></br>
+                            <TextField type="email" label="contact email" helperText="example: name@email.com" value={opp.email} onChange={(event) => this.makeNewOpp(event, 'email')} /><br></br>
+                            <TextField type="tel" label="contact phone" helperText="example: (612) 555-1234" value={opp.phone} onChange={(event) => this.makeNewOpp(event, 'phone')} /><br></br>
+                            <TextField type="url" label="web address" value={opp.web_address} onChange={(event) => this.makeNewOpp(event, 'web_address')} /><br></br>
+                            <TextField type="url" label="social" value={opp.social} onChange={(event) => this.makeNewOpp(event, 'social')} /><br></br>
+                            <TextField type="text" label="street address" value={opp.street_address} onChange={(event) => this.makeNewOpp(event, 'street_address')} /><br></br>
+                            <TextField type="text" label="city" value={opp.city} onChange={(event) => this.makeNewOpp(event, 'city')} /><br></br>
+                            <TextField type="text" label="zip code" value={opp.zip} onChange={(event) => this.makeNewOpp(event, 'zip')} /><br></br>
+                            <TextField type="text" label="description" multiline rowsMax="10" value={opp.description} onChange={(event) => this.makeNewOpp(event, 'description')} /><br></br>
                             <Button variant="contained" onClick={this.submitNewOpp}>submit</Button>
                         </form>
                     </CardContent>

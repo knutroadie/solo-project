@@ -59,26 +59,27 @@ class EditOpp extends Component {
 
     // THE FOLLOWING CODE IS REDUNDANT
     // AND NEEDS TO BE MADE DRY
-    
+
     render() {
+        let opp = this.state.oppToEdit;
         return (
             <div id="submitEdit">
                 <br></br>
                 <Card>
-                <CardContent>
-                <TextField type="text" label="image url" defaultValue={this.state.oppToEdit.img_url} value={this.state.oppToEdit.img_url} onChange={(event) => this.editThisOpp(event, 'img_url')} /><br></br>
-                <TextField type="text" label="name" defaultValue={this.state.oppToEdit.name} value={this.state.oppToEdit.name} onChange={(event) => this.editThisOpp(event, 'name')} /><br></br>
-                <TextField type="text" label="description" multiline rowsMax="10" defaultValue={this.state.oppToEdit.description} value={this.state.oppToEdit.description} onChange={(event) => this.editThisOpp(event, 'description')} /><br></br>
-                <TextField type="text" label="contact name" defaultValue={this.state.oppToEdit.contact} value={this.state.oppToEdit.contact} onChange={(event) => this.editThisOpp(event, 'contact')} /><br></br>
-                <TextField type="email" label="contact email" helperText="name@email.com" defaultValue={this.state.oppToEdit.email} value={this.state.oppToEdit.email} onChange={(event) => this.editThisOpp(event, 'email')} /><br></br>
-                <TextField type="tel" label="contact phone" helperText="(612) 555-1234" defaultValue={this.state.oppToEdit.phone} value={this.state.oppToEdit.phone} onChange={(event) => this.editThisOpp(event, 'phone')} /><br></br>
-                <TextField type="url" label="web address" defaultValue={this.state.oppToEdit.web_address} value={this.state.oppToEdit.web_address} onChange={(event) => this.editThisOpp(event, 'web_address')} /><br></br>
-                <TextField type="url" label="social" defaultValue={this.state.oppToEdit.social} value={this.state.oppToEdit.social} onChange={(event) => this.editThisOpp(event, 'social')} /><br></br>
-                <TextField type="text" label="street address" defaultValue={this.state.oppToEdit.street_address} value={this.state.oppToEdit.street_address} onChange={(event) => this.editThisOpp(event, 'street_address')} /><br></br>
-                <TextField type="text" label="city" defaultValue={this.state.oppToEdit.city} value={this.state.oppToEdit.city} onChange={(event) => this.editThisOpp(event, 'city')} /><br></br>
-                <TextField type="text" label="zip code" defaultValue={this.state.oppToEdit.zip} value={this.state.oppToEdit.zip} onChange={(event) => this.editThisOpp(event, 'zip')} /><br></br>
-                <Button variant="contained" onClick={this.submitEdit}>submit changes</Button>
-                </CardContent>
+                    <CardContent>
+                        <TextField type="text" label="image url" defaultValue={opp.img_url} value={opp.img_url} onChange={(event) => this.editThisOpp(event, 'img_url')} /><br></br>
+                        <TextField type="text" label="name" defaultValue={opp.name} value={opp.name} onChange={(event) => this.editThisOpp(event, 'name')} /><br></br>
+                        <TextField type="text" label="description" multiline rowsMax="10" defaultValue={opp.description} value={opp.description} onChange={(event) => this.editThisOpp(event, 'description')} /><br></br>
+                        <TextField type="text" label="contact name" defaultValue={opp.contact} value={opp.contact} onChange={(event) => this.editThisOpp(event, 'contact')} /><br></br>
+                        <TextField type="email" label="contact email" helperText="name@email.com" defaultValue={opp.email} value={opp.email} onChange={(event) => this.editThisOpp(event, 'email')} /><br></br>
+                        <TextField type="tel" label="contact phone" helperText="(612) 555-1234" defaultValue={opp.phone} value={opp.phone} onChange={(event) => this.editThisOpp(event, 'phone')} /><br></br>
+                        <TextField type="url" label="web address" defaultValue={opp.web_address} value={opp.web_address} onChange={(event) => this.editThisOpp(event, 'web_address')} /><br></br>
+                        <TextField type="url" label="social" defaultValue={opp.social} value={opp.social} onChange={(event) => this.editThisOpp(event, 'social')} /><br></br>
+                        <TextField type="text" label="street address" defaultValue={opp.street_address} value={opp.street_address} onChange={(event) => this.editThisOpp(event, 'street_address')} /><br></br>
+                        <TextField type="text" label="city" defaultValue={opp.city} value={opp.city} onChange={(event) => this.editThisOpp(event, 'city')} /><br></br>
+                        <TextField type="text" label="zip code" defaultValue={opp.zip} value={opp.zip} onChange={(event) => this.editThisOpp(event, 'zip')} /><br></br>
+                        <Button variant="contained" onClick={this.submitEdit}>submit changes</Button>
+                    </CardContent>
                 </Card>
             </div>
         )

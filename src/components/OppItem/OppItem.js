@@ -25,6 +25,7 @@ class OppItem extends Component {
         // if the user is logged in
         if (this.props.reduxState.user.username) {
             return (
+                <div className="oppCard">
                 <Card>
                     <CardContent>
                         <div>
@@ -32,16 +33,18 @@ class OppItem extends Component {
                                 <h3>{this.props.opp.name}</h3>
                                 <img src={this.props.opp.image_url} alt={this.props.opp.name} height="65"></img>
                                 <p>{this.props.opp.description}</p>
-                                <Button variant="contained" onClick={this.upVote}>upvote</Button>
-                                <Button variant="contained" key={this.props.opp.id} onClick={(event) => this.goDetail(event, this.props.opp)}>see more</Button>
+                                <Button id="Button" variant="contained" onClick={this.upVote}>upvote</Button>
+                                <Button id="Button" variant="contained" key={this.props.opp.id} onClick={(event) => this.goDetail(event, this.props.opp)}>see more</Button>
                             </li>
                         </div>
                     </CardContent>
                 </Card>
+                </div>
             )
         // if the user is not logged in
         } else {
             return (
+                <div className="oppCard">
                 <Card>
                     <CardContent>
                         <div>
@@ -54,6 +57,7 @@ class OppItem extends Component {
                         </div>
                     </CardContent>
                 </Card>
+                </div>
             )
         }
     }

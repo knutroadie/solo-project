@@ -1,18 +1,10 @@
 import React, { Component } from 'react';
-import {
-  HashRouter as Router,
-  Route,
-  // Redirect,
-  // Switch,
-} from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-// import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import AdminRoute from '../AdminRoute/AdminRoute';
 import AboutPage from '../AboutPage/AboutPage';
-// import UserPage from '../UserPage/UserPage';
-// import InfoPage from '../InfoPage/InfoPage';
 import OppList from '../OppList/OppList';
 import SubmitOpp from '../SubmitOpp/SubmitOpp';
 import EditOpp from '../EditOpp/EditOpp';
@@ -27,13 +19,13 @@ import './App.css';
 
 // window.onscroll = function () { scrollFunction() };
 
-// function scrollFunction() {
-//   if (document.body.scrollTop > 90 || document.documentElement.scrollTop > 100) {
-//     document.getElementById("header").style.fontSize = "40px";
-//   } else {
-//     document.getElementById("header").style.fontSize = "65px";
-//   }
-// }
+function scrollFunction() {
+  if (document.body.scrollTop > 90 || document.documentElement.scrollTop > 100) {
+    document.getElementById("header").style.fontSize = "40px";
+  } else {
+    document.getElementById("header").style.fontSize = "65px";
+  }
+}
 
 class App extends Component {
 
@@ -42,28 +34,26 @@ class App extends Component {
     this.props.dispatch({ type: 'GET_NEW_OPPS' });
   }
 
-render() {
-  return (
-    <Router>
-      <div className="App">
-        <header>
-          {/* <h1 id="header">good do good</h1>
-          <h3 id="motto">meeting good people WAS hard</h3> */}
-          <NavBar />
-        </header>
-        <NewlyAdded />
-        <Route path="/" exact component={OppList} />
-        <Route path="/login" exact component={LoginPage} />
-        <Route path="/register" exact component={RegisterPage} />
-        <Route path="/about" component={AboutPage} />
-        <Route path="/detail/:id" component={OppDetail} />
-        <ProtectedRoute path="/submit" where='/submit' component={SubmitOpp} />
-        <AdminRoute path="/edit" component={EditOpp} />
-        <Footer />
-      </div>
-    </Router>
-  )
-}
+  render() {
+    return (
+      <Router>
+        <div className="App">
+          <header>
+            <NavBar />
+          </header>
+          <NewlyAdded />
+          <Route path="/" exact component={OppList} />
+          <Route path="/login" exact component={LoginPage} />
+          <Route path="/register" exact component={RegisterPage} />
+          <Route path="/about" component={AboutPage} />
+          <Route path="/detail/:id" component={OppDetail} />
+          <ProtectedRoute path="/submit" where='/submit' component={SubmitOpp} />
+          <AdminRoute path="/edit" component={EditOpp} />
+          <Footer />
+        </div>
+      </Router>
+    )
+  }
 }
 
 const putStateOnProps = (reduxState) => {

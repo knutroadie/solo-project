@@ -49,11 +49,11 @@ class RegisterPage extends Component {
                 {this.props.errors.registrationMessage}
               </h2>
             )}
-            <form>
+            <form id="formContent">
               <h3>Register User</h3>
               <TextField type="text" label="username" value={this.state.username} onChange={this.handleInputChangeFor('username')} /><br></br>
               <TextField type="password" label="password" value={this.state.password} onChange={this.handleInputChangeFor('password')} /><br></br>
-              <Button variant="contained" onClick={this.registerUser}>register</Button>
+              <Button id="Button" variant="contained" onClick={this.registerUser}>register</Button>
             </form>
           </div>
         </CardContent>
