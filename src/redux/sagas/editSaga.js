@@ -5,6 +5,9 @@ function* editSaga() {
     yield takeLatest('SUBMIT_EDIT', editOpp);
 }
 
+// this dispatches a PUT to the server
+// updating a targeted row in the database
+// afterward, it does a get to refresh the page
 function* editOpp(action) {
     console.log('in editOpp', action);
     let response = yield axios.put(`/api/opportunity/${action.payload.id}`, action.payload);

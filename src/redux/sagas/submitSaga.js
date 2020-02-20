@@ -5,10 +5,8 @@ function* submitSaga() {
     yield takeLatest('SUBMIT_OPP', submitOpp);
 }
 
+// dispatches a POST for a new submission to the database
 function* submitOpp(action) {
-    // console.log('in submitOpp generator', action.payload);
-    // let response = yield axios.post(`/api/opportunity`);
-    // yield put({ type: 'GET_OPPS' });
     yield console.log('in submit opp', action.payload)
     try {
         yield axios.post(`/api/opportunity`, action.payload);

@@ -5,6 +5,8 @@ function* deleteSaga() {
     yield takeLatest('DELETE_OPP', deleteOpp);
 }
 
+//this dispatches a DELETE to the server targeting a specific ID
+// after that, it triggers a GET to refresh the list
 function* deleteOpp(action) {
     console.log('in deleteOpp', action.payload);
     let response = yield axios.delete(`/api/opportunity/${action.payload}`);

@@ -3,10 +3,9 @@ import { put, takeLatest } from 'redux-saga/effects';
 
 function* newOppSaga() {
     yield takeLatest('GET_NEW_OPPS', getNewOpps);
-    // yield takeLatest('GET_DETAIL', getDetail);
-    // yield takeLatest('SET_OPPS', setOpps);
 }
 
+// this dispatches a GET to the server for items newly added to the database
 function* getNewOpps() {
     console.log('in getNewOpps generator');
     let response = yield axios.get('/api/newOpp')

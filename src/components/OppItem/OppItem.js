@@ -18,7 +18,7 @@ class OppItem extends Component {
             type: 'CLICK_LIKE',
             payload: this.props.opp.id
         })
-        console.log('clicking to upvote', this.props.opp.id);
+        // console.log('clicking to upvote', this.props.opp.id);
     }
 
     render() {
