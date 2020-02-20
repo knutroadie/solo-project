@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import NewOpp from '../NewOpp/NewOpp';
 
+// this renders list items for everything in its reducer
 class NewlyAdded extends Component {
     render() {
         return (
@@ -18,11 +19,9 @@ class NewlyAdded extends Component {
 }
 
 const putStateOnProps = (reduxState) => {
-    return (
-        {
+    return ({
             reduxState
-        }
-    )
+    })
 }
 
 export default connect(putStateOnProps)(NewlyAdded)

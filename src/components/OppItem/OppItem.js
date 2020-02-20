@@ -7,13 +7,13 @@ import CardContent from "@material-ui/core/CardContent";
 
 class OppItem extends Component {
 
+    // directs the user to a detailed view of the item they just clicked on
     goDetail = (event, opp) => {
-        console.log('clicking to go detail', this.props.opp);
         this.props.history.push(`/detail/${opp.id}`)
     }
 
+    // POST an user-gerated LIKE to the database
     upVote = () => {
-        // post to user_opportunity
         this.props.dispatch({
             type: 'CLICK_LIKE',
             payload: this.props.opp.id
@@ -22,6 +22,7 @@ class OppItem extends Component {
     }
 
     render() {
+        // if the user is logged in
         if (this.props.reduxState.user.username) {
             return (
                 <Card>
@@ -38,6 +39,7 @@ class OppItem extends Component {
                     </CardContent>
                 </Card>
             )
+        // if the user is not logged in
         } else {
             return (
                 <Card>

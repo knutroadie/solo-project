@@ -2,11 +2,7 @@ import React from 'react';
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 
-// This is one of our simplest components
-// It doesn't have local state, so it can be a function component.
-// It doesn't dispatch any redux actions or display any part of redux state
-// or even care what the redux state is, so it doesn't need 'connect()'
-
+// a simple component that shows the user information about the application
 const AboutPage = () => (
   <div>
     <div id="fortyCard">

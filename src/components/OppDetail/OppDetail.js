@@ -7,6 +7,7 @@ import CardContent from "@material-ui/core/CardContent";
 
 class OppDetail extends Component {
 
+    // GET request for details of the item clicked on
     componentDidMount() {
         this.props.dispatch({
             type: 'GET_DETAIL',
@@ -14,11 +15,13 @@ class OppDetail extends Component {
         })
     }
 
+    // directs the admin to an edit page pre-populated with the items info
     goEdit = () => {
         console.log('clicking to go edit', this.props.match.params.id);
         this.props.history.push(`/edit/${this.props.match.params.id}`)
     }
 
+    // dispatches a DELETE to the database via redux saga for the item clicked on
     deleteOpp = () => {
         console.log('clicking to delete');
         this.props.dispatch({
@@ -28,6 +31,7 @@ class OppDetail extends Component {
         this.props.history.push(`/`)
     }
 
+    // POST an user-gerated LIKE to the database
     upVote = () => {
         // post to user_opportunity
         this.props.dispatch({
@@ -36,9 +40,12 @@ class OppDetail extends Component {
         })
     }
 
+    // THE FOLLOWING CODE IS REDUNDANT
+    // AND NEEDS TO BE MADE DRY
+
+    // show the item detail component differently based on the user
     render() {
-        console.log(this.props.match.params.id);
-        console.log(this.props.reduxState.detailReducer.contact);
+        // if an admin is viewing
         if (this.props.reduxState.user.auth < 1) {
             return (
                 <div id="fortyCard">
@@ -63,6 +70,7 @@ class OppDetail extends Component {
                     </Card>
                 </div>
             )
+        // if a logged in user is viewing
         } else if (this.props.reduxState.user.auth > 0) {
             return (
                 <div>
@@ -84,6 +92,7 @@ class OppDetail extends Component {
                     </Card>
                 </div>
             )
+        // if a non-logged in user is viewing
         } else {
             return (
                 <div>

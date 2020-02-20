@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import OppItem from '../OppItem/OppItem';
 
+// this renders list items for everything in its reducer
 class OppList extends Component {
     render() {
         return (
@@ -17,11 +18,9 @@ class OppList extends Component {
 }
 
 const putStateOnProps = (reduxState) => {
-    return (
-        {
+    return ({
             reduxState
-        }
-    )
+    })
 }
 
 export default connect(putStateOnProps)(OppList)

@@ -23,6 +23,7 @@ class SubmitOpp extends Component {
         }
     }
 
+    // sets local state based on user input
     makeNewOpp = (event, propertyValue) => {
         console.log(this.state.newOpp);
         this.setState({
@@ -33,6 +34,7 @@ class SubmitOpp extends Component {
         })
     }
 
+    // POST dispatch to the database
     submitNewOpp = () => {
         console.log('submitting new:', this.state.newOpp);
         this.props.dispatch({
@@ -42,12 +44,16 @@ class SubmitOpp extends Component {
         this.goHome();
     }
 
+    // generates a pop-up thanking the user for a successful submission
     goHome = () => {
         alert('thanks for helping us!')
-        console.log('clicking the alert to submit and go home');
         this.props.history.push(`/`)
     }
 
+    // THE FOLLOWING CODE IS REDUNDANT
+    // AND NEEDS TO BE MADE DRY
+
+    // displays a form for the user to generate a database submission
     render() {
         return (
             <div id="submitEdit">

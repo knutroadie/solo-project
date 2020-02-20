@@ -12,9 +12,9 @@ class LoginPage extends Component {
     password: '',
   };
 
+  // login fucntionality
   login = (event) => {
     event.preventDefault();
-
     if (this.state.username && this.state.password) {
       this.props.dispatch({
         type: 'LOGIN',
@@ -33,14 +33,16 @@ class LoginPage extends Component {
     } else {
       this.props.dispatch({ type: 'LOGIN_INPUT_ERROR' });
     }
-  } // end login
+  }
 
+  // sets local state upon user input
   handleInputChangeFor = propertyName => (event) => {
     this.setState({
       [propertyName]: event.target.value,
     });
   }
 
+  // redirects the user to a register form
   navClick = () => {
     this.props.dispatch({
       type: 'SET_TO_REGISTER_MODE'
@@ -48,63 +50,26 @@ class LoginPage extends Component {
     this.props.history.push('/register')
   }
 
+  // show inputs and buttons for login and register
   render() {
     return (
       <div id="loginCard">
-      <Card>
-        <CardContent>
-          
+        <Card>
+          <CardContent>
             {this.props.errors.loginMessage && (
-              <h2
-                className="alert"
-                role="alert"
-              >
+              <h2 className="alert" role="alert">
                 {this.props.errors.loginMessage}
               </h2>
             )}
             <form>
-              {/* onSubmit={this.login} */}
               <h3>Login</h3>
               <TextField type="text" label="username" value={this.state.username} onChange={this.handleInputChangeFor('username')} /><br></br>
               <TextField type="password" label="password" value={this.state.password} onChange={this.handleInputChangeFor('password')} /><br></br>
               <Button variant="contained" onClick={this.login}>Log In</Button>
               <Button variant="contained" onClick={this.navClick}>Register</Button>
-              {/* <div>
-            <label htmlFor="username">
-              Username:
-              <input
-                type="text"
-                name="username"
-                value={this.state.username}
-                onChange={this.handleInputChangeFor('username')}
-              />
-            </label>
-          </div> */}
-              {/* <div>
-            <label htmlFor="password">
-              Password:
-              <input
-                type="password"
-                name="password"
-                value={this.state.password}
-                onChange={this.handleInputChangeFor('password')}
-              />
-            </label>
-          </div> */}
-              {/* <div>
-            <input
-              className="log-in"
-              type="submit"
-              name="submit"
-              value="Log In"
-            />
-          </div> */}
-              {/* </form> */}
-              {/* this button should take the user to /register */}
             </form>
-          
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
       </div>
     );
   }

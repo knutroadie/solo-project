@@ -2,6 +2,7 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
+// POST to the like table
 router.post('/', (req, res) => {
     console.log('in /like POST:', req.body);
     let queryText = `

@@ -4,14 +4,14 @@ import { withRouter } from 'react-router-dom';
 
 class NewOpp extends Component {
 
+    // redirects the user to the detail view of the item they click on
     goDetail = (event, opp) => {
         console.log('clicking to go detail', this.props.opp);
         this.props.history.push(`/detail/${opp.id}`)
     }
 
+    // creates a reusable list item component for newly added
     render() {
-        console.log(this.props.opp);
-        
         return (
             <div key={this.props.opp.id} onClick={(event) => this.goDetail(event, this.props.opp)}>
                 <li id="newItemList">

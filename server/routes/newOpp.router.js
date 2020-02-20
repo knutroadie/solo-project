@@ -2,6 +2,7 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
+// GET for newly added
 router.get('/', (req, res) => {
     let queryText = `
         SELECT * FROM "opportunity"
@@ -16,6 +17,5 @@ router.get('/', (req, res) => {
             res.sendStatus(500)
         })
 })
-
 
 module.exports = router;

@@ -2,9 +2,7 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
-/**
- * GET route template
- */
+// GET for landing page, ranks entries based on likes
 router.get('/', (req, res) => {
     let queryText = `
         SELECT "opportunity".*, COUNT(*) as likes FROM "opportunity"
@@ -21,6 +19,7 @@ router.get('/', (req, res) => {
         })
 })
 
+// GET for the details of the item we clicked on
 router.get('/:id', (req, res) => {
     let queryText = `SELECT * FROM "opportunity" WHERE "id" = ${req.params.id}`
     pool.query(queryText)
@@ -33,9 +32,7 @@ router.get('/:id', (req, res) => {
         })
 })
 
-/**
- * POST route template
- */
+// POST for a new submission
 router.post('/', (req, res) => {
     console.log('in /opportunity POST:', req.body);
     let queryText = `
@@ -51,9 +48,7 @@ router.post('/', (req, res) => {
     })
 });
 
-/**
- * DELETE route template
- */
+// DELETE from the table targeting the ID of the item we clicked on
 router.delete('/:id', (req, res) => {
     console.log(req.params.id);
     pool.query('DELETE FROM "opportunity" WHERE id=$1', [req.params.id]).then((result) => {
@@ -64,37 +59,13 @@ router.delete('/:id', (req, res) => {
     })
 });
 
-/**
- * PUT route template
- */
+// UPDATES table at targeted ID
 router.put('/:id', (req, res) => {
     console.log('in router PUT', req.body);
-    // let img_url = req.body.img_url
-    // let name = req.body.name
-    // let description = req.body.description
-    // let contact = req.body.contact
-    // let email = req.body.email
-    // let phone = req.body.phone
-    // let web_address = req.body.web_address
-    // let social = req.body.social
-    // let street_address = req.body.street_address
-    // let city = req.body.city
-    // let zip = req.body.zip
     let sqlText = `
     UPDATE "opportunity" 
     SET "image_url"=$1, "name"=$2, "description"=$3, "contact"=$4, "email"=$5, "phone"=$6, "web_address"=$7, "social"=$8, "street_address"=$9, "city"=$10, "zip"=$11 WHERE "id"=${req.params.id};`;
     let values = [req.body.img_url, req.body.name, req.body.description, req.body.contact, req.body.email, req.body.phone, req.body.web_address, req.body.social, req.body.street_address, req.body.city, req.body.zip];
-    // "img_url" = $1, 
-    // "name" = $2, 
-    // "description" = $3, 
-    // "contact" = $4, 
-    // "email" = $5, 
-    // "phone" = $6, 
-    // "web_address" = $7, 
-    // "social" = $8, 
-    // "street_address" = $9, 
-    // "city" = $10, 
-    // "zip" = $11, 
     pool.query(sqlText, values)
     .then((result) => {
         res.sendStatus(200);

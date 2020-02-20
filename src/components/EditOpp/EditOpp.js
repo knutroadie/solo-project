@@ -26,7 +26,7 @@ class EditOpp extends Component {
     }
 
     editThisOpp = (event, propertyValue) => {
-        //build a new object in state
+        // build a new object in state
         console.log('building a new opp', this.state.oppToEdit);
         this.setState({
             oppToEdit: {
@@ -37,7 +37,7 @@ class EditOpp extends Component {
     }
 
     submitEdit = () => {
-        // dispatches edit to redux
+        // dispatches edit to redux/database
         console.log('clicking to submit edit', this.state.oppToEdit);
         this.props.dispatch({
             type: 'SUBMIT_EDIT',
@@ -48,12 +48,19 @@ class EditOpp extends Component {
     }
 
     goDetail = () => {
-        console.log('clicking to go back to detail');
+        // brings the user to a detail page showing all of
+        // the information for the item they clicked on
+        // console.log('clicking to go back to detail');
         this.props.history.push(`/detail/${this.props.reduxState.detailReducer.id}`)
     }
 
+    // renders pre-populated inputs with the
+    // information of the item we just clicked on
+
+    // THE FOLLOWING CODE IS REDUNDANT
+    // AND NEEDS TO BE MADE DRY
+    
     render() {
-        console.log(this.props.reduxState.detailReducer);
         return (
             <div id="submitEdit">
                 <br></br>
