@@ -73,7 +73,7 @@ class OppDetail extends Component {
         // if a logged in user is viewing
         } else if (this.props.reduxState.user.auth > 0) {
             return (
-                <div>
+                <div id="fortyCard">
                     <br></br>
                     <Card>
                         <CardContent>
@@ -95,7 +95,7 @@ class OppDetail extends Component {
         // if a non-logged in user is viewing
         } else {
             return (
-                <div>
+                <div id="fortyCard">
                     <br></br>
                     <Card>
                         <CardContent>
