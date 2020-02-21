@@ -178,5 +178,20 @@ VALUES
 'Saint Paul', 
 '55114');
 
+INSERT INTO "opportunity"("name", "image_url", "description", "contact", "email", "phone", "web_address", "social", "street_address", "city", "zip", "date_added")
+VALUES
+('Habitat for Humanity - Twin Cities', 
+'https://pbs.twimg.com/profile_images/461899942596849664/b1B2gUfi.jpeg', 
+'To eliminate poverty housing from the Twin Cities and to make decent, affordable shelter for all people a matter of conscience.', 
+'', 
+'info@tchabitat.org', 
+'(651) 207-1700',
+'https://www.tchabitat.org/volunteer', 
+'https://www.facebook.com/tchabitat/', 
+'1954 University Avenue West',
+'Saint Paul', 
+'55104',
+'now()');
+
 INSERT INTO "user" ("username", "password", "auth")
 VALUES ('admin', '123', '0') ('user', '123', '1');

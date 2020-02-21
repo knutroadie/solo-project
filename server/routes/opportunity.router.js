@@ -34,7 +34,7 @@ router.get('/:id', (req, res) => {
 })
 
 // POST for a new submission
-router.post('/', (req, res) => {
+router.post('/', rejectUnauthenticated, (req, res) => {
     console.log('in /opportunity POST:', req.body);
     let queryText = `
         INSERT INTO "opportunity" 
@@ -50,7 +50,7 @@ router.post('/', (req, res) => {
 });
 
 // DELETE from the table targeting the ID of the item we clicked on
-router.delete('/:id', (req, res) => {
+router.delete('/:id', rejectUnauthenticated, (req, res) => {
     console.log(req.params.id);
     pool.query('DELETE FROM "opportunity" WHERE id=$1', [req.params.id]).then((result) => {
         res.sendStatus(200);
