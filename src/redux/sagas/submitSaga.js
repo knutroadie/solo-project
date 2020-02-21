@@ -11,7 +11,7 @@ function* submitOpp(action) {
     try {
         yield axios.post(`/api/opportunity`, action.payload);
         yield put({ type: 'GET_OPPS' });
-        // yield put({ type: 'CLICK_LIKE' });
+        yield put({ type: 'GET_NEW_OPPS' });
     } catch (error) {
         console.log('Error in submitOpp generator', error);
         alert('Could not update data at this time. Try again later');

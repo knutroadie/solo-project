@@ -69,7 +69,7 @@ class EditOpp extends Component {
                     <CardContent>
                         <TextField type="text" label="image url" defaultValue={opp.img_url} value={opp.img_url} onChange={(event) => this.editThisOpp(event, 'img_url')} /><br></br>
                         <TextField type="text" label="name" defaultValue={opp.name} value={opp.name} onChange={(event) => this.editThisOpp(event, 'name')} /><br></br>
-                        <TextField type="text" label="description" multiline rowsMax="10" defaultValue={opp.description} value={opp.description} onChange={(event) => this.editThisOpp(event, 'description')} /><br></br>
+                        <TextField type="text" label="description" multiline rowsMax="8" defaultValue={opp.description} value={opp.description} onChange={(event) => this.editThisOpp(event, 'description')} /><br></br>
                         <TextField type="text" label="contact name" defaultValue={opp.contact} value={opp.contact} onChange={(event) => this.editThisOpp(event, 'contact')} /><br></br>
                         <TextField type="email" label="contact email" helperText="name@email.com" defaultValue={opp.email} value={opp.email} onChange={(event) => this.editThisOpp(event, 'email')} /><br></br>
                         <TextField type="tel" label="contact phone" helperText="(612) 555-1234" defaultValue={opp.phone} value={opp.phone} onChange={(event) => this.editThisOpp(event, 'phone')} /><br></br>
@@ -78,7 +78,7 @@ class EditOpp extends Component {
                         <TextField type="text" label="street address" defaultValue={opp.street_address} value={opp.street_address} onChange={(event) => this.editThisOpp(event, 'street_address')} /><br></br>
                         <TextField type="text" label="city" defaultValue={opp.city} value={opp.city} onChange={(event) => this.editThisOpp(event, 'city')} /><br></br>
                         <TextField type="text" label="zip code" defaultValue={opp.zip} value={opp.zip} onChange={(event) => this.editThisOpp(event, 'zip')} /><br></br>
-                        <Button variant="contained" onClick={this.submitEdit}>submit changes</Button>
+                        <Button id="Button" variant="contained" onClick={this.submitEdit}>submit changes</Button>
                     </CardContent>
                 </Card>
             </div>

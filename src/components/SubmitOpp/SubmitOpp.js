@@ -50,6 +50,23 @@ class SubmitOpp extends Component {
         this.props.history.push(`/`)
     }
 
+    populateInputs = () => {
+        this.setState({
+            newOpp:{
+                name: 'Big Brothers Big Sisters Twin Cities',
+                description: 'In our nearly 100 years of operation, almost half a million Twin Cities kids have had their lives changed for their better, forever through Big Brothers Big Sisters of the Greater Twin Cities.',
+                contact: '',
+                email: 'thinkbig@bigstwincities.org',
+                phone: '(651) 789-2400',
+                web_address: 'https://www.bigstwincities.org/volunteer/',
+                social: 'https://www.facebook.com/BigsTwinCities/',
+                street_address: '2550 University Avenue West, Suite 410N',
+                city: 'Saint Paul, MN',
+                zip: '55114'
+            }
+        })
+    }
+
     // THE FOLLOWING CODE IS REDUNDANT
     // AND NEEDS TO BE MADE DRY
 
@@ -58,6 +75,7 @@ class SubmitOpp extends Component {
         let opp = this.state.newOpp;
         return (
             <div id="submitEdit">
+                <h4 id="centerHeadline" onClick={this.populateInputs}>fill out this form</h4>
                 <br></br>
                 <Card>
                     <CardContent>
