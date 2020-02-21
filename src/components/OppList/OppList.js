@@ -4,6 +4,12 @@ import OppItem from '../OppItem/OppItem';
 
 // this renders list items for everything in its reducer
 class OppList extends Component {
+
+    componentDidMount() {
+        this.props.dispatch({
+            type: 'GET_OPPS'
+        })
+    }
     render() {
         return (
             <div>

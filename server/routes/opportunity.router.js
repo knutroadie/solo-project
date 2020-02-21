@@ -7,7 +7,7 @@ const { rejectUnauthenticated } = require('../modules/authentication-middleware'
 router.get('/', (req, res) => {
     let queryText = `
         SELECT "opportunity".*, COUNT(*) as likes FROM "opportunity"
-        JOIN "user_opportunity" on "user_opportunity".opportunity_id = "opportunity".id
+        LEFT OUTER JOIN "user_opportunity" on "user_opportunity".opportunity_id = "opportunity".id
         GROUP BY "opportunity".id
         ORDER BY likes DESC;`
     pool.query(queryText)
@@ -38,9 +38,9 @@ router.post('/', (req, res) => {
     console.log('in /opportunity POST:', req.body);
     let queryText = `
         INSERT INTO "opportunity" 
-        ("name", "description", "contact", "email", "phone", "web_address", "social", "street_address", "city", "zip", "date_added")
-        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11);`;
-    let values = [req.body.name, req.body.description, req.body.contact, req.body.email, req.body.phone, req.body.web_address, req.body.social, req.body.street_address, req.body.city, req.body.zip, 'now()'];
+        ("name", "description", "contact", "email", "phone", "web_address", "social", "street_address", "city", "zip", "date_added", "image_url")
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12);`;
+    let values = [req.body.name, req.body.description, req.body.contact, req.body.email, req.body.phone, req.body.web_address, req.body.social, req.body.street_address, req.body.city, req.body.zip, 'now()', 'https://upload.wikimedia.org/wikipedia/commons/3/3d/Fully_transparent_placeholder.svg'];
     pool.query(queryText, values).then((result) => {
         res.sendStatus(201);
     }).catch((error) => {
