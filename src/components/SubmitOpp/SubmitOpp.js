@@ -74,13 +74,13 @@ class SubmitOpp extends Component {
     render() {
         let opp = this.state.newOpp;
         return (
-            <div id="submitEdit">
+            <div id="submitEditCard">
                 <h4 id="centerHeadline" onClick={this.populateInputs}>fill out this form</h4>
                 <br></br>
                 <Card>
                     <CardContent>
-                        <form>
-                            <TextField type="text" label="name" helperText="required" value={opp.name} onChange={(event) => this.makeNewOpp(event, 'name')} /><br></br>
+                        <form id="submitEditForm">
+                            <TextField type="text" label="name" value={opp.name} onChange={(event) => this.makeNewOpp(event, 'name')} /><br></br>
                             <TextField type="text" label="contact name" value={opp.contact} onChange={(event) => this.makeNewOpp(event, 'contact')} /><br></br>
                             <TextField type="email" label="contact email" helperText="example: name@email.com" value={opp.email} onChange={(event) => this.makeNewOpp(event, 'email')} /><br></br>
                             <TextField type="tel" label="contact phone" helperText="example: (612) 555-1234" value={opp.phone} onChange={(event) => this.makeNewOpp(event, 'phone')} /><br></br>
@@ -90,8 +90,9 @@ class SubmitOpp extends Component {
                             <TextField type="text" label="city" value={opp.city} onChange={(event) => this.makeNewOpp(event, 'city')} /><br></br>
                             <TextField type="text" label="zip code" value={opp.zip} onChange={(event) => this.makeNewOpp(event, 'zip')} /><br></br>
                             <TextField type="text" label="description" multiline rowsMax="10" value={opp.description} onChange={(event) => this.makeNewOpp(event, 'description')} /><br></br>
-                            <Button id="Button" variant="contained" onClick={this.submitNewOpp}>submit</Button>
+                            {/* <Button id="editSubmitButton" variant="contained" onClick={this.submitNewOpp}>submit</Button> */}
                         </form>
+                            <Button id="Button" variant="contained" onClick={this.submitNewOpp}>submit</Button>
                     </CardContent>
                 </Card>
             </div>

@@ -8,8 +8,8 @@ CREATE TABLE "user" (
 CREATE TABLE "opportunity" (
 	"id" SERIAL PRIMARY KEY,
 	"name" VARCHAR(255) UNIQUE NOT NULL,
-	"image_url" VARCHAR(255),
-	"description" VARCHAR(255),
+	"image_url" TEXT,
+	"description" TEXT,
 	"contact" VARCHAR(255),
 	"email" VARCHAR(255),
 	"phone" VARCHAR(15),
@@ -176,21 +176,52 @@ VALUES
 'https://www.facebook.com/reclaimqt/', 
 '771 Raymond Avenue', 
 'Saint Paul', 
-'55114');
+'55114',
+'now()');
 
 INSERT INTO "opportunity"("name", "image_url", "description", "contact", "email", "phone", "web_address", "social", "street_address", "city", "zip", "date_added")
 VALUES
-('Habitat for Humanity - Twin Cities', 
-'https://pbs.twimg.com/profile_images/461899942596849664/b1B2gUfi.jpeg', 
-'To eliminate poverty housing from the Twin Cities and to make decent, affordable shelter for all people a matter of conscience.', 
+('Feed My Starving Children - Eagan', 
+'https://imagecdn.mightycause.com/d9edcd78-7e26-451e-aa61-40b5f0469123/-/crop/591x590/63,71/-/preview/', 
+'You will hear us say this again and again: “We want to reach everyone, until ALL are fed.” We truly mean this. This means reaching the hard-to-reach people and places, the “least of these.” They will be found, and they will be fed.', 
+'Tony Sconza', 
+'eaganinfo@fmsc.org', 
+'(763) 746-2952',
+'https://www.fmsc.org/get-involved/volunteer', 
+'https://www.facebook.com/feedmystarvingchildren', 
+'990 Lone Oak Road, Suite 136',
+'Eagan, MN', 
+'55121',
+'now()');
+
+INSERT INTO "opportunity"("name", "image_url", "description", "contact", "email", "phone", "web_address", "social", "street_address", "city", "zip", "date_added")
+VALUES
+('Ka Joog', 
+'https://pbs.twimg.com/profile_images/799689399139078144/q3zod7Rs.jpg', 
+'Ka Joog is a nationally recognized, Somali nonprofit organization tailored towards enriching the lives of Somali American youth by utilizing the positive elements of education, mentoring, employment, and the arts. Ka Joog’s mission is to motivate youth to pursue higher education, while promoting and building community ties at events throughout Minnesota.', 
 '', 
-'info@tchabitat.org', 
-'(651) 207-1700',
-'https://www.tchabitat.org/volunteer', 
-'https://www.facebook.com/tchabitat/', 
-'1954 University Avenue West',
-'Saint Paul', 
-'55104',
+'info@kajoog.org', 
+'(612) 255-3524',
+'https://www.kajoog.org', 
+'https://www.facebook.com/kajoog.org/', 
+'1420 South Washington Avenue',
+'Minneapolis, MN', 
+'55454',
+'now()');
+
+INSERT INTO "opportunity"("name", "image_url", "description", "contact", "email", "phone", "web_address", "social", "street_address", "city", "zip", "date_added")
+VALUES
+('Bridging - Roseville', 
+'https://www.handsontwincities.org/content/www.handsontwincities.org/agency/61532.jpg?1483109337?area=agency', 
+'Bridging empowers people to thrive in their homes by providing quality furniture and household goods to those pursuing housing stability.', 
+'', 
+'community@bridging.org', 
+'(651) 631-3255',
+'https://www.bridging.org/engage/volunteer/', 
+'https://www.facebook.com/BridgingMN/', 
+'1730 Terrace Drive',
+'Roseville, MN', 
+'55113',
 'now()');
 
 INSERT INTO "user" ("username", "password", "auth")

@@ -63,10 +63,11 @@ class EditOpp extends Component {
     render() {
         let opp = this.state.oppToEdit;
         return (
-            <div id="submitEdit">
+            <div id="submitEditCard">
                 <br></br>
                 <Card>
                     <CardContent>
+                        <form id="submitEditForm">
                         <TextField type="text" label="image url" defaultValue={opp.img_url} value={opp.img_url} onChange={(event) => this.editThisOpp(event, 'img_url')} /><br></br>
                         <TextField type="text" label="name" defaultValue={opp.name} value={opp.name} onChange={(event) => this.editThisOpp(event, 'name')} /><br></br>
                         <TextField type="text" label="description" multiline rowsMax="8" defaultValue={opp.description} value={opp.description} onChange={(event) => this.editThisOpp(event, 'description')} /><br></br>
@@ -78,10 +79,12 @@ class EditOpp extends Component {
                         <TextField type="text" label="street address" defaultValue={opp.street_address} value={opp.street_address} onChange={(event) => this.editThisOpp(event, 'street_address')} /><br></br>
                         <TextField type="text" label="city" defaultValue={opp.city} value={opp.city} onChange={(event) => this.editThisOpp(event, 'city')} /><br></br>
                         <TextField type="text" label="zip code" defaultValue={opp.zip} value={opp.zip} onChange={(event) => this.editThisOpp(event, 'zip')} /><br></br>
+                        {/* <Button id="Button" variant="contained" onClick={this.submitEdit}>submit changes</Button> */}
+                        </form>
                         <Button id="Button" variant="contained" onClick={this.submitEdit}>submit changes</Button>
                     </CardContent>
                 </Card>
-            </div>
+            </div >
         )
     }
 }

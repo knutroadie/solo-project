@@ -14,6 +14,11 @@
     width: 100%;
 }
 
+#headerDiv {
+    position: fixed;
+    top: 0;
+}
+
 #motto {
     color: #002f6c;
     background-color: transparent;
@@ -72,12 +77,17 @@ ul {
     justify-content: center;
 }
 
-#submitEdit {
+#submitEditCard {
     /* width: 200px;
     margin-left: 0 auto;
     border: 2px; */
-    width: 200px;
+    width: 400px;
     margin: auto;
+}
+
+#submitEditForm {
+    column-count: 2;
+
 }
 
 #loginCard {
@@ -85,7 +95,7 @@ ul {
     padding-left: 42%; */
     /* list-style-type: none; */
     /* display: inline-block; */
-    width: 240px;
+    width: 236px;
     /* padding-left: 35%; */
     margin: 0 auto;
 }
@@ -114,8 +124,15 @@ footer {
     margin-bottom: 10px;
 }
 
+#editSubmitButton {
+    margin-top: 10px;
+    margin-right: 10px;
+    left: 27%;
+    
+}
+
 #Button {
-    margin-top: 5px;
+    margin-top: 10px;
     margin-right: 10px;
 }
 
@@ -125,9 +142,9 @@ footer {
 
 #leftPic {
     height: 800px;
-    margin-left: -460px;
+    margin-left: -500px;
     /* -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0)); */
-    -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(128,128,128,.5) 40%, rgba(255,255,255,0) 60%);
+    -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(128,128,128,.5) 40%, rgba(255,255,255,0) 65%);
     margin-top: -250px;
     position: fixed;
 }
