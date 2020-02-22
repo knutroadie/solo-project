@@ -123,6 +123,15 @@ footer {
     text-align: center;
 }
 
+#leftPic {
+    height: 800px;
+    margin-left: -460px;
+    /* -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0)); */
+    -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(128,128,128,.5) 40%, rgba(255,255,255,0) 60%);
+    margin-top: -250px;
+    position: fixed;
+}
+
 /* .alert {
     background-color: #ff4545;
     margin: 50px;

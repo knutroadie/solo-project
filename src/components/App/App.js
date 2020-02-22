@@ -14,6 +14,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import NewlyAdded from '../NewlyAdded/NewlyAdded';
 import './App.css';
+import HandsImage from './hands.jpg';
 
 // THIS WILL EVENTUALLY ANIMATE THE HEADER ON SCROLL
 
@@ -41,6 +42,7 @@ class App extends Component {
           <header>
             <NavBar />
           </header>
+          <img id="leftPic" src={HandsImage} alt="hands"/>
           <NewlyAdded />
           <Route path="/" exact component={OppList} />
           <Route path="/login" exact component={LoginPage} />
