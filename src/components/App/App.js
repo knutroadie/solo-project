@@ -20,11 +20,23 @@ import HandsImage from './hands.jpg';
 
 // window.onscroll = function () { scrollFunction() };
 
+// function scrollFunction() {
+//   if (document.body.scrollTop > 90 || document.documentElement.scrollTop > 100) {
+//     document.getElementById("header").style.fontSize = "40px";
+//   } else {
+//     document.getElementById("header").style.fontSize = "65px";
+//   }
+// }
+
+window.onscroll = function() {scrollFunction()};
+
 function scrollFunction() {
-  if (document.body.scrollTop > 90 || document.documentElement.scrollTop > 100) {
-    document.getElementById("header").style.fontSize = "40px";
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById("headerDiv").style.padding = "30px 10px";
+    document.getElementById("header").style.fontSize = "25px";
   } else {
-    document.getElementById("header").style.fontSize = "65px";
+    document.getElementById("headerDiv").style.padding = "45px 10px";
+    document.getElementById("header").style.fontSize = "35px";
   }
 }
 

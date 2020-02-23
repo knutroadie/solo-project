@@ -224,5 +224,65 @@ VALUES
 '55113',
 'now()');
 
+INSERT INTO "opportunity"("name", "image_url", "description", "contact", "email", "phone", "web_address", "social", "street_address", "city", "zip", "date_added")
+VALUES
+('The Sheridan Story', 
+'https://www.thesheridanstory.org/wp-content/uploads/2017/06/SheridanStoryLogotallBW-1170x1170.jpg', 
+'Fight child hunger through community and school partnerships.', 
+'', 
+'info@thesheridanstory.org', 
+'(612) 568-4003',
+'https://www.thesheridanstory.org/get-involved/volunteer/', 
+'https://www.instagram.com/sheridanstory/', 
+'2723 Patton Road',
+'Roseville, MN', 
+'55113',
+'now()');
+
+INSERT INTO "opportunity"("name", "image_url", "description", "contact", "email", "phone", "web_address", "social", "street_address", "city", "zip", "date_added")
+VALUES
+('The Food Group', 
+'https://media-exp1.licdn.com/dms/image/C510BAQEClgMO2kCsRQ/company-logo_200_200/0?e=2159024400&v=beta&t=jqiZKDfeOLs8sF9SnXsjSLEboShXgZ-uRPpNdK_bu6k', 
+'We work at the intersection of food access, equity, and nutrition issues related to food and hunger in 32 counties in Minnesota and Wisconsin. We break down barriers to growing good food locally and getting good food to those who need it most.', 
+'contact', 
+'info@thefoodgroupmn.org', 
+'(763) 450-3860',
+'https://thefoodgroupmn.org/get-involved/volunteer/', 
+'https://www.facebook.com/thefoodgroupmn/', 
+'8501 54th Avenue North',
+'New Hope, MN', 
+'55428',
+'now()');
+
+INSERT INTO "opportunity"("name", "image_url", "description", "contact", "email", "phone", "web_address", "social", "street_address", "city", "zip", "date_added")
+VALUES
+('Neighborhood House', 
+'https://www.handsontwincities.org/content/www.handsontwincities.org/agency/61774.jpg?1481211891?area=agency', 
+'We are a multi-service agency, providing wrap-around services for people when they need it most. Neighborhood House helps people with basic needs, education, multiple youth programs, and health and well-being.', 
+'', 
+'info@neighb.org', 
+'(651) 789-2500',
+'http://neighb.org/support/volunteer/', 
+'https://www.facebook.com/neighborhoodhouseMN/', 
+'179 Robie Street East',
+'Saint Paul, MN', 
+'55107',
+'now()');
+
+INSERT INTO "opportunity"("name", "image_url", "description", "contact", "email", "phone", "web_address", "social", "street_address", "city", "zip", "date_added")
+VALUES
+('People Incorporated', 
+'https://pbs.twimg.com/profile_images/1214682325935632384/fW_cjS5R_400x400.png', 
+'We are an innovative community provider of vital integrated behavioral and mental health services in Minnesota supporting mental health and wellness in our community through collaboration and integration of care.', 
+'contact', 
+'info@peopleincorporated.org', 
+'(651) 774-0011',
+'https://www.peopleincorporated.org/get-involved/volunteer/', 
+'https://www.facebook.com/PeopleIncorporated', 
+'2060 Centre Pointe Boulevard, Suite 3',
+'Saint Paul, MN', 
+'55120',
+'now()');
+
 INSERT INTO "user" ("username", "password", "auth")
 VALUES ('admin', '123', '0') ('user', '123', '1');

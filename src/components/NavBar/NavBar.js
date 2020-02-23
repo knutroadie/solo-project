@@ -18,7 +18,7 @@ class NavBar extends Component {
         // if the user is logged in, show them this
         if (this.props.reduxState.user.username) {
             return (
-                <div className="headerDiv">
+                <div id="headerDiv">
                     <header>
                     <h1 id="header">good do good</h1>
                     <h3 id="motto">meeting good people WAS hard</h3>
