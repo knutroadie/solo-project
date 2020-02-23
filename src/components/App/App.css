@@ -1,3 +1,40 @@
+.App {
+    /* background-image: url(./hands.jpg); */
+    /* height: 800px;
+    margin-left: -500px;
+    -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(128,128,128,.5) 40%, rgba(255,255,255,0) 65%);
+    margin-top: -250px;
+    position: fixed; */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* .App:after { */
+    /* background-image: url(./hands.jpg); */
+    /* height: 800px; */
+    /* margin-left: -500px; */
+    /* -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(128,128,128,.5) 40%, rgba(255,255,255,0) 65%); */
+    /* margin-top: -250px; */
+    /* position: fixed; */
+
+    /* content: ' '; */
+    /* display: block; */
+    /* position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; */
+    /* z-index: -1; */
+    /* background-repeat: no-repeat;
+    background-position: 50% 0; */
+    /* -ms-background-size: cover; */
+    /* -o-background-size: cover; */
+    /* -moz-background-size: cover; */
+    /* -webkit-background-size: cover; */
+    /* background-size: cover; */
+/* } */
+
 #header {
     color: white;
     background-color: #002f6c;
@@ -12,6 +49,7 @@
     /* padding-bottom: 10px; */
     /* position: fixed; */
     width: 100%;
+    /* z-index: -0; */
 }
 
 #headerDiv {
@@ -124,12 +162,11 @@ footer {
     margin-bottom: 10px;
 }
 
-#editSubmitButton {
+/* #editSubmitButton {
     margin-top: 10px;
     margin-right: 10px;
     left: 27%;
-    
-}
+} */
 
 #Button {
     margin-top: 10px;
@@ -142,11 +179,12 @@ footer {
 
 #leftPic {
     height: 800px;
-    margin-left: -500px;
+    margin-left: -480px;
     /* -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0)); */
     -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(128,128,128,.5) 40%, rgba(255,255,255,0) 65%);
     margin-top: -250px;
     position: fixed;
+    z-index: -1;
 }
 
 /* .alert {

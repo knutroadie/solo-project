@@ -42,7 +42,8 @@ class App extends Component {
           <header>
             <NavBar />
           </header>
-          {/* <img id="leftPic" src={HandsImage} alt="hands"/> */}
+          <img id="leftPic" src={HandsImage} alt="hands"/>
+          <div  styles={{ backgroundImage:`url(${HandsImage})` }}></div>
           <NewlyAdded />
           <Route path="/" exact component={OppList} />
           <Route path="/login" exact component={LoginPage} />
