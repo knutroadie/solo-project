@@ -89,7 +89,7 @@ class SubmitOpp extends Component {
                             <TextField type="text" label="street address" value={opp.street_address} onChange={(event) => this.makeNewOpp(event, 'street_address')} /><br></br>
                             <TextField type="text" label="city" value={opp.city} onChange={(event) => this.makeNewOpp(event, 'city')} /><br></br>
                             <TextField type="text" label="zip code" value={opp.zip} onChange={(event) => this.makeNewOpp(event, 'zip')} /><br></br>
-                            <TextField type="text" label="description" multiline rowsMax="10" value={opp.description} onChange={(event) => this.makeNewOpp(event, 'description')} /><br></br>
+                            <TextField type="text" label="description" multiline rowsMax="3" value={opp.description} onChange={(event) => this.makeNewOpp(event, 'description')} /><br></br>
                             {/* <Button id="editSubmitButton" variant="contained" onClick={this.submitNewOpp}>submit</Button> */}
                         </form>
                             <Button id="Button" variant="contained" onClick={this.submitNewOpp}>submit</Button>

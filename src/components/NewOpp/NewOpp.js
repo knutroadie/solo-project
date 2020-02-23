@@ -13,8 +13,8 @@ class NewOpp extends Component {
     // creates a reusable list item component for newly added
     render() {
         return (
-            <div key={this.props.opp.id} onClick={(event) => this.goDetail(event, this.props.opp)}>
-                <li id="newItemList">
+            <div onClick={(event) => this.goDetail(event, this.props.opp)}>
+                <li key={this.props.opp.id}>
                     <img src={this.props.opp.image_url} alt={this.props.opp.name} height="50"></img>
                     <p>{this.props.opp.name}</p>
                 </li>

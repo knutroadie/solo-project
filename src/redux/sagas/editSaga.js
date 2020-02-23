@@ -10,7 +10,7 @@ function* editSaga() {
 // afterward, it does a get to refresh the page
 function* editOpp(action) {
     console.log('in editOpp', action);
-    let response = yield axios.put(`/api/opportunity/${action.payload.id}`, action.payload);
+    yield axios.put(`/api/opportunity/${action.payload.id}`, action.payload);
     yield put({ type: 'GET_OPPS' });
 }
 

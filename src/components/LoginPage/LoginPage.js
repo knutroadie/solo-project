@@ -25,7 +25,7 @@ class LoginPage extends Component {
       });
       const location = this.props.match.path;
       console.log('location:', this.props.match.path);
-      if (location == '/login') {
+      if (location === '/login') {
         this.props.history.push('/');
       } else {
         this.props.history.push(location);

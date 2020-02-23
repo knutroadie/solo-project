@@ -19,7 +19,6 @@ import HandsImage from './hands.jpg';
 // THIS WILL EVENTUALLY ANIMATE THE HEADER ON SCROLL
 
 // window.onscroll = function () { scrollFunction() };
-
 // function scrollFunction() {
 //   if (document.body.scrollTop > 90 || document.documentElement.scrollTop > 100) {
 //     document.getElementById("header").style.fontSize = "40px";
@@ -28,17 +27,16 @@ import HandsImage from './hands.jpg';
 //   }
 // }
 
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-    document.getElementById("headerDiv").style.padding = "30px 10px";
-    document.getElementById("header").style.fontSize = "25px";
-  } else {
-    document.getElementById("headerDiv").style.padding = "45px 10px";
-    document.getElementById("header").style.fontSize = "35px";
-  }
-}
+// window.onscroll = function() {scrollFunction()};
+// function scrollFunction() {
+//   if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+//     document.getElementById("headerDiv").style.padding = "30px 10px";
+//     document.getElementById("header").style.fontSize = "25px";
+//   } else {
+//     document.getElementById("headerDiv").style.padding = "45px 10px";
+//     document.getElementById("header").style.fontSize = "35px";
+//   }
+// }
 
 class App extends Component {
 
