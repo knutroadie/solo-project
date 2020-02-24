@@ -165,8 +165,9 @@ footer {
 }
 
 #leftPic {
-    height: 900px;
-    margin-left: -500px;
+    /* height: 900px; */
+    height: 110%;
+    margin-left: -400px;
     /* -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0)); */
     -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(128,128,128,.5) 40%, rgba(255,255,255,0) 65%);
     margin-top: -250px;
