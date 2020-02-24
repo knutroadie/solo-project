@@ -128,6 +128,10 @@ ul {
     margin-right: 3%;
 }
 
+#newOppItem {
+    cursor:pointer;
+}
+
 #newHeader {
     margin-left: 43px;
     margin-right: 43px;
