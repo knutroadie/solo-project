@@ -14,9 +14,9 @@ class OppList extends Component {
         return (
             <div>
                 <ul>
-                    {this.props.reduxState.oppsReducer.map(opp => {
-                        return <OppItem id="oppListItem" key={opp.id} opp={opp} />
-                    })}
+                     {this.props.reduxState.oppsReducer.map(opp => {
+                                return <OppItem id="oppListItem" key={opp.id} opp={opp} />
+                            })}
                 </ul>
             </div>
         )
